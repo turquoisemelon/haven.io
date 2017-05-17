@@ -1,24 +1,10 @@
-# README
+# haven.io
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An app to collect data from the homeless by the homeless to help the homeless.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Setup
+1. Fork & Clone
+2. Run `bundle install` to install dependencies
+3. Run `bin/rake db:create`
+4. Run `bin/rake db:migrate`
+5. Run `bin/rake db:reset`
