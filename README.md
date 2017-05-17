@@ -13,7 +13,7 @@ An app to collect data from the homeless by the homeless to help the homeless.
 Always create your own branch and never commit directly to master branch, please follow these steps:
 Create a new branch
 1. `git checkout -b <<your branch name>>`
-Push your branch to origin to track changes
+\n Push your branch to origin to track changes
 2. `git push --set-upstream origin <<your branch name>>`
 Commit and push all your changes to origin as you work
 once you are done your feature switch to local master branch
