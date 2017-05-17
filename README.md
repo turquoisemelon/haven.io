@@ -25,4 +25,4 @@ once your branch is merged checkout you local master branch and pull from origin
 Now delete your feature branch from origin as a clean up
 6. `git push origin --delete <<your branch name>>`
 Finally delete your remote feature branch
-7 `git branch -d <<your branch name>>`
+7. `git branch -d <<your branch name>>`
