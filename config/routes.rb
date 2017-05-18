@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'admin_dash', to: 'admin_dash#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'admin_dash#index'
+  root to: 'sessions#new'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'users#index'
+    get '/dashboard' => 'dashboard#index'
     get '/users' => 'users#index'
     put '/user/:id' => 'users#update'
   end
