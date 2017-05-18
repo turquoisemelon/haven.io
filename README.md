@@ -11,6 +11,7 @@ An app to collect data from the homeless by the homeless to help the homeless.
 
 ## Working with Git
 Always create your own branch and never commit directly to master branch, please follow these steps:
+
 1. Create a new branch<br/>
 `git checkout -b <<your branch name>>`
 2. Push your branch to origin to track changes<br/>
@@ -24,3 +25,8 @@ Always create your own branch and never commit directly to master branch, please
 `git push origin --delete <<your branch name>>`
 7. Finally delete your remote feature branch <br/>
 `git branch -d <<your branch name>>`
+
+## Working with React
+You will need to install yarn https://yarnpkg.com/en/docs/install after `bundle install`.
+
+run `bin/rails s` to start both rails and react server
