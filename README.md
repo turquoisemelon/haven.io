@@ -29,3 +29,5 @@ Finally delete your remote feature branch
 
 ## Working with React
 You will need to install yarn https://yarnpkg.com/en/docs/install after `bundle install`.
+
+run `foreman start -f Procfile.dev` to start both rails and react server
