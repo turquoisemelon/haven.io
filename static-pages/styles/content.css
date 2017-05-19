@@ -1,17 +1,25 @@
 * {
   box-sizing: border-box; }
 
-.background-image {
-  background-image: url("http://www.rths193.org/uploads/5/9/8/9/59899991/4160299.png?639");
+#filter-div {
+  background-color: black;
   background-size: cover;
   display: block;
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
   height: 600px;
   left: 0;
   position: fixed;
   right: 0;
   z-index: 1; }
+  #filter-div .background-image {
+    background-image: url("http://gacfhc.com/wp-content/uploads/2016/09/hands_1042111.jpg");
+    background-size: cover;
+    display: block;
+    height: 600px;
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+    opacity: 0.50; }
 
 .upper-content {
   display: flex;
@@ -27,16 +35,17 @@
   padding: 0 10px; }
   .upper-content .welcome-text {
     text-align: center;
-    color: #146517;
-    font-weight: 900;
+    color: white;
     margin-top: 30px; }
+    .upper-content .welcome-text h1 {
+      font-weight: 900; }
   .upper-content .middle-signup-button {
     display: flex;
     justify-content: center; }
     .upper-content .middle-signup-button .btn {
-      background-color: darkgreen; }
+      background-color: #90bb92; }
 
 .lower-content {
   z-index: 2; }
 
-/*# sourceMappingURL=header.css.map */
+/*# sourceMappingURL=content.css.map */
