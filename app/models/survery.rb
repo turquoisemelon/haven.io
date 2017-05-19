@@ -1,0 +1,2 @@
+class Survery < ApplicationRecord
+end

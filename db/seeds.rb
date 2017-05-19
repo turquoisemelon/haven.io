@@ -32,3 +32,29 @@ user2 = User.find_or_create_by!({
   email: 'bob@smith.com',
   password_digest: BCrypt::Password.create('1234')
 })
+
+puts "Standy- Creating User Reports... "
+puts user2.id
+
+
+
+report1= Report.find_or_create_by!({
+    user_id: user2.id,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: true,
+     bathed: true,
+     clothes: true,
+     drugs: true,
+     income: true,  
+     apply_benefits: true,  
+     verbal_arguments: true,  
+     fights: true,
+     ems: true,
+     hospital: true,  
+     medical_condition: true,  
+     weeks_homeless: 12,
+     created_at: DateTime.now,
+     sentiment: 3,
+    })
