@@ -10,14 +10,17 @@ Rails.application.routes.draw do
   # These routes will be for signup. The first renders a form in the browse, the second will
   # receive the form and create a user in our database using the data given to us by the user.
   get '/signup' => 'users#new'
-  post '/users' => 'users#create'
-  get 'user/:user_id/reports' => 'reports#index'
-  post 'user/:user_id/reports/new' => 'reports#new'
+  #post '/users' => 'users#create'
+  post '/signup' => 'users#create'
+  # get 'user/:user_id/reports' => 'reports#index'
+  # post 'user/:user_id/reports/' => 'reports#create'
 
   resources :user do
     root to: 'users#index',  as: 'user'
     resources :reports, only: [:index, :show, :create, :new]
-end
+  end
+
+  resources :reports
 
   namespace :admin do
     root to: 'users#index'
