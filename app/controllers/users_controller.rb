@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def new
+    @user = User.new
   end
 
   def create
@@ -37,3 +38,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :profession, :marital_status, :hiv, :veteran, :immigrant)
   end
 end
+  
