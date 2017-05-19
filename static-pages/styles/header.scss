@@ -3,24 +3,23 @@
 }
 
 .background-image {
-  background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
+  background-image: url('http://www.rths193.org/uploads/5/9/8/9/59899991/4160299.png?639');
   background-size: cover;
   display: block;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  height: 800px;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  height: 600px;
   left: 0;
   position: fixed;
   right: 0;
   z-index: 1;
 }
 
-.content {
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 3px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+.upper-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 90px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  top: 10px;
   left: 0;
   position: fixed;
   margin-left: 20px;
@@ -28,4 +27,22 @@
   right: 0;
   z-index: 2;
   padding: 0 10px;
+
+  .welcome-text {
+    text-align: center;
+    color: #146517;
+    font-weight: 900;
+    margin-top: 30px;
+  }
+  .middle-signup-button {
+    display: flex;
+    justify-content: center;
+    .btn {
+      background-color: darkgreen;
+    }
+  }
+}
+
+.lower-content {
+  z-index: 2;
 }
