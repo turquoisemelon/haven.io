@@ -13,7 +13,8 @@
           <th>User_id</th>
           <th>E-mail</th>
           <th>Admin</th>
-          <th>Make admin</th>
+          <th>Make Admin</th>
+          <th>Revoke Admin</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +26,13 @@
             <td>
             <% if u.admin %>
             <% else %>
-              <%= link_to 'Make Admin', admin_path(u.id, :admin => true), :method => :put %>
+              <%= link_to 'Make Admin', admin_user_path(u.id, :admin => true), :method => :put %>
+            <% end %>
+            </td>
+            <td>
+            <% if u.admin %>
+              <%= link_to 'Revoke Admin', admin_user_path(u.id, :admin => false), :method => :put %>
+            <% else %>
             <% end %>
             </td>
           </tr>

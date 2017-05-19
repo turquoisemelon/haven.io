@@ -1,0 +1,28 @@
+<h1>Complete your profile</h1>
+
+<div>
+  <div>
+    <%= form_for(@user) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :profession %>
+      <%= f.text_field :profession %>
+      <br>
+      <%= f.label :marital_status %>
+      <%= f.text_field :marital_status %>
+      <br>
+      <%= f.label(:hiv, 'I am HIV positive' ) %>
+      <%= f.check_box :hiv %>
+      <br>
+      <%= f.label(:veteran, 'I am a veteran' ) %>
+      <%= f.check_box :veteran %>
+      <br>
+      <%= f.label(:immigrant, 'My current immigration status' ) %>
+      <%= f.text_field :immigrant %>
+      <br>
+      <%= f.submit "Save changes" %>
+    <% end %>
+  </div>
+</div>
