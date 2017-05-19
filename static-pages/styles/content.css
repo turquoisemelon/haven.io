@@ -1,51 +1,31 @@
-* {
-  box-sizing: border-box; }
-
-#filter-div {
+.welcome {
+  height: 400px;
   background-color: black;
-  background-size: cover;
-  display: block;
-  height: 600px;
-  left: 0;
-  position: fixed;
-  right: 0;
-  z-index: 1; }
-  #filter-div .background-image {
+  position: relative; }
+  .welcome #filter-div {
+    height: 100%;
+    opacity: 0.6; }
+  .welcome .background-image {
     background-image: url("http://gacfhc.com/wp-content/uploads/2016/09/hands_1042111.jpg");
     background-size: cover;
-    display: block;
-    height: 600px;
-    left: 0;
-    position: fixed;
-    right: 0;
-    z-index: 1;
-    opacity: 0.50; }
-
-.upper-content {
-  display: flex;
-  flex-direction: column;
-  margin-top: 90px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  left: 0;
-  position: fixed;
-  margin-left: 20px;
-  margin-right: 20px;
-  right: 0;
-  z-index: 2;
-  padding: 0 10px; }
-  .upper-content .welcome-text {
-    text-align: center;
-    color: white;
-    margin-top: 30px; }
-    .upper-content .welcome-text h1 {
-      font-weight: 900; }
-  .upper-content .middle-signup-button {
-    display: flex;
-    justify-content: center; }
-    .upper-content .middle-signup-button .btn {
-      background-color: #90bb92; }
-
-.lower-content {
-  z-index: 2; }
+    height: 100%; }
+  .welcome .upper-content {
+    position: absolute;
+    top: 0;
+    width: 100%; }
+    .welcome .upper-content .welcome-text {
+      text-align: center;
+      padding-top: 70px;
+      color: white; }
+      .welcome .upper-content .welcome-text h1 {
+        font-weight: bold;
+        font-size: 3.5rem; }
+      .welcome .upper-content .welcome-text h2 {
+        font-size: 2.5rem; }
+    .welcome .upper-content .middle-signup-button {
+      text-align: center;
+      margin-top: 40px; }
+      .welcome .upper-content .middle-signup-button .btn {
+        background-color: #90bb92; }
 
 /*# sourceMappingURL=content.css.map */
