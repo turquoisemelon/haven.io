@@ -36,8 +36,6 @@ user2 = User.find_or_create_by!({
 puts "Standy- Creating User Reports... "
 puts user2.id
 
-
-
 report1= Report.find_or_create_by!({
     user_id: user2.id,
      meetings: true,

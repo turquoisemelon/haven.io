@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :reports
+  # resources :reports only: [:index, :show, :create, :new]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'sessions#new'
 
-  post '/reports/new' => 'reports#create'
+  # post '/reports/new' => 'reports#create'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
@@ -11,11 +11,12 @@ Rails.application.routes.draw do
   # receive the form and create a user in our database using the data given to us by the user.
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+  get 'user/:user_id/reports' => 'reports#index'
 
-#   namespace :user do
-#     root to: 'users#index'
-#     resources :reports, except: [:edit, :update, :show]
-# end
+  resources :user do
+    root to: 'users#index',  as: 'user'
+    resources :reports, only: [:index, :show, :create, :new]
+end
 
   namespace :admin do
     root to: 'users#index'

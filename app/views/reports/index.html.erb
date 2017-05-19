@@ -30,9 +30,7 @@
         <td><%= report.verbal_arguments %></td>
         <td><%= report.arrested %></td>
         <td><%= report.sentiment %></td>
-        <td><%= link_to 'Show', report %></td>
-        <td><%= link_to 'Edit', edit_report_path(report) %></td>
-        <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'show', user_report_path(report.user_id, report.id) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Report', new_report_path %>
+<%= link_to 'New Report', new_user_report_path %>
