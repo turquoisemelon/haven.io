@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   get 'user/:user_id/reports' => 'reports#index'
+  post 'user/:user_id/reports/new' => 'reports#new'
 
   resources :user do
     root to: 'users#index',  as: 'user'
