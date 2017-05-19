@@ -1,6 +1,6 @@
 <h1>New Report</h1>
 
-<%= form_for [current_user,  @report], :html => {:multipart => true}, :url => reports_path(:format => "json") do |f| %>
+<%= form_for [current_user,  @report], :html => {:multipart => true} do |f| %>
   Attending meetings : <%= f.check_box :meetings %><br />
   Been Arrested? : <%= f.check_box :arrested %><br />
   Been taking medication? : <%= f.check_box :medicated %><br />
