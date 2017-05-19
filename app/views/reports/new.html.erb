@@ -1,6 +1,6 @@
 <h1>New Report</h1>
 
-<%= form_for [current_user,  @report] do |f| %>
+<%= form_for [current_user,  @report], :html => {:multipart => true}, :url => reports_path(:format => "json") do |f| %>
   Attending meetings : <%= f.check_box :meetings %><br />
   Been Arrested? : <%= f.check_box :arrested %><br />
   Been taking medication? : <%= f.check_box :medicated %><br />
@@ -17,10 +17,9 @@
   New Medical condition? : <%= f.check_box :medical_condition %><br/>
   Current mood? : <%= f.check_box :sentiment %><br />
     Been to the hospital? : <%= f.check_box :hospital %><br />
-
+Current Sentiment? : <%= f.select :sentiment, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %><br />
   Weeks homeless? : <%= f.text_field :weeks_homeless %><br />
+  Comments : <%= f.text_area :notes %><br />
   <%= f.submit %>
 <% end %>
 <%= link_to 'Back', user_reports_path %>
-
-
