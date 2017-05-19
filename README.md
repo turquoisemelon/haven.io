@@ -29,5 +29,5 @@ Always create your own branch and never commit directly to master branch, please
 ## Working with React
 You will need to install yarn https://yarnpkg.com/en/docs/install after `bundle install`.
 
-run `bin/rails s` to start both rails and react server
+run `foreman start -f Procfile.dev` to start both rails and react server
 Will listen on port :3000
