@@ -3,7 +3,8 @@ import React from 'react';
 
 export default class AdminDash extends React.Component {
   static propTypes = {
-    name: PropTypes.string.isRequired, // this is passed from the Rails view
+    name: PropTypes.string.isRequired,
+    // id: PropTypes.string.isRequired, // this is passed from the Rails view
   };
 
   /**
@@ -15,12 +16,17 @@ export default class AdminDash extends React.Component {
 
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { name: this.props.name };
+    this.state = { name: this.props.name,}
+                  // currentUserId: this.props.id };
   }
 
   updateName = (name) => {
     this.setState({ name });
   };
+
+  getName = () =>{
+
+  }
 
   render() {
     return (
@@ -40,6 +46,7 @@ export default class AdminDash extends React.Component {
             onChange={(e) => this.updateName(e.target.value)}
           />
         </form>
+        <button onclick={this.getName}>Current User</button>
       </div>
     );
   }
