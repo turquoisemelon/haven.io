@@ -9,6 +9,8 @@
   </head>
 
   <body>
+    <%= render 'layouts/top_nav' %>
+
     <% unless notice.nil? %>
       <div class="alert alert-success">
         <%= flash[:notice] %>
@@ -24,6 +26,7 @@
     <% else %>
       <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> | <%= link_to 'Admin', '/admin' %>
     <% end %>
+
     <%= yield %>
   </body>
 </html>

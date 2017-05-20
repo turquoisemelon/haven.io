@@ -1,0 +1,31 @@
+.welcome {
+  height: 400px;
+  background-color: black;
+  position: relative; }
+  .welcome #filter-div {
+    height: 100%;
+    opacity: 0.6; }
+  .welcome .background-image {
+    background-image: url("http://gacfhc.com/wp-content/uploads/2016/09/hands_1042111.jpg");
+    background-size: cover;
+    height: 100%; }
+  .welcome .upper-content {
+    position: absolute;
+    top: 0;
+    width: 100%; }
+    .welcome .upper-content .welcome-text {
+      text-align: center;
+      padding-top: 70px;
+      color: white; }
+      .welcome .upper-content .welcome-text h1 {
+        font-weight: bold;
+        font-size: 3.5rem; }
+      .welcome .upper-content .welcome-text h2 {
+        font-size: 2.5rem; }
+    .welcome .upper-content .middle-signup-button {
+      text-align: center;
+      margin-top: 40px; }
+      .welcome .upper-content .middle-signup-button .btn {
+        background-color: #90bb92; }
+
+/*# sourceMappingURL=content.css.map */
