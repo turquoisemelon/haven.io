@@ -12,8 +12,8 @@
       <% if current_user %>
       <li>Signed in as <%= current_user.email %></li>
       <li><%= link_to 'Admin', '/admin' %></li>
-      <li><%= link_to "Profile", edit_user_path(id: User.find(session[:user_id])) %></li>
-      <li><%= link_to 'Report', user_reports_path(user_id: User.find(session[:user_id])) %></li>
+      <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
+      <li><%= link_to 'Report', user_reports_path(user_id: current_user.id) %></li>
       <li><%= link_to "Logout", '/logout' %></li>
       <% else %>
       <li><%= link_to 'Login', '/login' %></li>
