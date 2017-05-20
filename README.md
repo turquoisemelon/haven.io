@@ -18,7 +18,7 @@ Always create your own branch and never commit directly to master branch, please
 `git push --set-upstream origin <<your branch name>>`
 3. Commit and push all your changes to origin as you work once you are done your feature switch to local master branch<br/>
 4. Now go on github and generate a pull request, ask another team member to review your code and merge it to remote master
-5. Once your branch is merged checkout you local master branch and pull from origin<br/>
+5. Once your branch is merged checkout you local master branch and pull from origin<br/> 
 `git checkout master` <br/>
 `git pull origin master`
 6. Now delete your feature branch from origin as a clean up <br/>

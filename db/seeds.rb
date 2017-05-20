@@ -140,3 +140,28 @@ report5= Report.find_or_create_by!({
      created_at: DateTime.now,
      sentiment: 3,
     })
+
+history1= History.find_or_create_by!({
+    user_id: user2.id,
+    stolen:true,
+     friends:true,
+     clothes:true,
+    eaten: 3,
+     trash:true,
+     new_conditions:true,
+     health_condition: true,
+     health_condition_note: 'seasonal alergies',
+     appointments: true,
+     depressed: true,
+     mental_health: true,
+     mental_health_note: "I see dead people",
+     new_habit: true,
+     new_habit_note: "Can't stop collecting Beanie Babies",
+     AA_NA: true,
+     social_circle: true,
+     communicate_needs: true,
+     cooperate: 3,
+     housing_situation: 2,
+    comments: "doing better",
+     created_at: DateTime.now,
+    })

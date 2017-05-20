@@ -1,0 +1,24 @@
+<h1>New History Report</h1>
+
+<%= form_for [current_user,  @history], :html => {:multipart => true} do |f| %>
+  Have you had anything stolen from you ? : <%= f.check_box :stolen %><br />
+  Do you have any friends who seem to only hang around on payday? : <%= f.check_box :friends %><br />
+  Are you clothes reasonably clean and recently washed?  : <%= f.check_box :clothes %><br />
+  How often have you ate? : <%= f.select :eaten, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']] %><br />
+  Have you eaten out of trash or dumpsters  : <%= f.check_box :trash %><br />
+  Do you have any new medical conditions?  : <%= f.check_box :new_conditions %><br />
+  Do you have any new health problems?  : <%= f.check_box :health_condition %><br />
+  Details of any health or medical problems : <%= f.text_field :health_condition_note %><br />
+  Were you able to attend all of your appointments?  : <%= f.check_box :appointments %><br/>
+  Have you been feeling down or depressed? : <%= f.check_box :depressed %><br />
+  Have you had a mental health episode? : <%= f.check_box :mental_health %><br />
+  Details of Mental health issues? : <%= f.text_field :mental_health_note %><br />
+  Have you become addicted to any drug or habit ? : <%= f.check_box :new_habit %><br/>
+  Current mood? : <%= f.check_box :new_habit_note %><br />
+    Have you been attending all required AA / NA meetings? : <%= f.check_box :AA_NA %><br />
+    Are you able to communicate your needs to friends and staff?? : <%= f.check_box :communicate_needs %><br />
+    Able to cooperate with people and have conversations? : <%= f.select :cooperate, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %><br />
+What is your present housing situation? : <%= f.select :housing_situation, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %><br />
+  <%= f.submit %>
+<% end %>
+<%= link_to 'Back', user_histories_path %>
