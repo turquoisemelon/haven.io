@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    get 'users/:id' => 'user#show'
+    get 'users/:id' => 'users#find'
   end
 
 end
