@@ -22,7 +22,7 @@
       </div>
     <% end %>
     <% if current_user %>
-      Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %> | <%= link_to 'Admin', '/admin' %> | <%= link_to 'Report', user_reports_path(user_id: User.find(session[:user_id])) %> | <%= link_to "Profile", edit_user_path(id: User.find(session[:user_id])) %>
+      Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %> | <%= link_to 'Admin', '/admin' %> | <%= link_to 'Report', user_reports_path(user_id: current_user.id) %> | <%= link_to "Profile", edit_user_path(id: current_user.id) %>
     <% else %>
       <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> | <%= link_to 'Admin', '/admin' %>
     <% end %>
