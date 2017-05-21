@@ -13,6 +13,7 @@
       <li>Signed in as <%= current_user.email %></li>
       <li><%= link_to 'Admin', '/admin' %></li>
       <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
+      <li><%= link_to "History", user_histories_path(user_id: current_user.id) %></li>
       <li><%= link_to 'Report', user_reports_path(user_id: current_user.id) %></li>
       <li><%= link_to "Logout", '/logout' %></li>
       <% else %>
