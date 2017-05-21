@@ -2,8 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "materialize/components/color";
 @import "materialize";
+
+* {
+  box-sizing: border-box;
+}
+
+.nav-wrapper {
+  background-color: #90bb92;
+}
+
 .welcome {
   height: 400px;
   background-color: black;
@@ -42,9 +52,22 @@
     }
   }
 }
-// * {
-//   box-sizing: border-box;
-// }
+
+.lower-content-asset {
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+.filling-div {
+  height: 60px;
+}
+
+footer {
+  text-align: center;
+}
+
 //
 // #filter-div {
 //   background-color: black;
