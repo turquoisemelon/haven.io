@@ -10,23 +10,6 @@
 
   <body>
     <%= render 'layouts/top_nav' %>
-
-    <% unless notice.nil? %>
-      <div class="alert alert-success">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-    <% unless alert.nil? %>
-      <div class="alert alert-danger">
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
-    <% if current_user %>
-      Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %> | <%= link_to 'Admin', '/admin' %> | <%= link_to 'Report', user_reports_path(user_id: User.find(session[:user_id])) %> | <%= link_to "Profile", edit_user_path(id: User.find(session[:user_id])) %> | <%= link_to "History", user_histories_path(user_id: User.find(session[:user_id])) %>
-    <% else %>
-      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> | <%= link_to 'Admin', '/admin' %>
-    <% end %>
-
-    <%= yield %>
+  <%= yield %>
   </body>
 </html>
