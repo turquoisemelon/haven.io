@@ -38,4 +38,3 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :profession, :marital_status, :hiv, :veteran, :immigrant)
   end
 end
-  
