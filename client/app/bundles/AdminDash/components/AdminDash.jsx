@@ -17,8 +17,9 @@ export default class AdminDash extends React.Component {
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
     this.state = { name: this.props.name,
-                  currentUserId: this.props.user_id,
-                  user_profile: ''};
+                    currentUserId: this.props.user_id,
+                    user_profile: [{profession:''}]
+                  };
   }
 
   updateName = (name) => {
@@ -31,14 +32,12 @@ export default class AdminDash extends React.Component {
       method: 'GET',
       credentials: 'same-origin',
       header: {'Content-Type': 'application/json'},
-      // body: JSON.stringify({})
     })
     fetch(request)
     .then((res)=> res.json())
-    .then(data => {
-      console.log(data);
-      // debugger;
-      this.setState({ user_profile: data});
+    .then(data =>{
+      const concat_profile = this.state.user_profile.concat(data);
+      this.setState({user_profile: [data]});
     });
   }
 
@@ -48,7 +47,7 @@ export default class AdminDash extends React.Component {
         <h3>
           Hello, {this.state.name} User_id: {this.state.currentUserId}!
         </h3>
-        <p>{this.state.user_profile}</p>
+        <p>{this.state.user_profile[0].profession}</p>
         <hr />
         <form >
           <label htmlFor="name">
