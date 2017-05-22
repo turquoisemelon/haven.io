@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import UserPie from './UserPie.jsx'
+import AgePie from './AgePie.jsx'
 
 export default class AdminDash extends React.Component {
   static propTypes = {
@@ -27,7 +29,6 @@ export default class AdminDash extends React.Component {
   };
 
   getName = () =>{
-    console.log('got inside getName');
     const request = new Request(`http://localhost:3000/api/users/${this.state.currentUserId}`, {
       method: 'GET',
       credentials: 'same-origin',
@@ -36,7 +37,6 @@ export default class AdminDash extends React.Component {
     fetch(request)
     .then((res)=> res.json())
     .then(data =>{
-      const concat_profile = this.state.user_profile.concat(data);
       this.setState({user_profile: [data]});
     });
   }
@@ -61,19 +61,8 @@ export default class AdminDash extends React.Component {
           />
         </form>
         <button onClick={this.getName}>Current User</button>
-<Map google={this.props.google} zoom={14}>
-
-  <Marker onClick={this.onMarkerClick}
-          name={'Current location'} />
-
-  <InfoWindow onClose={this.onInfoWindowClose}>
-      <div>
-        <h1>{this.state.selectedPlace.name}</h1>
-      </div>
-  </InfoWindow>
-</Map>
-
-        
+        <UserPie/>
+        <AgePie/>
       </div>
     );
   }
