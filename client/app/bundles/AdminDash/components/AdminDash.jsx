@@ -29,7 +29,6 @@ export default class AdminDash extends React.Component {
   };
 
   getName = () =>{
-    console.log('got inside getName');
     const request = new Request(`http://localhost:3000/api/users/${this.state.currentUserId}`, {
       method: 'GET',
       credentials: 'same-origin',
@@ -38,7 +37,6 @@ export default class AdminDash extends React.Component {
     fetch(request)
     .then((res)=> res.json())
     .then(data =>{
-      const concat_profile = this.state.user_profile.concat(data);
       this.setState({user_profile: [data]});
     });
   }
