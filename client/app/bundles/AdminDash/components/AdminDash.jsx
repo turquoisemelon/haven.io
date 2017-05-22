@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import UserPie from './PieChart.jsx'
+import UserPie from './UserPie.jsx'
+import AgePie from './AgePie.jsx'
 
 export default class AdminDash extends React.Component {
   static propTypes = {
@@ -63,6 +64,7 @@ export default class AdminDash extends React.Component {
         </form>
         <button onClick={this.getName}>Current User</button>
         <UserPie/>
+        <AgePie/>
       </div>
     );
   }
