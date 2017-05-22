@@ -11,4 +11,8 @@
     "rails-server": "echo 'visit http://localhost:3000/' && foreman start -f Procfile.dev",
     "test": "rspec"
   },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
 }
