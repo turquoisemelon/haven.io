@@ -7,6 +7,12 @@
       <%= f.label :name %>
       <%= f.text_field :name %>
       <br>
+      <%= f.label :gender %>
+      <%= f.select :gender, [['male', 'Male'],['female', 'Female']] %>
+      <br>
+      <%= f.label :age %>
+      <%= f.number_field :age, min: 1%>
+      <br>
       <%= f.label :profession %>
       <%= f.text_field :profession %>
       <br>
@@ -15,6 +21,9 @@
       <br>
       <%= f.label(:hiv, 'I am HIV positive' ) %>
       <%= f.check_box :hiv %>
+      <br>
+      <%= f.label(:lgbt, 'I am a member of LGBTQ' ) %>
+      <%= f.check_box :lgbt %>
       <br>
       <%= f.label(:veteran, 'I am a veteran' ) %>
       <%= f.check_box :veteran %>

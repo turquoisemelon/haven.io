@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520172057) do
+ActiveRecord::Schema.define(version: 20170522194942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accuity", force: :cascade do |t|
+    t.boolean "treatment"
+    t.boolean "crisis"
+    t.boolean "medication"
+    t.boolean "housing"
+    t.boolean "basic_needs"
+    t.boolean "income"
+    t.boolean "substances"
+    t.boolean "emergency"
+    t.boolean "weeks_homeless"
+    t.boolean "moods"
+    t.string "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "histories", force: :cascade do |t|
     t.bigint "user_id"
@@ -77,7 +93,26 @@ ActiveRecord::Schema.define(version: 20170520172057) do
     t.string "marital_status"
     t.boolean "hiv"
     t.boolean "veteran"
-    t.boolean "immigrant"
+    t.string "immigrant"
+    t.integer "age"
+    t.boolean "lgbt"
+    t.string "gender"
+  end
+
+  create_table "vulnerability", force: :cascade do |t|
+    t.boolean "survivability"
+    t.boolean "needs"
+    t.boolean "mortality"
+    t.boolean "medical"
+    t.boolean "organizational"
+    t.boolean "sanity"
+    t.boolean "abuse"
+    t.boolean "communication"
+    t.boolean "social"
+    t.boolean "length_homeless"
+    t.string "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

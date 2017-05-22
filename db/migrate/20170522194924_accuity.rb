@@ -11,7 +11,7 @@ t.boolean :substances
 t.boolean :emergency
 t.boolean :weeks_homeless
 t.boolean :moods
-t.user_id :user_id
+t.string :user_id
 t.datetime :created_at
 t.timestamps null: false
    end
