@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519163512) do
+ActiveRecord::Schema.define(version: 20170522171112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,10 @@ ActiveRecord::Schema.define(version: 20170519163512) do
     t.string "marital_status"
     t.boolean "hiv"
     t.boolean "veteran"
-    t.boolean "immigrant"
+    t.string "immigrant"
+    t.integer "age"
+    t.boolean "lgbt"
+    t.string "gender"
   end
 
 end
