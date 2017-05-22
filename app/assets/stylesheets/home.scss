@@ -10,62 +10,69 @@
   box-sizing: border-box;
 }
 
-.nav-wrapper {
-  background-color: #90bb92;
-}
+html, body {
+  height: 100%;
+  .nav-wrapper {
+    background-color: #90bb92;
+  }
 
-.welcome {
-  height: 400px;
-  background-color: black;
-  position: relative;
-  #filter-div {
-    height: 100%;
-    opacity: 0.6;
-  }
-  .background-image {
-    background-image: url('http://gacfhc.com/wp-content/uploads/2016/09/hands_1042111.jpg');
-    background-size: cover;
-    height: 100%;
-  }
-  .upper-content {
-    position: absolute;
-    top:0;
-    width: 100%;
-    .welcome-text {
-      text-align: center;
-      padding-top: 70px;
-      color: white;
-      h1 {
-        font-weight: bold;
-        font-size: 3.5rem;
+  .welcome {
+    height: 450px;
+    background-color: black;
+    position: relative;
+    #filter-div {
+      height: 100%;
+      opacity: 0.6;
+    }
+    .background-image {
+      background-image: url('http://gacfhc.com/wp-content/uploads/2016/09/hands_1042111.jpg');
+      background-size: cover;
+      height: 100%;
+    }
+    .upper-content {
+      position: absolute;
+      top:0;
+      width: 100%;
+      .welcome-text {
+        text-align: center;
+        padding-top: 70px;
+        color: white;
+        h1 {
+          font-weight: bold;
+          font-size: 3.5vw;
+        }
+        h2 {
+          font-size: 2.5vw;
+        }
       }
+      .middle-signup-button {
+        text-align: center;
+        margin-top: 40px;
+        .btn {
+          background-color: #90bb92;
+        }
+      }
+    }
+  }
+
+  .container {
+    margin-top: 40px;
+    .lower-content-asset {
       h2 {
-        font-size: 2.5rem;
-      }
-    }
-    .middle-signup-button {
-      text-align: center;
-      margin-top: 40px;
-      .btn {
-        background-color: #90bb92;
+        font-size: 2rem;
+        font-weight: bold;
       }
     }
   }
-}
 
-.lower-content-asset {
-  h2 {
-    font-size: 2rem;
-    font-weight: bold;
+  .filling-div {
+    height: 60px;
   }
-}
 
-.filling-div {
-  height: 60px;
-}
+  footer {
+    text-align: center;
+  }
 
-footer {
-  text-align: center;
 }
 
 //
