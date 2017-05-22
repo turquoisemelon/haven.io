@@ -35,6 +35,6 @@ class UsersController < ApplicationController
 
 
   def user_update_params
-    params.require(:user).permit(:name, :profession, :marital_status, :hiv, :veteran, :immigrant)
+    params.require(:user).permit(:name, :profession, :marital_status, :hiv, :veteran, :immigrant, :lgbt, :gender, :age)
   end
 end
