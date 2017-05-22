@@ -6,19 +6,11 @@
   Been taking medication? : <%= f.check_box :medicated %><br />
   Sleep indoors? : <%= f.check_box :indoors %><br />
   Recently bathed? : <%= f.check_box :bathed %><br />
-  Clean appropriate clothes? : <%= f.check_box :clothes %><br />
   Recently taken drugs? : <%= f.check_box :drugs %><br />
-  Did you earn income? : <%= f.check_box :income %><br />
-  Apply for benefits? : <%= f.check_box :apply_benefits %><br />
-  Get into verbal argument? : <%= f.check_box :verbal_arguments %><br/>
   Have you been in a fight? : <%= f.check_box :fights %><br />
   Has EMS visited you? : <%= f.check_box :ems %><br />
-  Been to the hospital? : <%= f.check_box :hospital %><br />
-  New Medical condition? : <%= f.check_box :medical_condition %><br/>
-  Current mood? : <%= f.check_box :sentiment %><br />
-    Been to the hospital? : <%= f.check_box :hospital %><br />
-Current Sentiment? : <%= f.select :sentiment, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %><br />
   Weeks homeless? : <%= f.text_field :weeks_homeless %><br />
+Current Sentiment? : <%= f.select :sentiment, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %><br />
   Comments : <%= f.text_area :notes %><br />
   <%= f.submit %>
 <% end %>

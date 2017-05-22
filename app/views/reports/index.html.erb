@@ -6,14 +6,17 @@
   <thead>
     <tr>
       <th>User</th>
-      <th>Sentiment</th>
-      <th>Weeks</th>
+      <th>Meetings</th>
+      <th>arrested</th>
       <th>medicated</th>
       <th>indoors</th>
       <th>created_at</th>
-      <th>verbal_arguments</th>
-      <th>arrested</th>
-      <th>Sentiment</th>
+      <th>bathed</th>
+      <th>drugs</th>
+      <th>fights</th>
+      <td> ems </td>
+        <td>weeks_homeless </td>
+        <td>sentiment </td>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,13 +25,16 @@
     <% @reports.each do |report| %>
       <tr>
         <td><%= report.user_id %></td>
-        <td><%= report.sentiment %></td>
-        <td><%= report.weeks_homeless %></td>
+        <td><%= report.meetings %></td>
+        <td><%= report.arrested %></td>
         <td><%= report.medicated %></td>
         <td><%= report.indoors %></td>
         <td><%= report.created_at %></td>
-        <td><%= report.verbal_arguments %></td>
-        <td><%= report.arrested %></td>
+        <td><%= report.bathed %></td>
+        <td><%= report.drugs %></td>
+        <td><%= report.fights %></td>
+        <td><%= report.ems %></td>
+        <td><%= report.weeks_homeless %></td>
         <td><%= report.sentiment %></td>
         <td><%= link_to 'show', user_report_path(report.user_id, report.id) %></td>
       </tr>
