@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/reports' => 'reports#index'
   get '/histories' => 'histories#show'
   get '/histories' => 'histories#index'
+  get '/user_dashboard' => 'user_dashboard#index'
 
   namespace :admin do
     root to: 'users#index'

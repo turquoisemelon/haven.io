@@ -4,7 +4,7 @@ import React from 'react';
 export default class AdminDash extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    // id: PropTypes.string.isRequired, // this is passed from the Rails view
+    user_id: PropTypes.number.isRequired, // this is passed from the Rails view
   };
 
   /**
@@ -16,24 +16,38 @@ export default class AdminDash extends React.Component {
 
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { name: this.props.name,}
-                  // currentUserId: this.props.id };
+    this.state = { name: this.props.name,
+                    currentUserId: this.props.user_id,
+                    user_profile: [{profession:''}]
+                  };
   }
 
   updateName = (name) => {
-    this.setState({ name });
+    this.setState({ name: name });
   };
 
   getName = () =>{
-
+    console.log('got inside getName');
+    const request = new Request(`http://localhost:3000/api/users/${this.state.currentUserId}`, {
+      method: 'GET',
+      credentials: 'same-origin',
+      header: {'Content-Type': 'application/json'},
+    })
+    fetch(request)
+    .then((res)=> res.json())
+    .then(data =>{
+      const concat_profile = this.state.user_profile.concat(data);
+      this.setState({user_profile: [data]});
+    });
   }
 
   render() {
     return (
       <div>
         <h3>
-          Hello, {this.state.name}!
+          Hello, {this.state.name} User_id: {this.state.currentUserId}!
         </h3>
+        <p>{this.state.user_profile[0].profession}</p>
         <hr />
         <form >
           <label htmlFor="name">
@@ -46,7 +60,20 @@ export default class AdminDash extends React.Component {
             onChange={(e) => this.updateName(e.target.value)}
           />
         </form>
-        <button onclick={this.getName}>Current User</button>
+        <button onClick={this.getName}>Current User</button>
+<Map google={this.props.google} zoom={14}>
+
+  <Marker onClick={this.onMarkerClick}
+          name={'Current location'} />
+
+  <InfoWindow onClose={this.onInfoWindowClose}>
+      <div>
+        <h1>{this.state.selectedPlace.name}</h1>
+      </div>
+  </InfoWindow>
+</Map>
+
+        
       </div>
     );
   }
