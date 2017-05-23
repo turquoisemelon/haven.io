@@ -27,7 +27,18 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    get 'users/:id' => 'users#find'
+    get '/users/age' => 'users#age'
+    get '/users/:id' => 'users#find'
+    get '/users/:id/reports/' => 'reports#find'
+    get '/users/:id/accuity/' => 'reports#accuity'
   end
+
+# OR
+# namespace :api do
+#     get 'users/:id' => 'users#find'do
+#       resources :reports, controller: 'ReportsController'
+#     get 'users/:id/reports/' => 'reports#find'
+#   end
+#   end
 
 end

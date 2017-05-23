@@ -32,7 +32,6 @@ User.create!({id: 8, email: 'Ashley@torontohealth.com', password_digest: BCrypt:
 User.create!({id: 9, email: 'Joshua@torontohealth.com', password_digest: BCrypt::Password.create('1234'), admin: true})
 User.create!({id: 10, email: 'root@user.com', password_digest: BCrypt::Password.create('1234'), admin: true})
 
-
 puts 'Seeding non-admin users ...'
 
 User.create!({id: 11, email: 'william_peters@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "William Peters", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: true, immigrant: "citizen", age: 42, gender: "male"})
@@ -55,6 +54,16 @@ User.create!({id: 27, email: 'ramsey_whitefish@gmail.com', password_digest: BCry
 User.create!({id: 28, email: 'dean_hamilton@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Dean Hamilton", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "citizen", age: 18, gender: "female"})
 User.create!({id: 29, email: 'houston_lecky@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Houston Lecky", profession: "Plumber", marital_status: "Divorced", lgbt: true, hiv: true, veteran: false, immigrant: "refugee", age: 45, gender: "female"})
 User.create!({id: 30, email: 'brian_quoquat@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Brian Abel Quoquat", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: true, immigrant: "citizen", age: 68, gender: "male"})
+User.create!({id: 31, email: 'judy_battagliao@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: " Judy Battagliao", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: true, immigrant: "citizen", age: 57, gender: "female"})
+User.create!({id: 32, email: 'kassandra_balduc@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Kassandra Balduc", profession: "Deck hand", marital_status: "Single", lgbt: true, hiv: true, veteran: false, immigrant: "citizen", age: 64, gender: "female"})
+User.create!({id: 33, email: 'joanne_oldroyd@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Joanne Oldroyd", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: false, immigrant: "citizen", age: 63, gender: "female"})
+User.create!({id: 34, email: 'millie_van_mier@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Millie Van Mier", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "citizen", age: 15, gender: "female"})
+User.create!({id: 35, email: 'cindy_foster@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Paul Crombie", profession: "Plumber", marital_status: "Divorced", lgbt: true, hiv: true, veteran: false, immigrant: "citizen", age: 19, gender: "female"})
+User.create!({id: 36, email: 'tony_gorassi@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Ivan Nova", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "citizen", age: 52, gender: "male"})
+User.create!({id: 37, email: 'arthur_loutit@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Arthur Loutit", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: false, immigrant: "citizen", age: 26, gender: "male"})
+User.create!({id: 38, email: 'helena_boutilier@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Helena Boutilier", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "citizen", age: 18, gender: "female"})
+User.create!({id: 39, email: 'alfred_fitzpatrick@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Alfred Fitzpatrick", profession: "Plumber", marital_status: "Divorced", lgbt: true, hiv: true, veteran: false, immigrant: "refugee", age: 45, gender: "male"})
+User.create!({id: 40, email: 'douglas_blaker@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Douglas Blaker", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: true, immigrant: "citizen", age: 68, gender: "male"})
 User.create!({id: 41, email: 'beverly_bernardin@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Beverly (Bev) Bernardin", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: false, immigrant: "citizen", age: 78, gender: "female"})
 User.create!({id: 42, email: 'jason_cerasuolo@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Jason Cerasuolo", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "citizen", age: 68, gender: "male"})
 User.create!({id: 43, email: 'larry_raponi@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Larry (Lawrence) Raponi", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: true, immigrant: "citizen", age: 73, gender: "male"})
@@ -87,3 +96,214 @@ User.create!({id: 69, email: 'fredrick_chaisson@gmail.com', password_digest: BCr
 User.create!({id: 70, email: 'alexandre_lavallee@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Alexandre Joseph Lavallee", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "citizen", age: 39, gender: "female"})
 
 puts "Standy- Creating User Reports... "
+
+report101= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,1,1),
+    })
+
+report102= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,1,7),
+    })
+
+report103= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,1,14),
+    })
+
+report104= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,1,21),
+    })
+
+report105= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,1,28),
+    })
+
+report106= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,2,5),
+    })
+
+report107= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,2,12),
+    })
+
+report108= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,2,19),
+    })
+
+report109= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,2,26),
+    })
+
+report110= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,3,4),
+    })
+
+report111= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,3,11),
+    })
+
+report112= Report.find_or_create_by!({
+    user_id: 11,
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: true, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 0,
+     notes: "this is not the best",
+     created_at: Date.new(2017,3,18),
+    })
+
+history101= History.find_or_create_by!({
+    user_id: 11,
+    stolen:true,
+    eaten: 3,
+     health_condition: true,
+     health_condition_note: 'seasonal alergies',
+     appointments: true,
+     mental_health: true,
+     mental_health_note: "I see dead people",
+     new_habit: true,
+     new_habit_note: "Can't stop collecting Beanie Babies",
+     social_circle: true,
+     communicate_needs: true,
+     cooperate: 3,
+     housing_situation: 2,
+     comments: "doing better",
+     created_at: Date.new(2017,1,1),
+    })
