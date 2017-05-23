@@ -19,7 +19,6 @@ export default class AgePie extends React.Component{
     fetch(request)
     .then((res)=> res.json())
     .then(data =>{
-      return data;
       this.handleResponse(data);
     });
   }
@@ -29,26 +28,31 @@ export default class AgePie extends React.Component{
     this.state ={
       currentUserId: this.props.currentUserId,
       data: [
-              {name: '18-24', uv: 10, fill: '#8884d8'},
-              {name: '25-29', uv: 3, fill: '#83a6ed'},
-              {name: '30-34', uv: 5, fill: '#8dd1e1'},
-              {name: '35-39', uv: 5, fill: '#82ca9d'},
-              {name: '40-49', uv: 5, fill: '#a4de6c'},
-              {name: '50+', uv: 5, fill: '#d0ed57'}
+              {name: '0-19', uv: 0, fill: '#8884d8'},
+              {name: '20-29', uv: 0, fill: '#83a6ed'},
+              {name: '30-39', uv: 0, fill: '#8dd1e1'},
+              {name: '40-49', uv: 0, fill: '#82ca9d'},
+              {name: '50-59', uv: 0, fill: '#a4de6c'},
+              {name: '60+', uv: 0, fill: '#d0ed57'}
             ]
     }
   }
 
   handleResponse = (data) => {
-    // do stuff..
-    this.setState({wtv: data})
+    const new_data = [
+              {name: '0-19', uv: data['0-19'], fill: '#8884d8'},
+              {name: '20-29', uv: data['20-29'], fill: '#83a6ed'},
+              {name: '30-39', uv: data['30-39'], fill: '#8dd1e1'},
+              {name: '40-49', uv: data['40-49'], fill: '#82ca9d'},
+              {name: '50-59', uv: data['50-59'], fill: '#a4de6c'},
+              {name: '60+', uv: data['60+'], fill: '#d0ed57'}
+            ]
+    this.setState({data: new_data});
   }
 
 
   componentDidMount() {
-    const a = this.pullUsers();
-    // debugger;
-    console.log(a);
+    setTimeout(this.pullUsers, 2000);
   }
 
   render(){
