@@ -2,7 +2,8 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require materialize-sprockets
+//= require materialize
+
 
 
 // This is a manifest file that'll be compiled into application.js, which will include all the files
