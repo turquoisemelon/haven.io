@@ -1,11 +1,9 @@
 //= require webpack-bundle
 
 //= require jquery
-//= require turbolinks
-//= require materialize-sprockets
-
-//= require jquery
 //= require jquery_ujs
+//= require materialize
+
 
 
 // This is a manifest file that'll be compiled into application.js, which will include all the files
@@ -21,5 +19,8 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
+
+$( document ).ready(function(){
+   $(".button-collapse").sideNav();
+})

@@ -10,21 +10,45 @@
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <% if current_user %>
-      <li>Signed in as <%= current_user.email %></li>
-      <li><%= link_to 'Admin', '/admin' %></li>
-      <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
-      <li><%= link_to "History", user_histories_path(user_id: current_user.id) %></li>
-      <li><%= link_to 'Report', user_reports_path(user_id: current_user.id) %></li>
-      <li><%= link_to "Logout", '/logout' %></li>
+        <% if current_user.admin %>
+          <li>Hi <%= current_user.email %></li>
+          <li><%= link_to 'Home', '/' %></li>
+          <li><%= link_to 'User Management', '/admin' %></li>
+          <li><%= link_to 'Dashboard', '/admin/dashboard' %></li>
+          <li><%= link_to "Logout", '/logout' %></li>
+        <% else %>
+          <li>Hi <%= current_user.email %></li>
+          <li><%= link_to 'Home', '/' %></li>
+          <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
+          <li><%= link_to "History", user_histories_path(user_id: current_user.id) %></li>
+          <li><%= link_to 'New Survey', new_user_report_path(user_id: current_user.id) %></li>
+          <li><%= link_to "Logout", '/logout' %></li>
+        <% end %>
       <% else %>
-      <li><%= link_to 'Login', '/login' %></li>
-      <li><%= link_to 'Signup', '/signup' %></li>
+        <li><%= link_to 'Home', '/' %></li>
+        <li><%= link_to 'Login', '/login' %></li>
+        <li><%= link_to 'Signup', '/signup' %></li>
       <% end %>
     </ul>
     <ul class="side-nav" id="mobile-demo">
+      <% if current_user %>
+        <% if current_user.admin %>
+        <li><%= link_to 'Home', '/' %></li>
+        <li><%= link_to 'User Management', '/admin' %></li>
+        <li><%= link_to 'Dashboard', '/admin/dashboard' %></li>
+        <li><%= link_to "Logout", '/logout' %></li>
+        <% else %>
+        <li><%= link_to 'Home', '/' %></li>
+        <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
+        <li><%= link_to "History", user_histories_path(user_id: current_user.id) %></li>
+        <li><%= link_to 'New Survey', new_user_report_path(user_id: current_user.id) %></li>
+        <li><%= link_to "Logout", '/logout' %></li>
+        <% end %>
+      <% else %>
       <li><a href="/">Home</a></li>
       <li><a href="/login">Log In</a></li>
       <li><a href="/signup">Sign up</a></li>
+      <% end %>
     </ul>
   </div>
 </nav>
