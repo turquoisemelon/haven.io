@@ -10,11 +10,14 @@ Rails.application.routes.draw do
   # receive the form and create a user in our database using the data given to us by the user.
   resources :users, except: [:index, :show, :destroy] do
     resources :reports, only: [:index, :show, :create, :new]
+    resources :histories, only: [:index, :show, :create, :new]
   end
+  
   get '/signup' => 'users#new'
-
   get '/reports' => 'reports#show'
   get '/reports' => 'reports#index'
+  get '/histories' => 'histories#show'
+  get '/histories' => 'histories#index'
 
   namespace :admin do
     root to: 'users#index'
