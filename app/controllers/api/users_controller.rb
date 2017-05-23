@@ -6,4 +6,9 @@ class Api::UsersController < Api::APIController
     render json: @user
   end
 
+  def age
+    @users = User.all.group(:age).count
+    render json: @users
+  end
+
 end
