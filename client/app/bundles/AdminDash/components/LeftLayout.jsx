@@ -3,11 +3,22 @@ import React from 'react';
 import UserList from './UserList.jsx'
 import RadarChart from './RadarChart.jsx'
 
-export default class AdminDash extends React.Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    user_id: PropTypes.number.isRequired, // this is passed from the Rails view
-  };
+const data = [
+  currentUser: user_id,
+  users: {name: 'Bob', gender:'male'},
+          {name: 'Andrew', gender:'male'},
+          {name: 'Meltem', gender:'female'},
+          {name: 'Kiwi', gender:'male'},
+          {name: 'Jerry', gender:'male'},
+          {name: 'Jenny', gender:'female'},
+          {name: 'Catherine', gender: 'female'}
+  ];
+
+export default class LeftLayout extends React.Component {
+  // static propTypes = {
+  //   name: PropTypes.string.isRequired,
+  //   user_id: PropTypes.number.isRequired, // this is passed from the Rails view
+  // };
 
   /**
    * @param props - Comes from your rails view.
@@ -17,21 +28,22 @@ export default class AdminDash extends React.Component {
    constructor(props, _railsContext){
      super(props);
 
-     this.state = { name: this.props.name,
-                    currentUserId: this.props.user_id,
-                    age: this.props.age
-     }
+     this.state = data
    }
+
+   componentDidMount() {
+    this.setState({users: this.state.users})
+
+   }
+
    render() {
      return(
        <div>
-         <UserList/>
+         <UserList users={this.state.users}/>
          <RadarChart/>
        </div>
-     )
+     );
    }
-
-
 
 
 }

@@ -5,7 +5,7 @@ export default class User extends React.Component {
     return(
       <div className="user">
         <ul>
-          <li className="username"></li>
+          <li className="username">{this.props.name}</li>
         </ul>
       </div>
     )
