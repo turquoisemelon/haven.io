@@ -23,7 +23,12 @@ export default class AdminDash extends React.Component {
      }
    }
    render() {
-     return()
+     return(
+       <div>
+         <UserList/>
+         <RadarChart/>
+       </div>
+     )
    }
 
 

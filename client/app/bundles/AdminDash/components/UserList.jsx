@@ -14,9 +14,11 @@ export default class UserList extends React.Component {
   render () {
     return(
       <div className="userList">
-        <ul>
-          <li className="user"></li>
-        </ul>
+        {
+          this.props.messages.map( message => {
+            return <User/>
+          })
+        }
       </div>
     )
   }
