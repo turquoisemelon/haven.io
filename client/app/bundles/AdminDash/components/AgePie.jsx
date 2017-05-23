@@ -19,8 +19,8 @@ export default class AgePie extends React.Component{
     fetch(request)
     .then((res)=> res.json())
     .then(data =>{
-      console.log(data);
-      this.setState( {data0:data});
+      return data;
+      this.handleResponse(data);
     });
   }
 
@@ -35,16 +35,20 @@ export default class AgePie extends React.Component{
               {name: '35-39', uv: 5, fill: '#82ca9d'},
               {name: '40-49', uv: 5, fill: '#a4de6c'},
               {name: '50+', uv: 5, fill: '#d0ed57'}
-            ],
-      data0: ''
+            ]
     }
+  }
+
+  handleResponse = (data) => {
+    // do stuff..
+    this.setState({wtv: data})
   }
 
 
   componentDidMount() {
-    this.pullUsers();
+    const a = this.pullUsers();
     // debugger;
-    // console.log(a);
+    console.log(a);
   }
 
   render(){
