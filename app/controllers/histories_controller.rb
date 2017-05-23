@@ -33,7 +33,7 @@ class HistoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def history_params
-      params.require(:history).permit(:user_id, :user, :stolen, :friends, :clothes, :eaten, :trash, :new_conditions, :health_condition, :health_condition_note, :appointments, :depressed, :mental_health, :mental_health_note, :new_habit, :new_habit_note, :AA_NA, :social_circle, :communicate_needs, :cooperate, :created_at, :housing_situation, :comments)
+      params.require(:history).permit(:user_id, :user, :stolen, :eaten, :health_condition, :health_condition_note, :appointments, :mental_health, :mental_health_note, :new_habit, :new_habit_note, :social_circle, :communicate_needs, :cooperate, :created_at, :housing_situation, :comments, :created_at)
     end
 end
 

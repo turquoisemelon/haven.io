@@ -1,4 +1,5 @@
-class Api::UsersController < ActionController::API
+class Api::UsersController < Api::APIController
+  before_action :authorize_admin
 
   def find
     @user = User.find(params[:id])

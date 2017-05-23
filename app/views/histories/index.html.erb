@@ -7,13 +7,14 @@
     <tr>
       <th>User</th>
       <th>stolen</th>
-      <th>friends</th>
-      <th>clothes</th>
-      <th>eaten</th>
-      <th>trash</th>
-      <th>new_conditions</th>
-      <th>health_condition</th>
-      <th>health_condition_note</th>
+      <th>health</th>
+      <th>appointments</th>
+      <th>mental health</th>
+      <th>new habit</th>
+      <th>social Circle</th>
+      <th>Communicate Needs</th>
+      <th>Cooperate</th>
+      <th>Housing Situation</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,13 +23,15 @@
       <tr>
         <td><%= history.user_id %></td>
         <td><%= history.stolen %></td>
-        <td><%= history.friends %></td>
-        <td><%= history.clothes %></td>
         <td><%= history.eaten %></td>
-        <td><%= history.trash %></td>
-        <td><%= history.new_conditions %></td>
         <td><%= history.health_condition %></td>
-        <td><%= history.health_condition_note %></td>
+        <td><%= history.appointments %></td>
+        <td><%= history.mental_health %></td>
+        <td><%= history.new_habit  %></td>
+        <td><%= history.social_circle  %></td>
+        <td><%= history.communicate_needs  %></td>
+        <td><%= history.cooperate  %></td>
+        <td><%= history.housing_situation  %></td>
         <td><%= link_to 'show', user_history_path(history.user_id, history.id) %></td>
       </tr>
     <% end %>
@@ -38,26 +41,3 @@
 <br>
 
 <%= link_to 'New History', new_user_history_path %>
-
-<!-- 
-:stolen, 
-       :friends,
-       :clothes,
-       :eaten,
-       :trash,
-       :new_conditions,
-       :health_condition,
-       :health_condition_note,
-       :appointments,
-       :depressed,
-       :mental_health,
-       :mental_health_note,
-       :new_habit,
-       :new_habit_note,
-       :AA_NA,
-       :social_circle,
-       :communicate_needs,
-       :cooperate,
-       :created_at, 
-       :housing_situation,
-       :comments, -->

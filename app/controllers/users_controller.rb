@@ -30,12 +30,11 @@ class UsersController < ApplicationController
   private
 
   def user_sign_up_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :hiv, :veteran, :immigrant, :lgbt, :gender, :age)
   end
 
 
   def user_update_params
-    params.require(:user).permit(:name, :profession, :marital_status, :hiv, :veteran, :immigrant)
+    params.require(:user).permit(:name, :profession, :marital_status, :hiv, :veteran, :immigrant, :lgbt, :gender, :age)
   end
 end
-  
