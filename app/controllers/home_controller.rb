@@ -9,7 +9,4 @@ class HomeController < ApplicationController
   end
   helper_method :current_user
 
-  def edit
-    @user = User.find(params[:id])
-  end
 end
