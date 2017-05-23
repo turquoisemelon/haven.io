@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>History</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>stolen</th>
+      <th>health</th>
+      <th>appointments</th>
+      <th>mental health</th>
+      <th>new habit</th>
+      <th>social Circle</th>
+      <th>Communicate Needs</th>
+      <th>Cooperate</th>
+      <th>Housing Situation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @histories.each do |history| %>
+      <tr>
+        <td><%= history.user_id %></td>
+        <td><%= history.stolen %></td>
+        <td><%= history.eaten %></td>
+        <td><%= history.health_condition %></td>
+        <td><%= history.appointments %></td>
+        <td><%= history.mental_health %></td>
+        <td><%= history.new_habit  %></td>
+        <td><%= history.social_circle  %></td>
+        <td><%= history.communicate_needs  %></td>
+        <td><%= history.cooperate  %></td>
+        <td><%= history.housing_situation  %></td>
+        <td><%= link_to 'show', user_history_path(history.user_id, history.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New History', new_user_history_path %>
