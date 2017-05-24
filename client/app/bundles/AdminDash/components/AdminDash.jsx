@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import UserPie from './UserPie.jsx'
 import AgePie from './AgePie.jsx'
+import LeftLayout from './LeftLayout.jsx'
+
 
 export default class AdminDash extends React.Component {
   static propTypes = {
@@ -41,13 +43,14 @@ export default class AdminDash extends React.Component {
     });
   }
 
+
   render() {
     return (
       <div>
         <h3>
           Hello, {this.state.name} User_id: {this.state.currentUserId}!
         </h3>
-        <p>{this.state.user_profile[0].profession}</p>
+
         <hr />
         <form >
           <label htmlFor="name">
@@ -63,6 +66,7 @@ export default class AdminDash extends React.Component {
         <button onClick={this.getName}>Current User</button>
         <UserPie/>
         <AgePie currentUserId={this.state.currentUserId}/>
+        <LeftLayout/>
       </div>
     );
   }
