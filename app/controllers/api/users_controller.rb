@@ -1,6 +1,26 @@
 class Api::UsersController < Api::APIController
   before_action :authorize_admin
 
+  def breakdown
+    case params[:q]
+    when 'profession'
+      @users = User.all.where(admin:false).group(:profession).count
+      render json: @users
+    when 'immigrant'
+
+      render json: @users
+    when 'gender'
+
+      render json: @users
+    when 'ms'
+
+      render json: @users
+    else
+      @users['error'] = 'No parameter given, please specify a parameter'
+      render json: @users
+    end
+  end
+
   def age
       @users = {}
     case params[:q]
