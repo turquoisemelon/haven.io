@@ -62,8 +62,8 @@ export default class AdminDash extends React.Component {
           />
         </form>
         <button onClick={this.getName}>Current User</button>
-        <AgePie/>
-        <RadarPie/>
+        <UserPie/>
+        <AgePie currentUserId={this.state.currentUserId}/>
       </div>
     );
   }
