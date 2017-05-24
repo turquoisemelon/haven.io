@@ -2,6 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import UserPie from './UserPie.jsx'
 import AgePie from './AgePie.jsx'
+import UserList from './UserList.jsx'
+
+const testData = [
+          {name: 'Bob', gender:'male'},
+          {name: 'Andrew', gender:'male'},
+          {name: 'Meltem', gender:'female'},
+          {name: 'Kiwi', gender:'male'},
+          {name: 'Jerry', gender:'male'},
+          {name: 'Jenny', gender:'female'},
+          {name: 'Catherine', gender: 'female'}];
 
 export default class AdminDash extends React.Component {
   static propTypes = {
@@ -20,7 +30,7 @@ export default class AdminDash extends React.Component {
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
     this.state = { name: this.props.name,
                     currentUserId: this.props.user_id,
-                    user_profile: [{profession:''}]
+                    user_profile: testData
                   };
   }
 
@@ -41,13 +51,14 @@ export default class AdminDash extends React.Component {
     });
   }
 
+
   render() {
     return (
       <div>
         <h3>
           Hello, {this.state.name} User_id: {this.state.currentUserId}!
         </h3>
-        <p>{this.state.user_profile[0].profession}</p>
+
         <hr />
         <form >
           <label htmlFor="name">
@@ -63,6 +74,7 @@ export default class AdminDash extends React.Component {
         <button onClick={this.getName}>Current User</button>
         <UserPie/>
         <AgePie/>
+        <UserList/>
       </div>
     );
   }
