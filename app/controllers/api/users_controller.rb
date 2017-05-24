@@ -7,16 +7,17 @@ class Api::UsersController < Api::APIController
       @users = User.all.where(admin:false).group(:profession).count
       render json: @users
     when 'immigrant'
-
+      @users = User.all.where(admin:false).group(:immigrant).count
       render json: @users
     when 'gender'
-
+      @users = User.all.where(admin:false).group(:gender).count
       render json: @users
     when 'ms'
-
+      @users = User.all.where(admin:false).group(:marital_status).count
       render json: @users
     else
-      @users['error'] = 'No parameter given, please specify a parameter'
+      @users = {}
+      @users['error'] = 'Unrecognized parameter given, please specify a correct parameter'
       render json: @users
     end
   end
