@@ -5,13 +5,40 @@ import {RadialBarChart, RadialBar, Legend, Tooltip} from 'recharts'
 const style = {
   top: 0,
   left: 350,
-  lineHeight: '24px'
+  lineHeight: '25px'
 };
 
 export default class AgePie extends React.Component{
 
+  constructor(props){
+    super(props);
+    this.state ={
+      currentUserId: this.props.currentUserId,
+      intervalId: '',
+      data: [
+              {name: '0-19', uv: 0, fill: '#8884d8'},
+              {name: '20-29', uv: 0, fill: '#83a6ed'},
+              {name: '30-39', uv: 0, fill: '#8dd1e1'},
+              {name: '40-49', uv: 0, fill: '#82ca9d'},
+              {name: '50-59', uv: 0, fill: '#a4de6c'},
+              {name: '60+', uv: 0, fill: '#d0ed57'}
+            ]
+    }
+  }
+
+  handleClick = (filter) => {
+    this.pullUsers(filter);
+    this.clear();
+    this.poll = setInterval(()=>{
+      this.setState({intervalId: this.poll});
+      this.pullUsers(filter);
+      console.log(`polled ${filter}`)
+      }, 1000)
+  }
+
+  clear = () => {clearInterval(this.state.intervalId)}
+
   pullUsers = (param) => {
-      console.log(param);
       const request = new Request(`http://localhost:3000/api/users/age?q=${param}`, {
         method: 'GET',
         credentials: 'same-origin',
@@ -22,21 +49,6 @@ export default class AgePie extends React.Component{
       .then(data =>{
         this.handleResponse(data);
       });
-  }
-
-  constructor(props){
-    super(props);
-    this.state ={
-      currentUserId: this.props.currentUserId,
-      data: [
-              {name: '0-19', uv: 0, fill: '#8884d8'},
-              {name: '20-29', uv: 0, fill: '#83a6ed'},
-              {name: '30-39', uv: 0, fill: '#8dd1e1'},
-              {name: '40-49', uv: 0, fill: '#82ca9d'},
-              {name: '50-59', uv: 0, fill: '#a4de6c'},
-              {name: '60+', uv: 0, fill: '#d0ed57'}
-            ]
-    }
   }
 
   handleResponse = (data) => {
@@ -51,10 +63,12 @@ export default class AgePie extends React.Component{
     this.setState({data: new_data});
   }
 
-
   componentDidMount() {
-    setTimeout(this.pullUsers, 1000);
-    // setInterval(()=>console.log('1'), 1000);
+    let poll = setInterval(()=>{
+      this.pullUsers();
+      this.setState({intervalId: poll});
+      console.log('polled default');
+    }, 1000)
   }
 
   render(){
@@ -65,10 +79,11 @@ export default class AgePie extends React.Component{
           <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
           <Tooltip/>
         </RadialBarChart>
-        <button onClick={()=>this.pullUsers('hiv')}>HIV</button>
-        <button onClick={()=>this.pullUsers('male')}>Male</button>
-        <button onClick={()=>this.pullUsers('female')}>Female</button>
-        <button onClick={()=>this.pullUsers('veteran')}>Veteran</button>
+        <button onClick={()=>this.handleClick('')}>All</button>
+        <button onClick={()=>this.handleClick('hiv')}>HIV</button>
+        <button onClick={()=>this.handleClick('male')}>Male</button>
+        <button onClick={()=>this.handleClick('female')}>Female</button>
+        <button onClick={()=>this.handleClick('veteran')}>Veteran</button>
       </div>
     )
   }

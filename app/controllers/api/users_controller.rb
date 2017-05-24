@@ -4,7 +4,7 @@ class Api::UsersController < Api::APIController
   def age
       @users = {}
     case params[:q]
-    when 'vet'
+    when 'veteran'
       @users['0-19'] = User.where("admin = false AND age < 20 AND veteran = true").count
       @users['20-29'] = User.where("admin = false AND age >= 20 AND age < 30 AND veteran = true").count
       @users['30-39'] = User.where("admin = false AND age >= 30 AND age < 40 AND veteran = true").count
