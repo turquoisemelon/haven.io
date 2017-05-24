@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     get '/users/:id' => 'users#find'
     get '/users/:id/reports/' => 'reports#find'
     get '/users/:id/accuity/' => 'reports#accuity'
+    get '/users/:id/historys/' => 'reports#find'
+    get '/users/:id/vulnerabilities/' => 'reports#accuity'
 
   end
 

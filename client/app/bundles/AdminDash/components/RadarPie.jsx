@@ -57,8 +57,7 @@ constructor(props){
   componentDidMount() {
     setTimeout(this.pullReports, 1000);
   } 
-
-
+  
   render(){
     return(
       <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={this.state.data}>
