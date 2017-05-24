@@ -10,17 +10,18 @@ const style = {
 
 export default class AgePie extends React.Component{
 
-  pullUsers = () => {
-    const request = new Request('http://localhost:3000/api/users/age', {
-      method: 'GET',
-      credentials: 'same-origin',
-      header: {'Content-Type': 'application/json'},
-    })
-    fetch(request)
-    .then((res)=> res.json())
-    .then(data =>{
-      this.handleResponse(data);
-    });
+  pullUsers = (param) => {
+      console.log(param);
+      const request = new Request(`http://localhost:3000/api/users/age?q=${param}`, {
+        method: 'GET',
+        credentials: 'same-origin',
+        header: {'Content-Type': 'application/json'},
+      })
+      fetch(request)
+      .then((res)=> res.json())
+      .then(data =>{
+        this.handleResponse(data);
+      });
   }
 
   constructor(props){
@@ -52,16 +53,23 @@ export default class AgePie extends React.Component{
 
 
   componentDidMount() {
-    setTimeout(this.pullUsers, 2000);
+    setTimeout(this.pullUsers, 1000);
+    // setInterval(()=>console.log('1'), 1000);
   }
 
   render(){
     return(
-      <RadialBarChart width={500} height={300} cx={150} cy={150} innerRadius={30} outerRadius={140} barSize={10} data={this.state.data}>
-        <RadialBar minAngle={0} background clockWise={true} dataKey='uv'/>
-        <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
-        <Tooltip/>
-      </RadialBarChart>
+      <div>
+        <RadialBarChart width={500} height={175} cx={150} cy={150} innerRadius={30} outerRadius={140} barSize={10} data={this.state.data}>
+          <RadialBar minAngle={0} background clockWise={true} dataKey='uv'/>
+          <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
+          <Tooltip/>
+        </RadialBarChart>
+        <button onClick={()=>this.pullUsers('hiv')}>HIV</button>
+        <button onClick={()=>this.pullUsers('male')}>Male</button>
+        <button onClick={()=>this.pullUsers('female')}>Female</button>
+        <button onClick={()=>this.pullUsers('veteran')}>Veteran</button>
+      </div>
     )
   }
 }

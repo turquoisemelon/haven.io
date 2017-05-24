@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :reports, only: [:index, :show, :create, :new]
     resources :histories, only: [:index, :show, :create, :new]
   end
-  
+
   get '/signup' => 'users#new'
   get '/reports' => 'reports#show'
   get '/reports' => 'reports#index'
