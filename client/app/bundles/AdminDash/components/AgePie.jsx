@@ -5,28 +5,16 @@ import {RadialBarChart, RadialBar, Legend, Tooltip} from 'recharts'
 const style = {
   top: 0,
   left: 350,
-  lineHeight: '24px'
+  lineHeight: '25px'
 };
 
 export default class AgePie extends React.Component{
-
-  pullUsers = () => {
-    const request = new Request('http://localhost:3000/api/users/age', {
-      method: 'GET',
-      credentials: 'same-origin',
-      header: {'Content-Type': 'application/json'},
-    })
-    fetch(request)
-    .then((res)=> res.json())
-    .then(data =>{
-      this.handleResponse(data);
-    });
-  }
 
   constructor(props){
     super(props);
     this.state ={
       currentUserId: this.props.currentUserId,
+      intervalId: '',
       data: [
               {name: '0-19', uv: 0, fill: '#8884d8'},
               {name: '20-29', uv: 0, fill: '#83a6ed'},
@@ -36,6 +24,31 @@ export default class AgePie extends React.Component{
               {name: '60+', uv: 0, fill: '#d0ed57'}
             ]
     }
+  }
+
+  handleClick = (filter) => {
+    this.clear();
+    this.pullUsers(filter);
+    this.poll = setInterval(()=>{
+      this.setState({intervalId: this.poll});
+      this.pullUsers(filter);
+      console.log(`polled ${filter}`)
+      }, 1000)
+  }
+
+  clear = () => {clearInterval(this.state.intervalId)}
+
+  pullUsers = (param) => {
+      const request = new Request(`http://localhost:3000/api/users/age?q=${param}`, {
+        method: 'GET',
+        credentials: 'same-origin',
+        header: {'Content-Type': 'application/json'},
+      })
+      fetch(request)
+      .then((res)=> res.json())
+      .then(data =>{
+        this.handleResponse(data);
+      });
   }
 
   handleResponse = (data) => {
@@ -50,18 +63,29 @@ export default class AgePie extends React.Component{
     this.setState({data: new_data});
   }
 
-
   componentDidMount() {
-    setTimeout(this.pullUsers, 2000);
+    this.pullUsers();
+    let poll = setInterval(()=>{
+      this.pullUsers();
+      this.setState({intervalId: poll});
+      console.log('polled default');
+    }, 1000)
   }
-
+//to turn off polling change `this.handleClick()` to `this.pullUsers()`
   render(){
     return(
-      <RadialBarChart width={500} height={300} cx={150} cy={150} innerRadius={30} outerRadius={140} barSize={10} data={this.state.data}>
-        <RadialBar minAngle={0} background clockWise={true} dataKey='uv'/>
-        <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
-        <Tooltip/>
-      </RadialBarChart>
+      <div>
+        <RadialBarChart width={500} height={175} cx={150} cy={150} innerRadius={30} outerRadius={140} barSize={10} data={this.state.data}>
+          <RadialBar minAngle={0} background clockWise={true} dataKey='uv'/>
+          <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
+          <Tooltip/>
+        </RadialBarChart>
+        <button onClick={()=>this.handleClick('')}>All</button>
+        <button onClick={()=>this.handleClick('hiv')}>HIV</button>
+        <button onClick={()=>this.handleClick('male')}>Male</button>
+        <button onClick={()=>this.handleClick('female')}>Female</button>
+        <button onClick={()=>this.handleClick('veteran')}>Veteran</button>
+      </div>
     )
   }
 }
