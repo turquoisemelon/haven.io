@@ -23,7 +23,6 @@ export default class LeftLayout extends React.Component {
    render() {
      return(
        <div>
-       <AgePie currentUserId={this.state.currentUserId}/>
         <RadarPie currentUserId={this.state.currentUserId} />
         <UserList updateCurrentUser={this.updateCurrentUser}/>
        </div>

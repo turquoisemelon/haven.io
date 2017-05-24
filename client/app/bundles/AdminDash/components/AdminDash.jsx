@@ -63,7 +63,9 @@ export default class AdminDash extends React.Component {
             onChange={(e) => this.updateName(e.target.value)}
           />
         </form>
-        <button onClick={this.getName}>Current User</button>      
+        <button onClick={this.getName}>Current User</button>
+        <UserPie/>
+        <AgePie currentUserId={this.state.currentUserId}/>
         <LeftLayout/>
       </div>
     );
