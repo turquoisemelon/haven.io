@@ -11,7 +11,8 @@ import {Radar, RadarChart, PolarGrid, Legend,
 export default class RadarPie extends React.Component{
 
 pullReports = () => {
-    const request = new Request('http://localhost:3000/api/users/:id/accuity', {
+    const request = new Request(`http://localhost:3000/api/users/${this.props.currentUserId}/accuity`, { 
+      // this.props.user.name
       method: 'GET',
       credentials: 'same-origin',
       header: {'Content-Type': 'application/json'},
@@ -21,11 +22,13 @@ pullReports = () => {
     .then(data =>{
       this.handleResponse(data);
     });
+    console.log(this.props.currentUserId);
   }
 
 constructor(props){
     super(props);
     this.state ={
+     currentUserId: this.props.currentUserId,
       data: [
             { subject: 'Treatment Participation', A: 0, B: 5, fullMark: 5 },
             { subject: 'Crises Incidents', A: 0, B: 5, fullMark: 5 },
@@ -37,6 +40,7 @@ constructor(props){
             { subject: 'Other Problems', A: 0, B: 5, fullMark: 5 },
             ]
     }
+    console.log(this.props)
   }
 
   handleResponse = (data) => {
@@ -55,13 +59,17 @@ constructor(props){
 //  or line 58 is  this.setState({subject: new_report}); 
 
   componentDidMount() {
-    setTimeout(this.pullReports, 1000);
-  } 
+    this.pullReports();
+    let poll = setInterval(()=>{
+      this.pullReports();
+      this.setState({intervalId: poll});
+    }, 10000)
+  }
   
   render(){
     return(
       <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={this.state.data}>
-          <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
+          <Radar name="Radar" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
           <PolarGrid />
           <PolarAngleAxis dataKey="subject" />
           <PolarRadiusAxis/>

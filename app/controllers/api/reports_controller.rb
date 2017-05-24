@@ -3,14 +3,14 @@ class Api::ReportsController < Api::UsersController
 
   def accuity
     @accuity = {}
-      @accuity['Treatment Participation'] = Report.where("meetings = true").count
-      @accuity['Crises Incidents'] = Report.where("arrested = true").count
-      @accuity['Medicine Compliance'] = Report.where("medicated = true").count
-      @accuity['Housing'] = Report.where("indoors = true").count
-      @accuity['Meets basic'] = Report.where("bathed = true").count
-      @accuity['Substance Abuse'] = Report.where("drugs = true").count
-      @accuity['Danger to self'] = Report.where("fights = true").count
-      @accuity['Other Problems'] = Report.where("ems = true").count
+      @accuity['Treatment Participation'] = Report.where("user_id = user_id AND meetings = true").count
+      @accuity['Crises Incidents'] = Report.where("user_id = user_id AND arrested = true").count
+      @accuity['Medicine Compliance'] = Report.where("user_id = user_id AND medicated = true").count
+      @accuity['Housing'] = Report.where("user_id = user_id AND indoors = true").count
+      @accuity['Meets basic'] = Report.where("user_id = user_id AND bathed = true").count
+      @accuity['Substance Abuse'] = Report.where("user_id = user_id AND drugs = true").count
+      @accuity['Danger to self'] = Report.where("user_id = user_id AND fights = true").count
+      @accuity['Other Problems'] = Report.where("user_id = user_id AND ems = true").count
      # missing  weeks_homeless: 0,
      # missing  sentiment: 5,
       render json: @accuity
