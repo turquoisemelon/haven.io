@@ -21,7 +21,8 @@ export default class LeftLayout extends React.Component {
    render() {
      return(
        <div>
-         <UserList updateCurrentUser={this.updateCurrentUser}/>
+        <p>{this.state.currentUserId}</p>
+        <UserList updateCurrentUser={this.updateCurrentUser}/>
        </div>
      );
    }
