@@ -13,7 +13,6 @@ export default class AgePie extends React.Component{
   constructor(props){
     super(props);
     this.state ={
-      currentUserId: this.props.currentUserId,
       intervalId: '',
       data: [
               {name: '0-19', uv: 0, fill: '#8884d8'},
@@ -27,13 +26,12 @@ export default class AgePie extends React.Component{
   }
 
   handleClick = (filter) => {
-    this.clear();
+    // this.clear();
     this.pullUsers(filter);
-    this.poll = setInterval(()=>{
-      this.setState({intervalId: this.poll});
-      this.pullUsers(filter);
-      console.log(`polled ${filter}`)
-      }, 1000)
+    // this.poll = setInterval(()=>{
+    //   this.setState({intervalId: this.poll});
+    //   this.pullUsers(filter);
+    //   }, 1000)
   }
 
   clear = () => {clearInterval(this.state.intervalId)}
@@ -65,13 +63,12 @@ export default class AgePie extends React.Component{
 
   componentDidMount() {
     this.pullUsers();
-    let poll = setInterval(()=>{
-      this.pullUsers();
-      this.setState({intervalId: poll});
-      console.log('polled default');
-    }, 1000)
+    // let poll = setInterval(()=>{
+    //   this.pullUsers();
+    //   this.setState({intervalId: poll});
+    // }, 1000)
   }
-//to turn off polling change `this.handleClick()` to `this.pullUsers()`
+//uncomment code to turn on polling
   render(){
     return(
       <div>
