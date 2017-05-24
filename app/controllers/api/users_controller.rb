@@ -1,6 +1,27 @@
 class Api::UsersController < Api::APIController
   before_action :authorize_admin
 
+  def breakdown
+    case params[:q]
+    when 'profession'
+      @users = User.all.where(admin:false).group(:profession).count
+      render json: @users
+    when 'immigrant'
+      @users = User.all.where(admin:false).group(:immigrant).count
+      render json: @users
+    when 'gender'
+      @users = User.all.where(admin:false).group(:gender).count
+      render json: @users
+    when 'ms'
+      @users = User.all.where(admin:false).group(:marital_status).count
+      render json: @users
+    else
+      @users = {}
+      @users['error'] = 'Unrecognized parameter given, please specify a correct parameter'
+      render json: @users
+    end
+  end
+
   def age
       @users = {}
     case params[:q]

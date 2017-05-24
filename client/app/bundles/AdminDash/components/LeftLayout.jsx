@@ -5,9 +5,11 @@ import UserPie from './UserPie.jsx'
 import AgePie from './AgePie.jsx'
 import RadarPie from './RadarPie.jsx'
 
+
 export default class LeftLayout extends React.Component {
   constructor(props) {
     super(props);
+
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
     this.state = {currentUserId: this.props.user_id};
