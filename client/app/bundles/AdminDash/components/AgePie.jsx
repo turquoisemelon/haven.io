@@ -66,7 +66,7 @@ export default class AgePie extends React.Component{
     // let poll = setInterval(()=>{
     //   this.pullUsers();
     //   this.setState({intervalId: poll});
-    // }, 1000)
+    // }, 10000)
   }
 //uncomment code to turn on polling
   render(){

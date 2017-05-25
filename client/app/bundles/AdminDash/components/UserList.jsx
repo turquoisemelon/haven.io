@@ -6,7 +6,6 @@ export default class UserList extends React.Component {
 
     constructor(props) {
       super(props);
-
       // How to set initial state in ES6 class syntax
       // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
       this.state = {data: []};
@@ -29,7 +28,6 @@ export default class UserList extends React.Component {
 
   componentDidMount() {
     this.pullUsers();
-    console.log('yay')
   }
 
   render () {
