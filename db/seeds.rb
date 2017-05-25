@@ -20,14 +20,9 @@ end
 
 puts 'Seeding admin users ...'
 User.destroy_all
-
-
 user1 = User.create!({ email: 'Joshua@torontohealth.com', password_digest: BCrypt::Password.create('1234'), admin: true})
 user2 = User.create!({ email: 'root@user.com', password_digest: BCrypt::Password.create('1234'), admin: true})
-
-
 puts 'Seeding non-admin users ...'
-
 user3 = User.create!({ email: 'william_peters@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "William Peters", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: true, immigrant: "citizen", age: 42, gender: "male"})
 user4 = User.create!({ email: 'navneet_sondhi@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Navneet Sondhi", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "permanent Resident", age: 58, gender: "female"})
 user5 = User.create!({ email: 'bradley_macLaine@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Bradley MacLaine", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: false, immigrant: "citizen", age: 42, gender: "male"})
@@ -89,3 +84,201 @@ user60 = User.create!({ email: 'fred_chaisson@gmail.com', password_digest: BCryp
 user61 = User.create!({ email: 'david_westendorp@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "David Westendorp", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "citizen", age: 18, gender: "male"})
 
 puts "Standy- Creating User Reports... "
+
+user11.report101= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,1,1),
+    })
+
+user11.report102= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,1,7),
+    })
+
+user11.report103= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,1,14),
+    })
+
+user11.report104= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,1,21),
+    })
+
+user11.report105= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,1,28),
+    })
+
+user11.report106= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,2,5),
+    })
+
+user11.report107= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,2,12),
+    })
+
+user11.report108= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,2,19),
+    })
+
+user11.report109= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,2,26),
+    })
+
+user11.report110= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,3,4),
+    })
+
+user11.report111= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: false, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 12,
+     notes: "this is not the best",
+     created_at: Date.new(2017,3,11),
+    })
+
+user11.report112= Report.find_or_create_by!({
+    sentiment: 4,
+     meetings: true,
+     arrested: true, 
+     medicated: true,  
+     indoors: false,
+     bathed: true,
+     drugs: true, 
+     fights: true,
+     ems: true,  
+     weeks_homeless: 0,
+     notes: "this is not the best",
+     created_at: Date.new(2017,3,18),
+    })
+
+user11.history101= History.find_or_create_by!({
+    stolen:true,
+    eaten: 3,
+     health_condition: true,
+     health_condition_note: 'seasonal alergies',
+     appointments: true,
+     mental_health: true,
+     mental_health_note: "I see dead people",
+     new_habit: true,
+     new_habit_note: "Can't stop collecting Beanie Babies",
+     social_circle: true,
+     communicate_needs: true,
+     cooperate: 3,
+     housing_situation: 2,
+     comments: "doing better",
+     created_at: Date.new(2017,1,1),
+    })
