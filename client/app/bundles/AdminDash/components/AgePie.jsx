@@ -71,7 +71,7 @@ export default class AgePie extends React.Component{
 //uncomment code to turn on polling
   render(){
     return(
-      <div>
+      <div className="col s4">
         <RadialBarChart width={500} height={175} cx={150} cy={150} innerRadius={30} outerRadius={140} barSize={10} data={this.state.data}>
           <RadialBar minAngle={0} background clockWise={true} dataKey='uv'/>
           <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>

@@ -46,11 +46,10 @@ export default class AdminDash extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>
+      <div className="row">
+        {/*<h3>
           Hello, {this.state.name} User_id: {this.state.currentUserId}!
         </h3>
-
         <hr />
         <form >
           <label htmlFor="name">
@@ -63,10 +62,10 @@ export default class AdminDash extends React.Component {
             onChange={(e) => this.updateName(e.target.value)}
           />
         </form>
-        <button onClick={this.getName}>Current User</button>
+        <button onClick={this.getName}>Current User</button>*/}
+        <LeftLayout/>
         <UserPie/>
         <AgePie currentUserId={this.state.currentUserId}/>
-        <LeftLayout/>
       </div>
     );
   }

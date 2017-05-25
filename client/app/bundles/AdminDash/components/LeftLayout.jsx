@@ -20,7 +20,7 @@ export default class LeftLayout extends React.Component {
 
    render() {
      return(
-       <div>
+       <div className="col s2">
         <p>{this.state.currentUserId}</p>
         <UserList updateCurrentUser={this.updateCurrentUser}/>
        </div>

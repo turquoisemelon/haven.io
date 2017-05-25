@@ -7,8 +7,8 @@
       <%= f.label :name %>
       <%= f.text_field :name %>
       <br>
-      <%= f.label :gender %>
       <%= f.select :gender, [['male', 'Male'],['female', 'Female']] %>
+      <%= f.label :gender %>
       <br>
       <%= f.label :age %>
       <%= f.number_field :age, min: 1%>
@@ -19,17 +19,17 @@
       <%= f.label :marital_status %>
       <%= f.text_field :marital_status %>
       <br>
-      <%= f.label(:hiv, 'I am HIV positive' ) %>
       <%= f.check_box :hiv %>
+      <%= f.label(:hiv, 'I am HIV positive' ) %>
       <br>
-      <%= f.label(:lgbt, 'I am a member of LGBTQ' ) %>
       <%= f.check_box :lgbt %>
+      <%= f.label(:lgbt, 'I am a member of LGBTQ' ) %>
       <br>
-      <%= f.label(:veteran, 'I am a veteran' ) %>
       <%= f.check_box :veteran %>
+      <%= f.label(:veteran, 'I am a veteran' ) %>
       <br>
-      <%= f.label(:immigrant, 'My current immigration status' ) %>
       <%= f.text_field :immigrant %>
+      <%= f.label(:immigrant, 'My current immigration status' ) %>
       <br>
       <%= f.submit "Save changes" %>
     <% end %>
