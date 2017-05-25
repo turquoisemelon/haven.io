@@ -12,7 +12,7 @@ export default class LeftLayout extends React.Component {
 
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = {currentUserId: this.props.user_id};
+    this.state = {currentUserId: this.props.currentUserId};
   }
 
   updateCurrentUser = (id) => {

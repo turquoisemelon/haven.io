@@ -25,6 +25,16 @@ pullReports = () => {
     console.log(this.props.currentUserId);
   }
 
+
+  handleClick = (user) => {
+    // this.clear();
+    this.pullReports(user);
+    // this.poll = setInterval(()=>{
+    //   this.setState({intervalId: this.poll});
+    //   this.pullUsers(filter);
+    //   }, 1000)
+  }
+
 constructor(props){
     super(props);
     this.state ={
@@ -68,12 +78,15 @@ constructor(props){
   
   render(){
     return(
+      <div>
       <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={this.state.data}>
           <Radar name="Radar" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
           <PolarGrid />
           <PolarAngleAxis dataKey="subject" />
           <PolarRadiusAxis/>
         </RadarChart>
+        <button onClick={()=>this.handleClick('this.state.currentUserId')}>Generate Report</button>
+        </div>
     )
   }
 }
