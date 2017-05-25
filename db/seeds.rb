@@ -85,8 +85,7 @@ user61 = User.create!({ email: 'david_westendorp@gmail.com', password_digest: BC
 
 puts "Standy- Creating User Reports... "
 
-report101= Report.find_or_create_by!({
-    user_id: 11,
+user11.report101= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -101,8 +100,7 @@ report101= Report.find_or_create_by!({
      created_at: Date.new(2017,1,1),
     })
 
-report102= Report.find_or_create_by!({
-    user_id: 11,
+user11.report102= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -117,8 +115,7 @@ report102= Report.find_or_create_by!({
      created_at: Date.new(2017,1,7),
     })
 
-report103= Report.find_or_create_by!({
-    user_id: 11,
+user11.report103= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -133,8 +130,7 @@ report103= Report.find_or_create_by!({
      created_at: Date.new(2017,1,14),
     })
 
-report104= Report.find_or_create_by!({
-    user_id: 11,
+user11.report104= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -149,8 +145,7 @@ report104= Report.find_or_create_by!({
      created_at: Date.new(2017,1,21),
     })
 
-report105= Report.find_or_create_by!({
-    user_id: 11,
+user11.report105= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -165,8 +160,7 @@ report105= Report.find_or_create_by!({
      created_at: Date.new(2017,1,28),
     })
 
-report106= Report.find_or_create_by!({
-    user_id: 11,
+user11.report106= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -181,8 +175,7 @@ report106= Report.find_or_create_by!({
      created_at: Date.new(2017,2,5),
     })
 
-report107= Report.find_or_create_by!({
-    user_id: 11,
+user11.report107= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -197,8 +190,7 @@ report107= Report.find_or_create_by!({
      created_at: Date.new(2017,2,12),
     })
 
-report108= Report.find_or_create_by!({
-    user_id: 11,
+user11.report108= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -213,8 +205,7 @@ report108= Report.find_or_create_by!({
      created_at: Date.new(2017,2,19),
     })
 
-report109= Report.find_or_create_by!({
-    user_id: 11,
+user11.report109= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -229,8 +220,7 @@ report109= Report.find_or_create_by!({
      created_at: Date.new(2017,2,26),
     })
 
-report110= Report.find_or_create_by!({
-    user_id: 11,
+user11.report110= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -245,8 +235,7 @@ report110= Report.find_or_create_by!({
      created_at: Date.new(2017,3,4),
     })
 
-report111= Report.find_or_create_by!({
-    user_id: 11,
+user11.report111= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -261,8 +250,7 @@ report111= Report.find_or_create_by!({
      created_at: Date.new(2017,3,11),
     })
 
-report112= Report.find_or_create_by!({
-    user_id: 11,
+user11.report112= Report.find_or_create_by!({
     sentiment: 4,
      meetings: true,
      arrested: true, 
@@ -277,8 +265,7 @@ report112= Report.find_or_create_by!({
      created_at: Date.new(2017,3,18),
     })
 
-history101= History.find_or_create_by!({
-    user_id: 11,
+user11.history101= History.find_or_create_by!({
     stolen:true,
     eaten: 3,
      health_condition: true,

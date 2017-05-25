@@ -70,10 +70,10 @@ constructor(props){
 
   componentDidMount() {
     this.pullReports();
-    let poll = setInterval(()=>{
-      this.pullReports();
-      this.setState({intervalId: poll});
-    }, 10000)
+    // let poll = setInterval(()=>{
+    //   this.pullReports();
+    //   this.setState({intervalId: poll});
+    // }, 10000)
   }
   
   render(){

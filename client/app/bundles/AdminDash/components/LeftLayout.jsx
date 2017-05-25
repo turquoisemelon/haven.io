@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import UserList from './UserList.jsx';
-import UserPie from './UserPie.jsx'
-import AgePie from './AgePie.jsx'
 import RadarPie from './RadarPie.jsx'
 
 
