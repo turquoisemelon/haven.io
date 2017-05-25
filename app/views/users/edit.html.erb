@@ -1,8 +1,6 @@
 <div class="entrance-text">
-  <h1>Complete your profile</h1>
+  <h1>Please complete the form to create your profile</h1>
 </div>
-
-
 
 <%= form_for(@user) do |f| %>
   <div class="row">
@@ -12,7 +10,7 @@
         <div class="col s3"></div>
         <div class="input-field col s6">
           <%= f.text_field :name %>
-          <label for="name">Name</label>
+          <%= f.label :name %>
         </div>
         <div class="col s3"></div>
       </div>
@@ -98,6 +96,6 @@
 
 </div>
 
-<div class="footer">
+<div class="footer-profile-page">
   <footer>© 2017 haven.io. All rights reserved.</footer>
 </div>
