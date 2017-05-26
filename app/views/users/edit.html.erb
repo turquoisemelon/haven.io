@@ -1,37 +1,101 @@
-<h1>Complete your profile</h1>
+<div class="entrance-text">
+  <h1>Please complete the form to create your profile</h1>
+</div>
 
-<div>
-  <div>
-    <%= form_for(@user) do |f| %>
+<%= form_for(@user) do |f| %>
+  <div class="row">
+    <form class="col s12">
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <br>
-      <%= f.label :gender %>
-      <%= f.select :gender, [['male', 'Male'],['female', 'Female']] %>
-      <br>
-      <%= f.label :age %>
-      <%= f.number_field :age, min: 1%>
-      <br>
-      <%= f.label :profession %>
-      <%= f.text_field :profession %>
-      <br>
-      <%= f.label :marital_status %>
-      <%= f.text_field :marital_status %>
-      <br>
-      <%= f.label(:hiv, 'I am HIV positive' ) %>
-      <%= f.check_box :hiv %>
-      <br>
-      <%= f.label(:lgbt, 'I am a member of LGBTQ' ) %>
-      <%= f.check_box :lgbt %>
-      <br>
-      <%= f.label(:veteran, 'I am a veteran' ) %>
-      <%= f.check_box :veteran %>
-      <br>
-      <%= f.label(:immigrant, 'My current immigration status' ) %>
-      <%= f.text_field :immigrant %>
-      <br>
-      <%= f.submit "Save changes" %>
-    <% end %>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.text_field :name %>
+          <%= f.label :name %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+
+      <div class="row">
+        <div class="col s3"></div>
+          <div class="input-field col s6">
+          <%= f.select :gender, [['male', 'Male'],['female', 'Female']] %>
+          <%= f.label :gender %>
+          </div>
+        <div class="col s3"></div>
+      </div>
+      <div class="row">
+        <div class="col s3"></div>
+          <div class="input-field col s6">
+          <%= f.number_field :age, min: 1%>
+          <%= f.label :age %>
+          </div>
+        <div class="col s3"></div>
+      </div>
+       <div class="row">
+        <div class="col s3"></div>
+          <div class="input-field col s6">
+          <%= f.label :profession %>
+          <%= f.text_field :profession %>
+          </div>
+          <div class="col s3"></div>
+        </div>
+       </div>
+      <div class="row">
+        <div class="col s3"></div>
+          <div class="input-field col s6">
+          <%= f.label :marital_status %>
+          <%= f.text_field :marital_status %>
+          </div>
+          <div class="col s3"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s3"></div>
+          <div class="input-field col s6">
+          <%= f.label(:immigrant, 'My current immigration status' ) %>
+          <%= f.text_field :immigrant %>
+          </div>
+          <div class="col s3"></div>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col s3"></div>
+        <div class="col s9">
+          <p>
+            <%= f.check_box :hiv %>
+            <%= f.label(:hiv, 'I am HIV positive' ) %>
+          </p>
+        </div>
+       </div>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="col s9">
+          <p>
+            <%= f.check_box :lgbt %>
+            <%= f.label(:lgbt, 'I am a member of LGBTQ' ) %>
+          </p>
+        </div>
+       </div>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="col s9">
+          <p>
+            <%= f.check_box :veteran %>
+            <%= f.label(:veteran, 'I am a veteran' ) %>
+          </p>
+        </div>
+       </div>
+       <div class="filling-div"></div>
+      <div class="center-btn">
+        <a class="waves-effect waves-light btn"><%= f.submit "Submit" %></a>
+      </div>
+    </form>
   </div>
+<% end %>
+<div class="filling-div">
+
+</div>
+
+<div class="footer-profile-page">
+  <footer>© 2017 haven.io. All rights reserved.</footer>
 </div>
