@@ -7,7 +7,7 @@ export default class UserList extends React.Component {
     constructor(props) {
       super(props);
 
-      this.state = {data: []};
+      this.state = {users: []};
   }
 
   pullUsers = (param) => {
@@ -22,7 +22,7 @@ export default class UserList extends React.Component {
   }
 
   handleResponse = (data) => {
-    this.setState({data: data});
+    this.setState({users: data});
   }
 
   componentDidMount() {
@@ -31,13 +31,11 @@ export default class UserList extends React.Component {
 
   render () {
     return(
-      <div className="users">
-        {
-          this.state.data.map( user => {
-            return <User key={user.id} user={user} onClick={this.props.updateSelected}/>
+      <div className="collection users">
+        {this.state.users.map( user => {
+            return <User key={user.id} user={user} clickHandler={this.props.clickHandler}/>
           })
         }
-
       </div>
     )
   }

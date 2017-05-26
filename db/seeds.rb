@@ -85,187 +85,188 @@ user61 = User.create!({ email: 'david_westendorp@gmail.com', password_digest: BC
 
 puts "Standy- Creating User Reports... "
 
-user11.report101= Report.find_or_create_by!({
+Report.destroy_all
+report101= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: false, 
+     drugs: false,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 12,
      notes: "this is not the best",
      created_at: Date.new(2017,1,1),
     })
 
-user11.report102= Report.find_or_create_by!({
+report102= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: false, 
+     drugs: false,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 12,
      notes: "this is not the best",
      created_at: Date.new(2017,1,7),
     })
 
-user11.report103= Report.find_or_create_by!({
+report103= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: false, 
+     drugs: false,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 12,
      notes: "this is not the best",
      created_at: Date.new(2017,1,14),
     })
 
-user11.report104= Report.find_or_create_by!({
+report104= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: false, 
+     drugs: false,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 12,
      notes: "this is not the best",
      created_at: Date.new(2017,1,21),
     })
 
-user11.report105= Report.find_or_create_by!({
+report105= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: false, 
+     drugs: false,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 12,
      notes: "this is not the best",
      created_at: Date.new(2017,1,28),
     })
 
-user11.report106= Report.find_or_create_by!({
+report106= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: false, 
+     drugs: false,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 12,
      notes: "this is not the best",
      created_at: Date.new(2017,2,5),
     })
 
-user11.report107= Report.find_or_create_by!({
+report107= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: false, 
+     drugs: false,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 12,
      notes: "this is not the best",
      created_at: Date.new(2017,2,12),
     })
 
-user11.report108= Report.find_or_create_by!({
+report108= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: false, 
+     drugs: false,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 12,
      notes: "this is not the best",
      created_at: Date.new(2017,2,19),
     })
 
-user11.report109= Report.find_or_create_by!({
+report109= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: false, 
+     drugs: false,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 12,
      notes: "this is not the best",
      created_at: Date.new(2017,2,26),
     })
 
-user11.report110= Report.find_or_create_by!({
+report110= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: false, 
+     drugs: false,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 12,
      notes: "this is not the best",
      created_at: Date.new(2017,3,4),
     })
 
-user11.report111= Report.find_or_create_by!({
+report111= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: false, 
+     drugs: false,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 12,
      notes: "this is not the best",
      created_at: Date.new(2017,3,11),
     })
 
-user11.report112= Report.find_or_create_by!({
+report112= user11.reports.find_or_create_by!({
     sentiment: 4,
      meetings: true,
-     arrested: true, 
-     medicated: true,  
+     arrested: true,
+     medicated: true,
      indoors: false,
      bathed: true,
-     drugs: true, 
+     drugs: true,
      fights: true,
-     ems: true,  
+     ems: true,
      weeks_homeless: 0,
      notes: "this is not the best",
      created_at: Date.new(2017,3,18),
     })
 
-user11.history101= History.find_or_create_by!({
+history101= user11.histories.find_or_create_by!({
     stolen:true,
     eaten: 3,
      health_condition: true,
