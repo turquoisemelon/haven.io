@@ -8,6 +8,7 @@ const style = {
   lineHeight: '25px'
 };
 
+//uncomment code to turn on polling
 export default class AgePie extends React.Component{
 
   constructor(props){
@@ -68,13 +69,12 @@ export default class AgePie extends React.Component{
     //   this.setState({intervalId: poll});
     // }, 10000)
   }
-//uncomment code to turn on polling
   render(){
     return(
-      <div className="col s4">
-        <RadialBarChart width={500} height={175} cx={150} cy={150} innerRadius={30} outerRadius={140} barSize={10} data={this.state.data}>
+      <div className="col s5">
+        <RadialBarChart width={350} height={175} cx={150} cy={150} innerRadius={20} outerRadius={100} barSize={10} data={this.state.data}>
           <RadialBar minAngle={0} background clockWise={true} dataKey='uv'/>
-          <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
+          <Legend iconSize={10} width={100} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
           <Tooltip/>
         </RadialBarChart>
         <button onClick={()=>this.handleClick('')}>All</button>

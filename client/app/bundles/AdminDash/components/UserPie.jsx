@@ -47,7 +47,7 @@ export default class UserPie extends React.Component{
 
   render(){
     return(
-      <div className="col s4">
+      <div className="col s5">
         <PieChart width={300} height={300}>
           <Pie data={this.state.data} cx={150} cy={150} innerRadius={40} outerRadius={80} fill="#8884d8" label/>
           <Tooltip/>
