@@ -43,14 +43,14 @@ export default class LeftLayout extends React.Component {
 
   handleResponse = (data) => {
     const new_data = [
-              {subject: 'Treatment Participation', A: data['Treatment Participation'], fullMark: 5},
-              {subject: 'Crises Incidents', A: data['Crises Incidents'], fullMark: 5},
-              {subject: 'Medicine Compliance', A: data['Medicine Compliance'], fullMark: 5},
+              {subject: 'Treatment', A: data['Treatment'], fullMark: 5},
+              {subject: 'Incidents', A: data['Incidents'], fullMark: 5},
+              {subject: 'Compliance', A: data['Compliance'], fullMark: 5},
               {subject: 'Housing', A: data['Housing'], fullMark: 5},
-              {subject: 'Meets basic needs', A: data['Meets basic needs'], fullMark: 5},
-              {subject: 'Substance Abuse', A: data['Substance Abuse'], fullMark: 5},
-              {subject: 'Danger to self', A: data['Danger to self'], fullMark: 5},
-              {subject: 'Other Problems', A: data['Treatment Participation'], fullMark: 5 },
+              {subject: 'basic needs', A: data['basic needs'], fullMark: 5},
+              {subject: 'Substance', A: data['Substance'], fullMark: 5},
+              {subject: 'Danger', A: data['Danger'], fullMark: 5},
+              {subject: 'Situational', A: data['Situational'], fullMark: 5 },
             ];
     this.setState({radarData: new_data});
   }
@@ -58,6 +58,7 @@ export default class LeftLayout extends React.Component {
    render() {
      return(
        <div>
+       <p>Users</p>
         <UserList clickHandler={this.updateSelected}/>
         <RadarPie data={this.state.radarData}/>
        </div>

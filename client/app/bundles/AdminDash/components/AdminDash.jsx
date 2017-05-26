@@ -28,14 +28,14 @@ export default class AdminDash extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col s3">
+        <div className="col s5">
           <LeftLayout/>
         </div>
-        <div className="col s9">
+        <div className="col s4">
           <div className="row">
             <AgePie/>
             <UserPie/>
-            <div className="col s1">
+            <div className="col s3">
             Total user Count
             </div>
           </div>
