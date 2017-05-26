@@ -41,8 +41,8 @@ export default class AdminDash extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col s1">
-              Total user Count
+            <div className="col s12">
+              timeseries
             </div>
           </div>
         </div>
