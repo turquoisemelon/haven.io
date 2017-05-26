@@ -8,18 +8,12 @@ import LeftLayout from './LeftLayout.jsx'
 export default class AdminDash extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    user_id: PropTypes.number.isRequired, // this is passed from the Rails view
+    user_id: PropTypes.number.isRequired,
   };
 
-  /**
-   * @param props - Comes from your rails view.
-   * @param _railsContext - Comes from React on Rails
-   */
   constructor(props, _railsContext) {
     super(props);
 
-    // How to set initial state in ES6 class syntax
-    // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
     this.state = { name: this.props.name,
                     currentUserId: this.props.user_id,
                     user_profile: [{profession:''}]

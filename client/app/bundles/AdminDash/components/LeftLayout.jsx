@@ -1,31 +1,31 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import UserList from './UserList.jsx';
-import RadarChart from './RadarChart.jsx';
+import RadarPie from './RadarPie.jsx'
+
 
 export default class LeftLayout extends React.Component {
   constructor(props) {
     super(props);
 
-    // How to set initial state in ES6 class syntax
-    // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = {currentUserId: this.props.user_id};
+    this.state = {
+      currentUserId: this.props.currentUserId
+    };
   }
 
-  updateCurrentUser = (id) => {
-    this.setState({currentUserId: id})
-    console.log('hello')
-    console.log(id)
+  updateSelected = (id) => {
+    this.setState({currentUserId: id
+    });
+
   }
 
    render() {
      return(
        <div className="col s2">
         <p>{this.state.currentUserId}</p>
-        <UserList updateCurrentUser={this.updateCurrentUser}/>
+        <RadarPie currentUserId={this.state.currentUserId}/>
+        <UserList updateSelected={this.updateSelected}/>
        </div>
      );
    }
-
-
 }
