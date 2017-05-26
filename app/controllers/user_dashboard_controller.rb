@@ -1,5 +1,5 @@
 class UserDashboardController < ApplicationController
   def index
-    @map_initial_state = {'this.state.google'}
+    @map_initial_state = {}
   end
 end

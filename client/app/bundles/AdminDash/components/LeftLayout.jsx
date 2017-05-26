@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import UserList from './UserList.jsx';
-import RadarChart from './RadarChart.jsx';
+import RadarPie from './RadarPie.jsx';
 
 export default class LeftLayout extends React.Component {
   constructor(props) {
@@ -23,6 +23,7 @@ export default class LeftLayout extends React.Component {
        <div>
         <p>{this.state.currentUserId}</p>
         <UserList updateCurrentUser={this.updateCurrentUser}/>
+        <RadarPie/>
        </div>
      );
    }
