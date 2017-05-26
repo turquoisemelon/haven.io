@@ -69,13 +69,8 @@ class Api::UsersController < Api::APIController
   end
 
   def name
-    @users = User.select("id, name, gender").where("admin = false")
+    @users = User.select("id, name, gender").where("admin = false").order(:id)
     render json: @users
-  end
-
-  def find
-    @user = User.find(params[:id])
-    render json: @user
   end
 
 end

@@ -1,17 +1,108 @@
-<h1>New Report</h1>
+<div class="entrance-text">
+  <h1>Fill out this survey for us to keep track of your current situation</h1>
+</div>
 
 <%= form_for [current_user,  @report], :html => {:multipart => true} do |f| %>
-  Attending meetings : <%= f.check_box :meetings %><br />
-  Been Arrested? : <%= f.check_box :arrested %><br />
-  Been taking medication? : <%= f.check_box :medicated %><br />
-  Sleep indoors? : <%= f.check_box :indoors %><br />
-  Recently bathed? : <%= f.check_box :bathed %><br />
-  Recently taken drugs? : <%= f.check_box :drugs %><br />
-  Have you been in a fight? : <%= f.check_box :fights %><br />
-  Has EMS visited you? : <%= f.check_box :ems %><br />
-  Weeks homeless? : <%= f.text_field :weeks_homeless %><br />
-Current Sentiment? : <%= f.select :sentiment, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %><br />
-  Comments : <%= f.text_area :notes %><br />
-  <%= f.submit %>
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.check_box :meetings %>
+          <%= f.label(:meetings, 'Have you been attending to your meetings for the past 6 months?' ) %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.check_box :arrested %>
+          <%= f.label(:arrested, 'Have you been arrested for the past 6 months?' ) %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.check_box :medicated %>
+          <%= f.label(:medicated, 'Have you been taking medication for the past 6 months?' ) %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.check_box :indoors %>
+          <%= f.label(:indoors, 'Do you have an indoor place to sleep?' ) %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.check_box :bathed %>
+          <%= f.label(:bathed, 'Have you recently bathed?' ) %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.check_box :drugs %>
+          <%= f.label(:drugs, 'Have you been taking drugs recently?' ) %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+       <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.check_box :fights %>
+          <%= f.label(:fights, 'Have you recently involved in a fight?' ) %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.check_box :ems %>
+          <%= f.label(:ems, 'Has EMS visited you?' ) %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.number_field :weeks_homeless, min: 0 %>
+          <%= f.label(:weeks_homeless, 'How many weeks have you been homeless?' ) %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.select :sentiment, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %>
+          <%= f.label(:sentiment, 'Current Sentiment?' ) %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+      <div class="row">
+        <div class="col s3"></div>
+        <div class="input-field col s6">
+          <%= f.text_area :notes, class: 'materialize-textarea' %>
+          <%= f.label(:notes, 'Additional information that you want to provide us: ' ) %>
+        </div>
+        <div class="col s3"></div>
+      </div>
+      <div class="center-btn">
+        <a class="waves-effect waves-light btn"><%= f.submit "Submit" %></a>
+      </div>
+      <div class="filling-div"></div>
+    </div>
+  </div>
 <% end %>
+
 <%= link_to 'Back', user_reports_path %>
+
+<div class="footer-profile-page">
+  <footer>© 2017 haven.io. All rights reserved.</footer>
+</div>

@@ -1,45 +1,48 @@
-<br>
-<%= link_to "Dashboard", '/admin/dashboard' %>
 <section class="admin-users-index">
 
-  <header class="page-header">
-    <h1>Admin &raquo; All Users</h1>
+  <header class="header-text">
+    <h1>All Users</h1>
   </header>
 
-  <div class="panel panel-default categories">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-            <th>User_id</th>
-            <th>E-mail</th>
+  <div class="row">
+    <div class="col s1"></div>
+    <div class="panel panel-default categories col s10">
+      <table class="bordered responsive-table highlight centered">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Email</th>
             <th>Admin</th>
             <th>Make Admin</th>
             <th>Revoke Admin</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @users.each do |u| %>
-          <tr>
-            <td><%= u.id %></td>
-            <td><%= u.email %></td>
-            <td><%= u.admin %></td>
-            <td>
-            <% if u.admin %>
-            <% else %>
-              <%= link_to 'Make Admin', admin_user_path(u.id, :admin => true), :method => :put %>
-            <% end %>
-            </td>
-            <td>
-            <% if u.admin %>
-              <%= link_to 'Revoke Admin', admin_user_path(u.id, :admin => false), :method => :put %>
-            <% else %>
-            <% end %>
-            </td>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @users.each do |u| %>
+            <tr>
+              <td><%= u.id %></td>
+              <td><%= u.name %></td>
+              <td><%= u.email %></td>
+              <td><%= u.admin %></td>
+              <td>
+              <% if u.admin %>
+              <% else %>
+                <%= link_to 'Make Admin', admin_user_path(u.id, :admin => true), :method => :put %>
+              <% end %>
+              </td>
+              <td>
+              <% if u.admin %>
+                <%= link_to 'Revoke Admin', admin_user_path(u.id, :admin => false), :method => :put %>
+              <% else %>
+              <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
+    </div>
+    <div class="col s1"></div>
   </div>
-
 </section>
