@@ -58,7 +58,7 @@ export default class LeftLayout extends React.Component {
    render() {
      return(
        <div>
-        <UserList clickHandler={this.updateSelected}/>
+        <UserList selectedUser={this.state.selectedUserId} clickHandler={this.updateSelected}/>
         <RadarPie data={this.state.radarData}/>
        </div>
      );

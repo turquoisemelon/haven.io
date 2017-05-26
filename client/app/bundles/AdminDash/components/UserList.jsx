@@ -33,7 +33,7 @@ export default class UserList extends React.Component {
     return(
       <div className="collection users">
         {this.state.users.map( user => {
-            return <User key={user.id} user={user} clickHandler={this.props.clickHandler}/>
+            return <User selectedUser={this.props.selectedUser} key={user.id} user={user} clickHandler={this.props.clickHandler}/>
           })
         }
       </div>
