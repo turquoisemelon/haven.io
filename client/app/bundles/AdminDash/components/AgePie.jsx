@@ -71,7 +71,7 @@ export default class AgePie extends React.Component{
   }
   render(){
     return(
-      <div className="col s5">
+      <div className="col s12">
         <RadialBarChart width={350} height={175} cx={150} cy={150} innerRadius={20} outerRadius={100} barSize={10} data={this.state.data}>
           <RadialBar minAngle={0} background clockWise={true} dataKey='uv'/>
           <Legend iconSize={10} width={100} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
