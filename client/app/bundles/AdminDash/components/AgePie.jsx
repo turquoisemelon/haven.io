@@ -72,16 +72,18 @@ export default class AgePie extends React.Component{
   render(){
     return(
       <div className="col s12">
-        <RadialBarChart width={350} height={175} cx={150} cy={150} innerRadius={20} outerRadius={100} barSize={10} data={this.state.data}>
+        <RadialBarChart width={350} height={175} cx={180} cy={150} innerRadius={50} outerRadius={170} barSize={15} data={this.state.data}>
           <RadialBar minAngle={0} background clockWise={true} dataKey='uv'/>
           <Legend iconSize={10} width={100} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
           <Tooltip/>
         </RadialBarChart>
-        <button onClick={()=>this.handleClick('')}>All</button>
-        <button onClick={()=>this.handleClick('hiv')}>HIV</button>
-        <button onClick={()=>this.handleClick('male')}>Male</button>
-        <button onClick={()=>this.handleClick('female')}>Female</button>
-        <button onClick={()=>this.handleClick('veteran')}>Veteran</button>
+        <div className="buttons">
+          <button onClick={()=>this.handleClick('')}>All</button>
+          <button onClick={()=>this.handleClick('hiv')}>HIV</button>
+          <button onClick={()=>this.handleClick('male')}>Male</button>
+          <button onClick={()=>this.handleClick('female')}>Female</button>
+          <button onClick={()=>this.handleClick('veteran')}>Veteran</button>
+        </div>
       </div>
     )
   }
