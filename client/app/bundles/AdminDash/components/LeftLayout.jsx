@@ -43,14 +43,14 @@ export default class LeftLayout extends React.Component {
 
   handleResponse = (data) => {
     const new_data = [
-              {subject: 'Treatment', A: data['Treatment Participation'], fullMark: 5},
-              {subject: 'Incidents', A: data['Crises Incidents'], fullMark: 5},
-              {subject: 'Compliance', A: data['Medicine Compliance'], fullMark: 5},
-              {subject: 'Housing', A: data['Housing'], fullMark: 5},
-              {subject: 'Basic needs', A: data['Meets basic'], fullMark: 5},
-              {subject: 'Substance', A: data['Substance Abuse'], fullMark: 5},
-              {subject: 'Danger', A: data['Danger to self'], fullMark: 5},
-              {subject: 'Situational', A: data['Treatment Participation'], fullMark: 5 },
+              {subject: 'Treatment', A: data['Treatment Participation'], fullMark: 3},
+              {subject: 'Incidents', A: data['Crises Incidents'], fullMark: 3},
+              {subject: 'Compliance', A: data['Medicine Compliance'], fullMark: 3},
+              {subject: 'Housing', A: data['Housing'], fullMark: 3},
+              {subject: 'Basic needs', A: data['Meets basic'], fullMark: 3},
+              {subject: 'Substance', A: data['Substance Abuse'], fullMark: 3},
+              {subject: 'Danger', A: data['Danger to self'], fullMark: 3},
+              {subject: 'Situational', A: data['Other Problems'], fullMark: 3},
             ];
     this.setState({radarData: new_data});
   }
