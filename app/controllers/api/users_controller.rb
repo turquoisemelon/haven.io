@@ -78,4 +78,5 @@ class Api::UsersController < Api::APIController
     render json: @headshot
   end
 
+
 end

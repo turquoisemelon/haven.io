@@ -28,7 +28,7 @@ export default class LeftLayout extends React.Component {
   updateSelected = (id) => {
     this.setState({selectedUserId: id});
     this.pullReports(id);
-    // this.getProfile(id);
+    this.getProfile(id);
   }
 
   pullReports = (id) => {
@@ -41,11 +41,25 @@ export default class LeftLayout extends React.Component {
     .then((res)=> res.json())
     .then(data =>{
       this.handleResponse(data);
+
     });
   }
 
 
-  
+  getProfile = (id) => {
+    const requested = new Request(`http://localhost:3000/api/users/${id}/profile`, {
+      method: 'GET',
+      credentials: 'same-origin',
+      header: {'Content-Type': 'application/json'},
+    })
+    fetch(requested)
+    .then((res)=> res.json())
+    .then(lore =>{
+      // this.handleProfile(lore);
+console.log(lore);
+    });
+  }
+
 
   handleResponse = (data) => {
     const new_data = [
