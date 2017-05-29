@@ -20,6 +20,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    uploaded_io = params[:user][:picture]
+    @user.update(:picture => uploaded_io.original_filename)
+    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+      file.write(uploaded_io.read)
+    end
+
     if @user.update_attributes(user_update_params)
       redirect_to '/', notice: "Successfully submited survey"
     else
@@ -37,4 +43,5 @@ class UsersController < ApplicationController
   def user_update_params
     params.require(:user).permit(:name, :profession, :marital_status, :hiv, :veteran, :immigrant, :lgbt, :gender, :age)
   end
+
 end
