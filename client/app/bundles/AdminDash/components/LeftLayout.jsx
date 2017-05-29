@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import UserList from './UserList.jsx';
 import RadarPie from './RadarPie.jsx'
+import UserProfile from './card.jsx'
+
 
 
 export default class LeftLayout extends React.Component {
@@ -26,6 +28,7 @@ export default class LeftLayout extends React.Component {
   updateSelected = (id) => {
     this.setState({selectedUserId: id});
     this.pullReports(id);
+    // this.getProfile(id);
   }
 
   pullReports = (id) => {
@@ -39,6 +42,20 @@ export default class LeftLayout extends React.Component {
     .then(data =>{
       this.handleResponse(data);
     });
+  }
+
+  getProfile = (id) => {
+    const requested new Request(`http://localhost:3000/api/users/${id}/profile`, {
+      method: "GET",
+      credentials: 'same-origin',
+      header: {'Content-Type': 'application/json'},
+})
+    fetch(requested)
+    .then((res)=> res.json())
+    .then(lore =>{
+      this.handleResponse(lore)
+    })
+    } 
   }
 
   handleResponse = (data) => {
@@ -59,6 +76,7 @@ export default class LeftLayout extends React.Component {
      return(
        <div>
         <p>Users</p>
+        <UserProfile data={this.state.selectedUserIdy}/>
         <UserList selectedUser={this.state.selectedUserId} clickHandler={this.updateSelected}/>
         <RadarPie data={this.state.radarData}/>
        </div>

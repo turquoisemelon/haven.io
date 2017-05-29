@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     get '/users/age' => 'users#age'
     get 'users/breakdown' => 'users#breakdown'
     get '/users/:id/accuity/' => 'reports#accuity'
+    get '/users/:id/profile/' => 'users#profile'
   end
 
 end

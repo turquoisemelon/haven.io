@@ -34,57 +34,57 @@ class Api::ReportsController < Api::UsersController
 
       if @accuity['Treatment Participation'] < 0
         @accuity['Treatment Participation'] = 0
-      elsif @accuity['Treatment Participation'] > 5
-        @accuity['Treatment Participation'] = 5
+      elsif @accuity['Treatment Participation'] > 4
+        @accuity['Treatment Participation'] = 4
       else
       end
 
       if @accuity['Crises Incidents'] < 0
         @accuity['Crises Incidents'] = 0
-      elsif @accuity['Crises Incidents'] > 5
-        @accuity['Crises Incidents'] = 5
+      elsif @accuity['Crises Incidents'] > 4
+        @accuity['Crises Incidents'] = 4
       else
       end
 
       if @accuity['Medicine Compliance'] < 0
         @accuity['Medicine Compliance'] = 0
-      elsif @accuity['Medicine Compliance'] > 5
-        @accuity['Medicine Compliance'] = 5
+      elsif @accuity['Medicine Compliance'] > 4
+        @accuity['Medicine Compliance'] = 4
       else
       end
 
       if @accuity['Housing'] < 0
         @accuity['Housing'] = 0
-      elsif @accuity['Housing'] > 5
-        @accuity['Housing'] = 5
+      elsif @accuity['Housing'] > 4
+        @accuity['Housing'] = 4
       else
       end
 
       if @accuity['Meets basic'] < 0
         @accuity['Meets basic'] = 0
-      elsif @accuity['Meets basic'] > 5
-        @accuity['Meets basic'] = 5
+      elsif @accuity['Meets basic'] > 4
+        @accuity['Meets basic'] = 4
       else
       end
 
       if @accuity['Substance Abuse'] < 0
         @accuity['Substance Abuse'] = 0
-      elsif @accuity['Substance Abuse'] > 5
-        @accuity['Substance Abuse'] = 5
+      elsif @accuity['Substance Abuse'] > 4
+        @accuity['Substance Abuse'] = 4
       else
       end
 
       if @accuity['Danger to self'] < 0
         @accuity['Danger to self'] = 0
-      elsif @accuity['Danger to self'] > 5
-        @accuity['Danger to self'] = 5
+      elsif @accuity['Danger to self'] > 4
+        @accuity['Danger to self'] = 4
       else
       end
 
       if @accuity['Other Problems'] < 0
         @accuity['Other Problems'] = 0
-      elsif @accuity['Other Problems'] > 5
-        @accuity['Other Problems'] = 5
+      elsif @accuity['Other Problems'] > 4
+        @accuity['Other Problems'] = 4
       else
       end
 

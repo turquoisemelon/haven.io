@@ -89,9 +89,9 @@ Report.destroy_all
 
     report1 =user3.reports.find_or_create_by!({
     sentiment: 5,
-    meetings: true,
+    meetings: false,
     arrested: false,
-    medicated: true,
+    medicated: false,
     indoors: true,
     bathed: true,
     drugs: false,
@@ -103,9 +103,9 @@ Report.destroy_all
 
     report2 =user3.reports.find_or_create_by!({
     sentiment: 2,
-    meetings: true,
+    meetings: false,
     arrested: false,
-    medicated: true,
+    medicated: false,
     indoors: false,
     bathed: true,
     drugs: false,
@@ -117,7 +117,7 @@ Report.destroy_all
 
     report3 =user3.reports.find_or_create_by!({
     sentiment: 3,
-    meetings: true,
+    meetings: false,
     arrested: false,
     medicated: false,
     indoors: true,
@@ -131,7 +131,7 @@ Report.destroy_all
 
     report4 =user3.reports.find_or_create_by!({
     sentiment: 4,
-    meetings: true,
+    meetings: false,
     arrested: false,
     medicated: false,
     indoors: true,
@@ -145,9 +145,9 @@ Report.destroy_all
 
     report5 =user3.reports.find_or_create_by!({
     sentiment: 1,
-    meetings: true,
+    meetings: false,
     arrested: false,
-    medicated: true,
+    medicated: false,
     indoors: true,
     bathed: true,
     drugs: false,
@@ -159,9 +159,9 @@ Report.destroy_all
 
     report6 =user3.reports.find_or_create_by!({
     sentiment: 3,
-    meetings: true,
+    meetings: false,
     arrested: false,
-    medicated: true,
+    medicated: false,
     indoors: true,
     bathed: true,
     drugs: false,
@@ -173,10 +173,10 @@ Report.destroy_all
 
     report7 =user3.reports.find_or_create_by!({
     sentiment: 5,
-    meetings: true,
+    meetings: false,
     arrested: false,
-    medicated: true,
-    indoors: true,
+    medicated: false,
+    indoors: false,
     bathed: true,
     drugs: false,
     fights: false,
@@ -187,9 +187,9 @@ Report.destroy_all
 
     report8 =user3.reports.find_or_create_by!({
     sentiment: 5,
-    meetings: true,
+    meetings: false,
     arrested: false,
-    medicated: true,
+    medicated: false,
     indoors: true,
     bathed: false,
     drugs: false,
@@ -201,11 +201,11 @@ Report.destroy_all
 
     report9 =user3.reports.find_or_create_by!({
     sentiment: 5,
-    meetings: true,
+    meetings: false,
     arrested: false,
-    medicated: true,
+    medicated: false,
     indoors: true,
-    bathed: true,
+    bathed: false,
     drugs: false,
     fights: false,
     ems: true,
@@ -215,9 +215,9 @@ Report.destroy_all
 
     report10= user3.reports.find_or_create_by!({
     sentiment: 4,
-    meetings: true,
+    meetings: false,
     arrested: false,
-    medicated: true,
+    medicated: false,
     indoors: false,
     bathed: true,
     drugs: false,
@@ -234,7 +234,7 @@ Report.destroy_all
     medicated: true,
     indoors: true,
     bathed: true,
-    drugs: false,
+    drugs: true,
     fights: false,
     ems: true,
     weeks_homeless: 2,
@@ -243,13 +243,13 @@ Report.destroy_all
 
     report12= user3.reports.find_or_create_by!({
     sentiment: 4,
-    meetings: true,
+    meetings: false,
     arrested: false,
     medicated: false,
     indoors: true,
     bathed: true,
     drugs: false,
-    fights: false,
+    fights: true,
     ems: false,
     weeks_homeless: 5,
     notes: "ullamco Lorem culpa labore qui consequat cupidatat tempor do quis dolore dolore culpa officia ad",
@@ -257,7 +257,7 @@ Report.destroy_all
 
     report13= user3.reports.find_or_create_by!({
     sentiment: 3,
-    meetings: true,
+    meetings: false,
     arrested: false,
     medicated: false,
     indoors: false,
@@ -271,12 +271,12 @@ Report.destroy_all
 
     report14= user3.reports.find_or_create_by!({
     sentiment: 1,
-    meetings: true,
+    meetings: false,
     arrested: false,
     medicated: true,
     indoors: false,
     bathed: true,
-    drugs: false,
+    drugs: true,
     fights: false,
     ems: false,
     weeks_homeless: 3,
@@ -285,7 +285,7 @@ Report.destroy_all
 
     report15= user3.reports.find_or_create_by!({
     sentiment: 5,
-    meetings: true,
+    meetings: false,
     arrested: false,
     medicated: true,
     indoors: true,
@@ -299,7 +299,7 @@ Report.destroy_all
 
     report16= user3.reports.find_or_create_by!({
     sentiment: 2,
-    meetings: true,
+    meetings: false,
     arrested: false,
     medicated: true,
     indoors: true,
@@ -346,9 +346,9 @@ Report.destroy_all
     medicated: true,
     indoors: true,
     bathed: false,
-    drugs: false,
+    drugs: true,
     fights: false,
-    ems: false,
+    ems: true,
     weeks_homeless: 3,
     notes: "qui fugiat consectetur proident consequat incididunt labore esse occaecat duis sit velit eu tempor nostrud",
     created_at: Date.new(2017,05,18)})
@@ -399,7 +399,7 @@ Report.destroy_all
     sentiment: 4,
     meetings: true,
     arrested: false,
-    medicated: true,
+    medicated: false,
     indoors: true,
     bathed: false,
     drugs: false,
@@ -637,7 +637,7 @@ Report.destroy_all
     report40 =user4.reports.find_or_create_by!({
     sentiment: 1,
     meetings: false,
-    arrested: false,
+    arrested: true,
     medicated: true,
     indoors: false,
     bathed: false,
@@ -678,7 +678,7 @@ Report.destroy_all
 
     report43 =user4.reports.find_or_create_by!({
     sentiment: 4,
-    meetings: true,
+    meetings: false,
     arrested: false,
     medicated: true,
     indoors: true,
@@ -734,7 +734,7 @@ Report.destroy_all
 
     report47 =user4.reports.find_or_create_by!({
     sentiment: 3,
-    meetings: true,
+    meetings: false,
     arrested: false,
     medicated: false,
     indoors: true,
@@ -762,12 +762,12 @@ Report.destroy_all
 
     report49 =user4.reports.find_or_create_by!({
     sentiment: 2,
-    meetings: true,
+    meetings: false,
     arrested: false,
     medicated: true,
     indoors: true,
     bathed: true,
-    drugs: false,
+    drugs: true,
     fights: false,
     ems: false,
     weeks_homeless: 5,
@@ -781,7 +781,7 @@ Report.destroy_all
     medicated: true,
     indoors: true,
     bathed: true,
-    drugs: false,
+    drugs: true,
     fights: false,
     ems: false,
     weeks_homeless: 5,
@@ -792,9 +792,9 @@ Report.destroy_all
     sentiment: 3,
     meetings: true,
     arrested: false,
-    medicated: true,
+    medicated: false,
     indoors: true,
-    bathed: true,
+    bathed: false,
     drugs: false,
     fights: false,
     ems: false,
@@ -806,7 +806,7 @@ Report.destroy_all
     sentiment: 4,
     meetings: true,
     arrested: false,
-    medicated: true,
+    medicated: false,
     indoors: true,
     bathed: true,
     drugs: true,
@@ -820,7 +820,7 @@ Report.destroy_all
     sentiment: 2,
     meetings: true,
     arrested: false,
-    medicated: true,
+    medicated: false,
     indoors: true,
     bathed: true,
     drugs: false,
@@ -1214,7 +1214,7 @@ Report.destroy_all
     meetings: true,
     arrested: false,
     medicated: true,
-    indoors: true,
+    indoors: false,
     bathed: true,
     drugs: false,
     fights: false,
@@ -1984,7 +1984,7 @@ Report.destroy_all
     report137= user7.reports.find_or_create_by!({
     sentiment: 2,
     meetings: true,
-    arrested: false,
+    arrested: true,
     medicated: false,
     indoors: false,
     bathed: true,
@@ -2001,7 +2001,7 @@ Report.destroy_all
     arrested: false,
     medicated: false,
     indoors: true,
-    bathed: false,
+    bathed: true,
     drugs: true,
     fights: false,
     ems: true,
@@ -2099,7 +2099,7 @@ Report.destroy_all
     arrested: true,
     medicated: false,
     indoors: false,
-    bathed: false,
+    bathed: true,
     drugs: false,
     fights: false,
     ems: false,
@@ -2124,7 +2124,7 @@ Report.destroy_all
     report147= user7.reports.find_or_create_by!({
     sentiment: 3,
     meetings: false,
-    arrested: false,
+    arrested: true,
     medicated: true,
     indoors: false,
     bathed: true,

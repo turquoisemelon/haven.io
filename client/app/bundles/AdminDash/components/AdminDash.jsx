@@ -3,7 +3,7 @@ import React from 'react';
 import UserPie from './UserPie.jsx'
 import AgePie from './AgePie.jsx'
 import LeftLayout from './LeftLayout.jsx'
-
+import User from './User.jsx'
 
 export default class AdminDash extends React.Component {
 
