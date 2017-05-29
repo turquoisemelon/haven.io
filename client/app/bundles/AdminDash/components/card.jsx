@@ -2,19 +2,6 @@ import React from 'react';
 import User from './User.jsx';
 
 
-
-var user = {
-  basicInfo: {
-    name: "Jane Doe",
-    gender: "Female",
-    birthday: "April 3, 1990",
-    location: "Los Angeles, CA",
-    photo: "http://lorempixel.com/500/500/people",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat fugit quia pariatur est saepe necessitatibus, quibusdam reiciendis ratione voluptate atque in qui provident rem repellat soluta. Blanditiis repellat velit eligendi."
-  }
-}
-
-
 class Avatar extends React.Component {
   render() {
     var image = this.props.image,
@@ -34,6 +21,7 @@ class Avatar extends React.Component {
 }
 
 class MainPanel extends React.Component {
+
   render() {
     var info = this.props.info;
     if (!info) return null;
@@ -50,11 +38,10 @@ class MainPanel extends React.Component {
             <h3>{info.location}</h3>
           
           <hr />
-            <p>{info.gender} | {info.birthday}</p>
+            <p>{info.gender} | {info.age}</p>
         </div>
         
         <div className="bottom">
-          <h4>Biography</h4>
           <p>{info.bio}</p>
         </div>
       </div>
@@ -62,12 +49,12 @@ class MainPanel extends React.Component {
   }
 }
 
-
 export default class UserProfile extends React.Component {
   render() {
+    console.log(this.props.data)
     return (
       <div id="user-profile">
-        <MainPanel info={user.basicInfo} />
+        <MainPanel info={this.props.data} />
       </div>
     )
   }

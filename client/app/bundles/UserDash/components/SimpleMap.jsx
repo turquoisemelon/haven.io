@@ -26,7 +26,6 @@ style: {
     key: "AIzaSyCfqsqs1OAXX_C1F3iBkVxspWpiDObrx24",
     language: 'en',
   }
-  
   };
 
 
@@ -42,8 +41,7 @@ constructor(props) {
       <GoogleMapReact style={this.props.style}
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
-        bootstrapURLKeys={this.props.bootstrapURLKeys}
-      >
+        bootstrapURLKeys={this.props.bootstrapURLKeys}>
         <MyGreatPlace lat={43.6532} lng={-79.3832} text={'A'} /* Kreyser Avrora */ />
         <MyGreatPlace {...this.props.greatPlaceCoords} text={'B'} /* road circle */ />
       </GoogleMapReact>

@@ -3,7 +3,7 @@ import React from 'react';
 import UserPie from './UserPie.jsx'
 import AgePie from './AgePie.jsx'
 import LeftLayout from './LeftLayout.jsx'
-
+  
 export default class AdminDash extends React.Component {
 
   updateName = (name) => {
@@ -19,7 +19,7 @@ export default class AdminDash extends React.Component {
     fetch(request)
     .then((res)=> res.json())
     .then(data =>{
-      this.setState({user_profile: [data]});
+      // this.setState({user_profile: [data]});
     });
   }
 
@@ -36,7 +36,6 @@ export default class AdminDash extends React.Component {
             <div className="col s6 agepie">
               <AgePie/>
             </div>
-
             <div className="col s5 userpie">
               <UserPie/>
             </div>

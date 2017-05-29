@@ -16,9 +16,8 @@ export default class UserDash extends React.Component {
   render() {
     return (
       <div>
-<SimpleMap style ={{
-      width: 100,
-      height: 100,}}/>
+      <section>
+      </section>
 </div>
     )
   }

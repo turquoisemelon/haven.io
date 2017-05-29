@@ -8,20 +8,29 @@ import UserProfile from './card.jsx'
 export default class LeftLayout extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       selectedUserId: '',
       radarData: [
-        { subject: 'Treatment', A: 0, fullMark: 5 },
-        { subject: 'Incidents', A: 0, fullMark: 5 },
-        { subject: 'Compliance', A: 0, fullMark: 5 },
-        { subject: 'Housing', A: 0, fullMark: 5 },
-        { subject: 'Basic needs', A: 0, fullMark: 5 },
-        { subject: 'Substance', A: 0, fullMark: 5 },
-        { subject: 'Danger', A: 0, fullMark: 5 },
-        { subject: 'Situational', A: 0, fullMark: 5 },
-      ]
+        { subject: 'Treatment', A: 2, fullMark: 5 },
+        { subject: 'Incidents', A: 3, fullMark: 5 },
+        { subject: 'Compliance', A: 4, fullMark: 5 },
+        { subject: 'Housing', A: 1, fullMark: 5 },
+        { subject: 'Basic needs', A: 4, fullMark: 5 },
+        { subject: 'Substance', A: 2, fullMark: 5 },
+        { subject: 'Danger', A: 1, fullMark: 5 },
+        { subject: 'Situational', A: 3, fullMark: 5 },
+      ],
+      basicInfo: {
+        name: "Tammy Geraldson",
+        gender: "Female",
+        age: "April 3, 1970",
+        location: "Toronto, ON",
+        photo: "https://pbs.twimg.com/profile_images/857413369850200065/KkKXIkze.jpg",
+        bio: "Social Service worker since 1999.  BS University of Toronto",
+      }
     };
+    console.log(this.state.basicInfo);
+    console.log(this.state.radarData)
   }
 
   updateSelected = (id) => {
@@ -44,7 +53,6 @@ export default class LeftLayout extends React.Component {
     });
   }
 
-
   getProfile = (id) => {
     const requested = new Request(`http://localhost:3000/api/users/${id}/profile`, {
       method: 'GET',
@@ -54,11 +62,22 @@ export default class LeftLayout extends React.Component {
     fetch(requested)
     .then((res)=> res.json())
     .then(lore =>{
-      // this.handleProfile(lore);
-console.log(lore);
+      this.handleProfile(lore);
+// console.log(lore);
     });
   }
 
+  handleProfile = (lore) =>{
+    const new_profile = {
+      name: lore[0].name,
+      gender: lore[0].gender,
+      age: lore[0].age,
+      location: "Toronto, ON",
+      photo: "http://lorempixel.com/500/500/people",
+      bio: "Never bruv."
+    }
+    this.setState({basicInfo: new_profile});
+  }
 
   handleResponse = (data) => {
     const new_data = [
@@ -77,10 +96,9 @@ console.log(lore);
    render() {
      return(
        <div>
-        <p>Users</p>
-        <UserProfile data={this.state.selectedUserIdy}/>
-        <UserList selectedUser={this.state.selectedUserId} clickHandler={this.updateSelected}/>
+        <UserProfile data={this.state.basicInfo}/>
         <RadarPie data={this.state.radarData}/>
+        <UserList selectedUser={this.state.selectedUserId} clickHandler={this.updateSelected}/>
        </div>
      );
    }
