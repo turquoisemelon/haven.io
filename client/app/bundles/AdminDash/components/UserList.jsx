@@ -22,6 +22,7 @@ export default class UserList extends React.Component {
   }
 
   handleResponse = (data) => {
+    console.log(data)
     this.setState({users: data});
   }
 
