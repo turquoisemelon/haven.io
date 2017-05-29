@@ -44,19 +44,8 @@ export default class LeftLayout extends React.Component {
     });
   }
 
-  getProfile = (id) => {
-    const requested new Request(`http://localhost:3000/api/users/${id}/profile`, {
-      method: "GET",
-      credentials: 'same-origin',
-      header: {'Content-Type': 'application/json'},
-})
-    fetch(requested)
-    .then((res)=> res.json())
-    .then(lore =>{
-      this.handleResponse(lore)
-    })
-    } 
-  }
+
+  
 
   handleResponse = (data) => {
     const new_data = [
