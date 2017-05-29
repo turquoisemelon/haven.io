@@ -8,8 +8,10 @@ html, body {
   .collection {
     height: 400px;
     overflow: scroll;
+    margin-left: 1rem;
   }
   .radar-pie {
+    margin-left: 1rem;
     display: flex;
     justify-content: center;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
@@ -50,6 +52,35 @@ html, body {
           height: 2rem;
         }
       }
+    }
+    .col.s1.filling-div {
+      width: 3%;
+    }
+    .userpie.col.s5 {
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+      border-radius: 2px;
+      background-color: #fff;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      margin-left: 2.5rem;
+      .col.s12 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .buttons {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          button {
+            width: 9rem;
+            padding-left: 1rem;
+            height: 2rem;
+            margin-bottom: 0.7rem;
+          }
+        }
+      }
+
     }
   }
 }
