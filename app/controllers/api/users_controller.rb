@@ -69,7 +69,7 @@ class Api::UsersController < Api::APIController
   end
 
   def name
-    @users = User.select("id, name, gender").where("admin = false").order(:id).limit(8)
+    @users = User.select("id, name, gender, picture").where("admin = false").order(:id).limit(8)
     render json: @users
   end
 
