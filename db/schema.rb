@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522171112) do
+ActiveRecord::Schema.define(version: 20170529192118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,12 +43,18 @@ ActiveRecord::Schema.define(version: 20170522171112) do
     t.boolean "medicated"
     t.boolean "indoors"
     t.boolean "bathed"
+    t.boolean "clothes"
     t.boolean "drugs"
+    t.boolean "income"
+    t.boolean "apply_benefits"
+    t.boolean "verbal_arguments"
     t.boolean "fights"
     t.boolean "ems"
+    t.boolean "hospital"
+    t.boolean "medical_condition"
     t.integer "weeks_homeless"
-    t.integer "sentiment"
     t.datetime "created_at", null: false
+    t.integer "sentiment"
     t.datetime "updated_at", null: false
     t.text "notes"
     t.index ["user_id"], name: "index_reports_on_user_id"
@@ -69,6 +75,7 @@ ActiveRecord::Schema.define(version: 20170522171112) do
     t.integer "age"
     t.boolean "lgbt"
     t.string "gender"
+    t.string "picture"
   end
 
 end
