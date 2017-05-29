@@ -18,7 +18,7 @@
           <%end%>
           <li><%= link_to 'Home', '/' %></li>
           <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
-          <li><%= link_to "History", user_histories_path(user_id: current_user.id) %></li>
+          <li><%= link_to "History", new_user_history_path(user_id: current_user.id) %></li>
           <li><%= link_to 'New Survey', new_user_report_path(user_id: current_user.id) %></li>
           <li><i class="large material-icons"><%= link_to "power_settings_new", '/logout', class:'logout-icon' %></i></li>
         <% end %>
