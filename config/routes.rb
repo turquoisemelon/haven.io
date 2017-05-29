@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     get 'users/breakdown' => 'users#breakdown'
     get 'users/:id' => 'users#find'
     get '/users/:id/accuity/' => 'reports#accuity'
+    get '/users/:id/profile/' => 'users#profile'
   end
 
 end

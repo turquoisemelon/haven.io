@@ -48,16 +48,16 @@ export default class UserPie extends React.Component{
   render(){
     return(
       <div className="col s12">
-        <PieChart width={300} height={300}>
-          <Pie data={this.state.data} cx={150} cy={150} innerRadius={40} outerRadius={80} fill="#8884d8" label/>
+        <PieChart width={300} height={220}>
+          <Pie data={this.state.data} cx={150} cy={90} innerRadius={50} outerRadius={90} fill="#8884d8" label/>
           <Tooltip/>
         </PieChart>
-        <span>
-          <button onClick={()=>this.handleClick('profession')}>Previous Profession</button>
-          <button onClick={()=>this.handleClick('immigrant')}>Immigration Status</button>
-          <button onClick={()=>this.handleClick('gender')}>Gender</button>
-          <button onClick={()=>this.handleClick('ms')}>Marital Status</button>
-        </span>
+        <div className="buttons">
+          <button className="waves-effect waves-light btn" onClick={()=>this.handleClick('profession')}>Profession</button>
+          <button className="waves-effect waves-light btn" onClick={()=>this.handleClick('immigrant')}>Immigration Status</button>
+          <button className="waves-effect waves-light btn" onClick={()=>this.handleClick('gender')}>Gender</button>
+          <button className="waves-effect waves-light btn" onClick={()=>this.handleClick('ms')}>Marital Status</button>
+        </div>
       </div>
     )
   }

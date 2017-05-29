@@ -30,12 +30,14 @@ export default class AdminDash extends React.Component {
         <div className="col s4">
           <LeftLayout/>
         </div>
-        <div className="col 8">
-          <div className="row">
-            <div className="col s6">
+        <div className="col s8">
+        <div className="row filling"></div>
+          <div className="row age-user-pie">
+            <div className="col s6 agepie">
               <AgePie/>
             </div>
-            <div className="col s6">
+
+            <div className="col s5 userpie">
               <UserPie/>
             </div>
           </div>

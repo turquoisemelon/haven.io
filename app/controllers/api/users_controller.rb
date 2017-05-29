@@ -73,4 +73,10 @@ class Api::UsersController < Api::APIController
     render json: @users
   end
 
+  def profile
+    @headshot =User.select("name, gender, marital_status, profession, immigrant, age").where("admin = false").order(:age)
+    render json: @headshot
+  end
+
+
 end
