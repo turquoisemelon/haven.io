@@ -1,3 +1,7 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "materialize/components/color";
+@import "materialize";
+
 * {
   box-sizing: border-box;
 }
@@ -8,8 +12,18 @@ html, body {
   .collection {
     height: 400px;
     overflow: scroll;
+    margin-left: 1rem;
+    li.collection-item.avatar {
+      display: flex;
+      align-items: center;
+      min-height: 60px;
+    }
+    .collection-item.active {
+      color: #26a69a;
+    }
   }
   .radar-pie {
+    margin-left: 1rem;
     display: flex;
     justify-content: center;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
@@ -18,6 +32,67 @@ html, body {
     transition: box-shadow .25s;
     .recharts-layer {
       font-size: 0.95rem;
+    }
+  }
+  .row.filling {
+    height: 2rem;
+  }
+  .age-user-pie {
+    .agepie.col.s6 {
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+      border-radius: 2px;
+      background-color: #fff;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      .buttons-first-row {
+        display: flex;
+        justify-content: space-around;
+        padding-right: 3rem;
+        padding-left: 2rem;
+        button {
+          height: 2rem;
+        }
+      }
+      .buttons-second-row {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 0.6rem;
+        padding-left: 2rem;
+        padding-right: 3rem;
+        button {
+          height: 2rem;
+        }
+      }
+    }
+    .col.s1.filling-div {
+      width: 3%;
+    }
+    .userpie.col.s5 {
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+      border-radius: 2px;
+      background-color: #fff;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      margin-left: 2.5rem;
+      .col.s12 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .buttons {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          button {
+            width: 9rem;
+            padding-left: 1rem;
+            height: 2rem;
+            margin-bottom: 0.7rem;
+          }
+        }
+      }
+
     }
   }
 }
