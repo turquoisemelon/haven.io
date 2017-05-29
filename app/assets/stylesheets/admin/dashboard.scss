@@ -1,3 +1,7 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "materialize/components/color";
+@import "materialize";
+
 * {
   box-sizing: border-box;
 }
@@ -9,6 +13,14 @@ html, body {
     height: 400px;
     overflow: scroll;
     margin-left: 1rem;
+    li.collection-item.avatar {
+      display: flex;
+      align-items: center;
+      min-height: 60px;
+    }
+    .collection-item.active {
+      color: #26a69a;
+    }
   }
   .radar-pie {
     margin-left: 1rem;
