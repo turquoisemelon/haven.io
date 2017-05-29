@@ -43,18 +43,12 @@ ActiveRecord::Schema.define(version: 20170529192118) do
     t.boolean "medicated"
     t.boolean "indoors"
     t.boolean "bathed"
-    t.boolean "clothes"
     t.boolean "drugs"
-    t.boolean "income"
-    t.boolean "apply_benefits"
-    t.boolean "verbal_arguments"
     t.boolean "fights"
     t.boolean "ems"
-    t.boolean "hospital"
-    t.boolean "medical_condition"
     t.integer "weeks_homeless"
-    t.datetime "created_at", null: false
     t.integer "sentiment"
+    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "notes"
     t.index ["user_id"], name: "index_reports_on_user_id"
