@@ -8,14 +8,14 @@ const markerDescriptions = [
     size: {width: 62, height: 60},
     origin: {x: 15 / 62, y: 1},
     withText: true,
-    // image: require('icons/map_icons/map_icon_text_red.svg')
+    // image: require('./map_icons/map_icon_text_red.svg')
     imageClass: 'map_icon_text_red'
   },
   {
     size: {width: 62, height: 60},
     origin: {x: 15 / 62, y: 1},
     withText: true,
-    // image: require('icons/map_icons/map_icon_text_indigo.svg')
+     // image: require('./map_icons/map_icon_text_indigo.svg')
     imageClass: 'map_icon_text_indigo'
   },
   {

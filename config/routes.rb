@@ -28,7 +28,6 @@ Rails.application.routes.draw do
 
   namespace :api do
 
-
     get '/users' => 'users#name'
     get '/users/age' => 'users#age'
     get 'users/breakdown' => 'users#breakdown'

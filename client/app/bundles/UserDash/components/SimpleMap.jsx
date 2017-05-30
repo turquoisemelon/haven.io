@@ -42,9 +42,7 @@ style: {
   }
   };
 
-
   shouldComponentUpdate = shouldPureComponentUpdate;
-
 
 constructor(props) {
     super(props);
