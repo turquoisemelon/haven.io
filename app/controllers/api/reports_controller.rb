@@ -90,7 +90,7 @@ class Api::ReportsController < Api::UsersController
 
       render json: @accuity
   end
-  helper_method :accuity
+  # helper_method :accuity
 
   def find
     user = User.find(params[:id])
