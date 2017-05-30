@@ -98,7 +98,7 @@ class Api::ReportsController < Api::UsersController
     when 'week'
       @time = Report.select(
         "date(created_at)
-        ,sum((meetings=true)::int) as meeting_count
+        ,sum((meetings=true)::int) as meetings_count
         ,sum((arrested=true)::int) as arrested_count
         ,sum((medicated=true)::int) as medicated_count
         ,sum((indoors=true)::int) as indoors_count
@@ -113,7 +113,7 @@ class Api::ReportsController < Api::UsersController
     when 'month'
       @time = Report.select(
         "date(created_at)
-        ,sum((meetings=true)::int) as meeting_count
+        ,sum((meetings=true)::int) as meetings_count
         ,sum((arrested=true)::int) as arrested_count
         ,sum((medicated=true)::int) as medicated_count
         ,sum((indoors=true)::int) as indoors_count
