@@ -32,14 +32,11 @@ Rails.application.routes.draw do
     get '/users' => 'users#name'
     get '/users/age' => 'users#age'
     get 'users/breakdown' => 'users#breakdown'
-<<<<<<< HEAD
     get 'users/:id' => 'users#find'
     get '/users/:id/accuity/' => 'reports#accuity'
     get '/users/:id/profile/' => 'users#profile'
-=======
     get '/users/:id/accuity' => 'reports#accuity'
     get '/reports/time' => 'reports#time'
->>>>>>> master
   end
 
 end
