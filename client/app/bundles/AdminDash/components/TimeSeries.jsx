@@ -24,8 +24,7 @@ export default class TimeSeries extends React.Component {
         'indoors',
         'bathed',
         'drugs',
-        'fights',
-        'sentiment'
+        'fights'
       ]
       data: []
     }

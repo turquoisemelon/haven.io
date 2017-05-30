@@ -29,7 +29,8 @@ Rails.application.routes.draw do
     get '/users' => 'users#name'
     get '/users/age' => 'users#age'
     get 'users/breakdown' => 'users#breakdown'
-    get '/users/:id/accuity/' => 'reports#accuity'
+    get '/users/:id/accuity' => 'reports#accuity'
+    get '/reports/time' => 'reports#time'
   end
 
 end
