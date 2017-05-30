@@ -7,6 +7,14 @@ import drop_ins from './drop_ins.js';
 import shelters from './shelters.js';
 import water from './water.js';
 import youth from './youth.js';
+import controllable from 'react-controllables';
+import MarkerExample, {K_SCALE_NORMAL} from './marker_example.jsx';
+import {getScale, getRealFromTo} from './calc_markers_visibility.js';
+import markerDescriptions from './marker_descriptions.js';
+import {customDistanceToMouse} from './custom_distance.js';
+import Svg from './svg.jsx'
+
+import {List} from 'immutable';
 //import MarkerExample, {K_SCALE_NORMAL} from './marker_example.jsx';
  
 
