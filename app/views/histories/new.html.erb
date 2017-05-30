@@ -1,4 +1,6 @@
+<div class="entrance-text">
 <h1>New History Report</h1>
+</div>
 
 <%= form_for [current_user,  @history], :html => {:multipart => true} do |f| %>
   Have you had anything stolen from you ? : <%= f.check_box :stolen %>
