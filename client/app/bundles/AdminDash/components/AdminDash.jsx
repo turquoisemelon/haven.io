@@ -19,7 +19,7 @@ export default class AdminDash extends React.Component {
     fetch(request)
     .then((res)=> res.json())
     .then(data =>{
-      // this.setState({user_profile: [data]});
+      this.setState({user_profile: [data]});
     });
   }
 

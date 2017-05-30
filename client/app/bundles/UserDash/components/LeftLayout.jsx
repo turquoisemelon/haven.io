@@ -29,6 +29,8 @@ export default class LeftLayout extends React.Component {
         bio: "Social Service worker since 1999.  BS University of Toronto",
       }
     };
+    console.log(this.state.basicInfo);
+    console.log(this.state.radarData)
   }
 
   updateSelected = (id) => {
