@@ -6,6 +6,8 @@
 @import "materialize/components/color";
 @import "materialize";
 
+$navbar-background-color: #5da8c1;
+
 * {
   box-sizing: border-box;
 }
@@ -40,7 +42,7 @@ html, body {
     margin-bottom: 4rem;
   }
   .btn {
-    background-color: #90bb92;
+    background-color: $navbar-background-color;
   }
   .footer {
     position: fixed;

@@ -6,6 +6,8 @@
   box-sizing: border-box;
 }
 
+$chart-background-color: #fff;
+
 html, body {
   height: 100%;
   background-color: #eeeeee;
@@ -28,7 +30,7 @@ html, body {
     justify-content: center;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
     border-radius: 2px;
-    background-color: #fff;
+    background-color: $chart-background-color;
     transition: box-shadow .25s;
     .recharts-layer {
       font-size: 0.95rem;
@@ -41,7 +43,7 @@ html, body {
     .agepie.col.s6 {
       box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
       border-radius: 2px;
-      background-color: #fff;
+      background-color: $chart-background-color;
       height: 350px;
       display: flex;
       align-items: center;
@@ -71,7 +73,7 @@ html, body {
     .userpie.col.s5 {
       box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
       border-radius: 2px;
-      background-color: #fff;
+      background-color: $chart-background-color;
       height: 350px;
       display: flex;
       align-items: center;
