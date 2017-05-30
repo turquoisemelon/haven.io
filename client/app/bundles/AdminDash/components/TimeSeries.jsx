@@ -17,6 +17,16 @@ export default class TimeSeries extends React.Component {
         'fights',
         'sentiment'
       ],
+      color: {
+        meetings: "#8884d8",
+        arrested: "#cadbdc",
+        medicated: "#10adbc",
+        indoors: "#fba188",
+        bathed: "#cbd536",
+        drugs: "#6ba9dd",
+        fights: "#ff9ea3",
+        sentiment: "#e187ff",
+      },
       data: []
     }
   }
@@ -65,28 +75,45 @@ export default class TimeSeries extends React.Component {
     this.setState({data: new_state});
   }
 
+  toggleData = (item) => {
+
+  }
+
+  componentDidMount() {
+    this.getData('week');
+  }
+
   render () {
+    let series;
+    series = this.state.show.map((item)=>{
+      return <Line type='monotone' dataKey={item} stroke={this.state.color[item]} activeDot={{r: 6}}/>
+    })
     return (
-      <div>
+      <div className="col s12">
+        <button className="waves-effect waves-light btn" onClick={()=>this.getData('week')}>week</button>
+        <button className="waves-effect waves-light btn" onClick={()=>this.getData('month')}>month</button>
         <LineChart width={800} height={500} data={this.state.data}
               margin={{top: 5, right: 30, left: 20, bottom: 5}}>
          <XAxis dataKey="date"/>
          <YAxis/>
          <CartesianGrid strokeDasharray="3 3"/>
          <Tooltip/>
-         <Legend />
-         <Line type="monotone" dataKey="meetings" stroke="#8884d8" activeDot={{r: 6}}/>
-         <Line type="monotone" dataKey="arrested" stroke="#cadbdc" activeDot={{r: 6}}/>
-         <Line type="monotone" dataKey="medicated" stroke="#10adbc" activeDot={{r: 6}}/>
-         <Line type="monotone" dataKey="indoors" stroke="#fba188" activeDot={{r: 6}}/>
-         <Line type="monotone" dataKey="bathed" stroke="#cbd536" activeDot={{r: 6}}/>
-         <Line type="monotone" dataKey="drugs" stroke="#6ba9dd" activeDot={{r: 6}}/>
-         <Line type="monotone" dataKey="fights" stroke="#ff9ea3" activeDot={{r: 6}}/>
-         <Line type="monotone" dataKey="sentiment" stroke="#e187ff" activeDot={{r: 6}}/>
+         <Legend/>
+         {series}
         </LineChart>
-        <button onClick={()=>this.getData('week')}>week</button>
-        <button onClick={()=>this.getData('month')}>month</button>
+        <form action='#'>
+          <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+          <label for="filled-in-box">Filled in</label>
+        </form>
       </div>
     );
   }
 }
+        // <button onClick={()=>this.getData('week')}>week</button>
+        // <button onClick={()=>this.getData('month')}>month</button>
+        // <button onClick={()=>this.getData('month')}>month</button>
+        // <button onClick={()=>this.getData('month')}>month</button>
+        // <button onClick={()=>this.getData('month')}>month</button>
+        // <button onClick={()=>this.getData('month')}>month</button>
+        // <button onClick={()=>this.getData('month')}>month</button>
+        // <button onClick={()=>this.getData('month')}>month</button>

@@ -24,10 +24,8 @@ export default class AdminDash extends React.Component {
               <UserPie/>
             </div>
           </div>
-          <div className="row">
-            <div className="col s12">
-              <TimeSeries/>
-            </div>
+          <div className="row timeseries">
+            <TimeSeries/>
           </div>
         </div>
       </div>
