@@ -11,10 +11,11 @@
           <li><%= link_to 'Dashboard', '/admin/dashboard' %></li>
           <li><i class="large material-icons"><%= link_to "power_settings_new", '/logout', class:'logout-icon' %></i></li>
         <% else %>
-          <% if current_user.name %>
-          <li>Hi <%= current_user.name %></li>
+          <% if current_user.picture && current_user.name %>
+          <li class="user-avatar"><%=image_tag("/uploads/#{current_user.picture}", class:"circle responsive-img")%></li>
+          <li><%= current_user.name %> </li>
           <% else %>
-          <li></li>
+          <li>Hi user</li>
           <%end%>
           <li><%= link_to 'Home', '/' %></li>
           <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
