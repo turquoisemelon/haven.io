@@ -18,11 +18,11 @@
             </ul>
           </li>
         <% else %>
-          <% if current_user.picture && current_user.name %>
+          <% if current_user.name && current_user.picture%>
           <li class="user-avatar"><%=image_tag("/uploads/#{current_user.picture}", class:"circle responsive-img")%></li>
           <li><%= current_user.name %> </li>
           <% else %>
-          <li>Hi user</li>
+          <li>Hi <%=current_user.email%></li>
           <%end%>
           <li>
             <a class='dropdown-button btn' href='#' data-activates='dropdown1'><i class="material-icons">view_headline</i></a>
