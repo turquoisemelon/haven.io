@@ -21,7 +21,7 @@ end
 puts 'Seeding admin users ...'
 User.destroy_all
 user1 = User.create!({ email: 'Joshua@torontohealth.com', password_digest: BCrypt::Password.create('1234'), admin: true})
-user2 = User.create!({ email: 'root@user.com', password_digest: BCrypt::Password.create('1234'), admin: true})
+user2 = User.create!({ email: 'root@user.com', password_digest: BCrypt::Password.create('1234'), admin: true, picture: "admin-avatar.png"})
 puts 'Seeding non-admin users ...'
 user3 = User.create!({ email: 'william_peters@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "William Peters", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: true, immigrant: "citizen", age: 42, gender: "male", picture: "avatar1.png"})
 user4 = User.create!({ email: 'navneet_sondhi@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Navneet Sondhi", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "permanent Resident", age: 58, gender: "female", picture: "billy-normal-avatar-teaser.png"})
