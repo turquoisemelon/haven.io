@@ -6,6 +6,9 @@
 @import "materialize/components/color";
 @import "materialize";
 
+$text-color: white;
+$navbar-background-color: #5da8c1;
+
 * {
   box-sizing: border-box;
 }
@@ -13,7 +16,7 @@
 html, body {
   height: 100%;
   .nav-wrapper {
-    background-color: #90bb92;
+    background-color: $navbar-background-color;
     a.logout-icon {
       font-size: 2rem;
       font-weight: 900;
@@ -31,8 +34,9 @@ html, body {
       height: 100%;
       opacity: 0.6;
     }
+
     .background-image {
-      background-image: url('http://gacfhc.com/wp-content/uploads/2016/09/hands_1042111.jpg');
+      background-image: url('http://i.magaimg.net/img/nhx.png');
       background-size: cover;
       height: 100%;
     }
@@ -43,7 +47,7 @@ html, body {
       .welcome-text {
         text-align: center;
         padding-top: 70px;
-        color: white;
+        color: $text-color;
         h1 {
           font-weight: bold;
           font-size: 3.5vw;
@@ -56,9 +60,9 @@ html, body {
         text-align: center;
         margin-top: 40px;
         .btn {
-          background-color: #90bb92;
+          background-color: $navbar-background-color;
           a {
-            color: white;
+            color: $text-color;
           }
         }
       }
@@ -78,8 +82,8 @@ html, body {
   }
 
   .last-section {
-    background-color: black;
-    color: white;
+    background-color: #304b5f;
+    color: $text-color;
     margin-bottom: 0;
       .contact-us {
         height: 13rem;
@@ -94,7 +98,7 @@ html, body {
         a {
               margin: 1rem 0 0 2rem;
           i {
-              color: #81c784;
+              color: $navbar-background-color;
               font-size: 4rem;
           }
         }
