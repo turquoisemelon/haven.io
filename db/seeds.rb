@@ -23,9 +23,9 @@ User.destroy_all
 user1 = User.create!({ email: 'Joshua@torontohealth.com', password_digest: BCrypt::Password.create('1234'), admin: true})
 user2 = User.create!({ email: 'root@user.com', password_digest: BCrypt::Password.create('1234'), admin: true})
 puts 'Seeding non-admin users ...'
-user3 = User.create!({ email: 'william_peters@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "William Peters", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: true, immigrant: "citizen", age: 42, gender: "male"})
-user4 = User.create!({ email: 'navneet_sondhi@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Navneet Sondhi", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "permanent Resident", age: 58, gender: "female"})
-user5 = User.create!({ email: 'bradley_macLaine@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Bradley MacLaine", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: false, immigrant: "citizen", age: 42, gender: "male"})
+user3 = User.create!({ email: 'william_peters@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "William Peters", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: true, immigrant: "citizen", age: 42, gender: "male", picture: "avatar1.png"})
+user4 = User.create!({ email: 'navneet_sondhi@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Navneet Sondhi", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "permanent Resident", age: 58, gender: "female", picture: "billy-normal-avatar-teaser.png"})
+user5 = User.create!({ email: 'bradley_macLaine@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Bradley MacLaine", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: false, immigrant: "citizen", age: 42, gender: "male", picture: "Hopstarter-Face-Avatars-Female-Face-FH-4-slim.png"})
 user6 = User.create!({ email: 'pierre_gregoire@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Pierre Gregoire", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "citizen", age: 22, gender: "male"})
 user7 = User.create!({ email: 'stevie_charron@gmail.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: " Steven (Tiny) Charron", profession: "Plumber", marital_status: "Divorced", hiv: false, veteran: false, immigrant: "citizen", age: 52, gender: "female"})
 user8 = User.create!({ email: 'joshua_parisien.com', password_digest: BCrypt::Password.create('1234'), admin: false, name: "Joshua Parisien", profession: "Deck hand", marital_status: "Single", hiv: false, veteran: false, immigrant: "undocumented", age: 21, gender: "male"})
@@ -549,7 +549,7 @@ Report.destroy_all
     notes: "esse ex adipisicing voluptate enim reprehenderit consectetur exercitation pariatur enim sunt dolor enim do officia",
     created_at: Date.new(2017,06,01)})
 
-    
+
     report34 =user4.reports.find_or_create_by!({
     sentiment: 3,
     meetings: true,

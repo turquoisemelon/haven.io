@@ -90,12 +90,45 @@ class Api::ReportsController < Api::UsersController
 
       render json: @accuity
   end
-  helper_method :accuity
+  # helper_method :accuity
 
-  def find
-    user = User.find(params[:id])
-    # if params[:user_id] && @user = User.find_by_id(params[:user_id])
-    report = user.reports
-    render json: report
+  def time
+    # @time = {}
+    case params[:q]
+    when 'week'
+      @time = Report.select(
+        "date(created_at)
+        ,sum((meetings=true)::int) as meetings_count
+        ,sum((arrested=true)::int) as arrested_count
+        ,sum((medicated=true)::int) as medicated_count
+        ,sum((indoors=true)::int) as indoors_count
+        ,sum((bathed=true)::int) as bathed_count
+        ,sum((drugs=true)::int) as drugs_count
+        ,sum((fights=true)::int) as fights_count
+        ,avg(sentiment) as sentiment_average")
+      .where("created_at <= '2017-06-01' AND created_at > '2017-05-25'")
+      .group("date(created_at)")
+      .order("date(created_at)")
+      render json: @time, :except=> [:id]
+    when 'month'
+      @time = Report.select(
+        "date(created_at)
+        ,sum((meetings=true)::int) as meetings_count
+        ,sum((arrested=true)::int) as arrested_count
+        ,sum((medicated=true)::int) as medicated_count
+        ,sum((indoors=true)::int) as indoors_count
+        ,sum((bathed=true)::int) as bathed_count
+        ,sum((drugs=true)::int) as drugs_count
+        ,sum((fights=true)::int) as fights_count
+        ,avg(sentiment) as sentiment_average")
+      .where("created_at <= '2017-06-01' AND created_at > '2017-04-30'")
+      .group("date(created_at)")
+      .order("date(created_at)")
+      render json: @time, :except=> [:id]
+    else
+      @time = {}
+      @time['error'] = 'Unrecognized parameter given, please specify a correct parameter'
+      render json: @time
+    end
   end
 end
