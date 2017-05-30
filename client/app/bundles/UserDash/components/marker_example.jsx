@@ -2,7 +2,7 @@
    * Marker example
    */
 
-import React, {PropTypes, Component} from 'react/addons';
+import React, {PropTypes, Component} from 'react';
 import cx from 'classnames';
 
 import controllable from 'react-controllables';
@@ -47,7 +47,7 @@ function calcMarkerTextStyle(scale, markerTextStyle) {
 
 export {K_SCALE_NORMAL};
 
-@controllable(['hoverState', 'showBallonState'])
+// @controllable(['hoverState', 'showBallonState'])
 export default class MapMarker extends Component {
   static propTypes = {
     $hover: PropTypes.bool,

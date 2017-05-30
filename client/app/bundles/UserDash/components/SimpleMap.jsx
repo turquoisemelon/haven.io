@@ -13,7 +13,7 @@ import {getScale, getRealFromTo} from './calc_markers_visibility.js';
 import markerDescriptions from './marker_descriptions.js';
 import {customDistanceToMouse} from './custom_distance.js';
 import Svg from './svg.jsx'
-
+import IceTable from './ice_table.jsx';
 import {List} from 'immutable';
 //import MarkerExample, {K_SCALE_NORMAL} from './marker_example.jsx';
  
@@ -127,6 +127,7 @@ constructor(props) {
         bootstrapURLKeys={this.props.bootstrapURLKeys}>
         <MyGreatPlace lat={43.6532} lng={-79.3832} text={'A'} /* Kreyser Avrora */ />
         <MyGreatPlace {...this.props.greatPlaceCoords} text={'B'} /* road circle */ />
+        <IceTable/>
       </GoogleMapReact>
     );
   }
