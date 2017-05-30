@@ -36,7 +36,6 @@ class MainPanel extends React.Component {
             /> 
             <h2>{info.name}</h2>
             <h3>{info.location}</h3>
-          
           <hr />
             <p>{info.gender} | {info.age}</p>
         </div>

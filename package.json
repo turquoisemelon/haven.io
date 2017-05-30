@@ -12,9 +12,11 @@
     "test": "rspec"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "google-map-react": "^0.24.0",
     "mapbox": "^1.0.0-beta7",
     "point-geometry": "^0.1.0",
+    "react-controllable": "^0.1.1",
     "react-pure-render": "^1.0.2"
   }
 }

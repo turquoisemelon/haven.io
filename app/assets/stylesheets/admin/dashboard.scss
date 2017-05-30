@@ -23,16 +23,16 @@ html, body {
     }
   }
   .radar-pie {
-    margin-left: 1rem;
+    margin: auto;
     display: flex;
     justify-content: center;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-    border-radius: 2px;
+    border-radius: 0px;
     background-color: #fff;
     transition: box-shadow .25s;
     .recharts-layer {
-      font-size: 0.95rem;
-    }
+      font-size: 0.90rem;
+    } 
   }
   .row.filling {
     height: 2rem;
@@ -48,12 +48,12 @@ html, body {
       .buttons-first-row {
         display: flex;
         justify-content: space-around;
-        padding-right: 3rem;
-        padding-left: 2rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
         button {
           height: 2rem;
         }
-      }
+      } 
       .buttons-second-row {
         display: flex;
         justify-content: space-around;
