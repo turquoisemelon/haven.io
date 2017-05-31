@@ -25,13 +25,13 @@ export default class LeftLayout extends React.Component {
     this.getCount();
     // let poll = setInterval(()=>{
     //   this.getCount();
-    // }, 1000)
+    // }, 3000)
   }
 
   render(){
     return(
-      <div>
-      Current User Count: {this.state.count}
+      <div className="user-count">
+      <h1>Current User Count: {this.state.count}</h1>
       </div>
     )
   }
