@@ -90,9 +90,11 @@ export default class TimeSeries extends React.Component {
     })
     return (
       <div className="col s12">
-        <button className="waves-effect waves-light btn" onClick={()=>this.getData('week')}>week</button>
-        <button className="waves-effect waves-light btn" onClick={()=>this.getData('month')}>month</button>
-        <LineChart width={800} height={500} data={this.state.data}
+        <div className='buttons'>
+          <button className="waves-effect waves-light btn" onClick={()=>this.getData('week')}>week</button>
+          <button className="waves-effect waves-light btn" onClick={()=>this.getData('month')}>month</button>
+        </div>
+        <LineChart width={1100} height={500} data={this.state.data}
               margin={{top: 5, right: 30, left: 20, bottom: 5}}>
          <XAxis dataKey="date"/>
          <YAxis/>
