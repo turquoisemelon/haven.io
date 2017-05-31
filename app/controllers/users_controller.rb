@@ -31,9 +31,9 @@ class UsersController < ApplicationController
     end
 
     if @user.update_attributes(user_update_params)
-      redirect_to '/', notice: "Successfully submited survey"
+      redirect_to "/users/#{@user.id}", notice: "Successfully submited survey"
     else
-      redirect_to "/users/#{@user.id}/profile"
+      redirect_to "/users/#{@user.id}"
     end
   end
 

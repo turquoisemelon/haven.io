@@ -17,7 +17,7 @@ class ReportsController < ApplicationController
     @report.user_id = session[:user_id]
     respond_to do |format|
       if @report.save
-        format.html { redirect_to '/', notice: 'Report was successfully created.' }
+        format.html { redirect_to "/users/#{@report.user_id}", notice: 'Report was successfully created.' }
       else
         puts @report.errors
         format.html { render :new }

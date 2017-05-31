@@ -4,14 +4,14 @@
       <div class="card-image">
         <img src="/uploads/<%= @user.picture %>">
         <span class="card-title"><%= @user.name %></span>
-        <%= link_to "edit" edit_user_path(user_id: current_user.id) :class =>  "btn-floating halfway-fab waves-effect waves-light red" %>
+        <a href="<%= current_user.id %>/edit" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">edit</i></a>
       </div>
       <div class="card-content">
         <p><%= @user.age %></p>
       </div>
       <div class="card-action">
-        <a class='left' href="#"><%= link_to "Vulnerability Survey", new_user_history_path(user_id: current_user.id) %></a>
-        <a clas='right'href="#"><%= link_to 'Accuity Survey', new_user_report_path(user_id: current_user.id) %></a>
+        <a class='left' href="#"><%= link_to "New Situation Report", new_user_history_path(user_id: current_user.id) %></a>
+        <a clas='right'href="#"><%= link_to 'Status Update', new_user_report_path(user_id: current_user.id) %></a>
       </div>
     </div>
   </div>
