@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import UserPie from './UserPie.jsx'
-import AgePie from './AgePie.jsx'
-import LeftLayout from './LeftLayout.jsx'
-import TimeSeries from './TimeSeries.jsx'
+import UserPie from './UserPie.jsx';
+import AgePie from './AgePie.jsx';
+import LeftLayout from './LeftLayout.jsx';
+import TimeSeries from './TimeSeries.jsx';
+
 
 
 export default class AdminDash extends React.Component {
@@ -14,7 +15,6 @@ export default class AdminDash extends React.Component {
           <LeftLayout/>
         </div>
         <div className="col s8">
-        <div className="row filling"></div>
           <div className="row age-user-pie">
             <div className="col s6 agepie">
               <AgePie/>
@@ -23,10 +23,8 @@ export default class AdminDash extends React.Component {
               <UserPie/>
             </div>
           </div>
-          <div className="row">
-            <div className="col s12">
-              <TimeSeries/>
-            </div>
+          <div className="row timeseries">
+            <TimeSeries/>
           </div>
         </div>
       </div>

@@ -1,26 +1,40 @@
 <nav>
   <div class="nav-wrapper">
-    <a href="/" class="brand-logo">Haven.to</a>
+    <img href="/" src="http://i.magaimg.net/img/nv9.png"href="/" class="brand-logo" style="width:230px;height:60px;" >
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <% if current_user %>
         <% if current_user.admin %>
-          <li>Admin User</li>
-          <li><%= link_to 'Home', '/' %></li>
-          <li><%= link_to 'User Management', '/admin' %></li>
-          <li><%= link_to 'Dashboard', '/admin/dashboard' %></li>
-          <li><i class="large material-icons"><%= link_to "power_settings_new", '/logout', class:'logout-icon' %></i></li>
+          <li class="user-avatar"><%=image_tag("/uploads/#{current_user.picture}", class:"circle responsive-img")%></li>
+          <li><%= current_user.email %></li>
+          <li class="menu-icon">
+            <a class='dropdown-button' href='#' data-activates='dropdown1'><i class="material-icons">view_headline</i></a>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><%= link_to 'Home', '/' %></li>
+              <li><%= link_to 'Users', '/admin' %></li>
+              <li class="divider"></li>
+              <li><%= link_to 'Dashboard', '/admin/dashboard' %></li>
+              <li><%= link_to "Logout", '/logout' %></li>
+            </ul>
+          </li>
         <% else %>
-          <% if current_user.name %>
-          <li>Hi <%= current_user.name %></li>
+          <% if current_user.name && current_user.picture%>
+          <li class="user-avatar"><%=image_tag("/uploads/#{current_user.picture}", class:"circle responsive-img")%></li>
+          <li><%= current_user.name %> </li>
           <% else %>
-          <li></li>
+          <li>Hi <%=current_user.email%></li>
           <%end%>
-          <li><%= link_to 'Home', '/' %></li>
-          <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
-          <li><%= link_to "History", new_user_history_path(user_id: current_user.id) %></li>
-          <li><%= link_to 'New Survey', new_user_report_path(user_id: current_user.id) %></li>
-          <li><i class="large material-icons"><%= link_to "power_settings_new", '/logout', class:'logout-icon' %></i></li>
+          <li class="menu-icon">
+            <a class='dropdown-button' href='#' data-activates='dropdown1'><i class="material-icons">view_headline</i></a>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><%= link_to 'Home', '/' %></li>
+              <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
+              <li class="divider"></li>
+              <li><%= link_to "History", new_user_history_path(user_id: current_user.id) %></li>
+              <li><%= link_to 'New Survey', new_user_report_path(user_id: current_user.id) %></li>
+              <li><%= link_to "Logout", '/logout' %></li>
+            </ul>
+          </li>
         <% end %>
       <% else %>
         <li><%= link_to 'Home', '/' %></li>
@@ -38,7 +52,7 @@
         <% else %>
         <li><%= link_to 'Home', '/' %></li>
         <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
-        <li><%= link_to "History", user_histories_path(user_id: current_user.id) %></li>
+        <li><%= link_to "History", new_user_history_path(user_id: current_user.id) %></li>
         <li><%= link_to 'New Survey', new_user_report_path(user_id: current_user.id) %></li>
         <li><%= link_to "Logout", '/logout' %></li>
         <% end %>

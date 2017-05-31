@@ -1,19 +1,117 @@
-<h1>New History Report</h1>
+<div class="entrance-text">
+<h1>Please submit your situation report for this period</h1>
+</div>
 
-<%= form_for [current_user,  @history], :html => {:multipart => true} do |f| %>
-  Have you had anything stolen from you ? : <%= f.check_box :stolen %>
-  <br />
-  How often have you ate? : <%= f.select :eaten, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']] %><br />
-  Do you have any new health problems?  : <%= f.check_box :health_condition %><br />
-  Details of any health or medical problems : <%= f.text_field :health_condition_note %><br />
-  Were you able to attend all of your appointments?  : <%= f.check_box :appointments %><br/>
-  Have you been feeling down or depressed or had a mental health episode? : <%= f.check_box :mental_health %><br />
-  Details of Mental health issues? : <%= f.text_field :mental_health_note %><br />
-  Have you become addicted to any drug or habit ? : <%= f.check_box :new_habit %><br/>
-  Current mood? : <%= f.check_box :new_habit_note %><br />
-    Are you able to communicate your needs to friends and staff?? : <%= f.check_box :communicate_needs %><br />
-    Able to cooperate with people and have conversations? : <%= f.select :cooperate, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %><br />
-What is your present housing situation? : <%= f.select :housing_situation, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %><br />
-  <%= f.submit %>
+<div class="container">
+  <%= form_for [current_user,  @history], :html => {:multipart => true} do |f| %>
+
+    <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+       <%= f.check_box :stolen %>
+      <%= f.label(:stolen, 'Have you had anything stolen from you?' ) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+       <%= f.check_box :health_condition %>
+      <%= f.label(:health_condition, 'Do you have any new health problems?' ) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+       <%= f.check_box :appointments %>
+      <%= f.label(:appointments, 'Were you able to attend all of your appointments?' ) %>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+       <%= f.check_box :mental_health %>
+      <%= f.label(:mental_health, 'Have you been feeling down or depressed or had a mental health episode?' ) %>
+      </div>
+    </div>
+
+   <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+      <%= f.check_box :new_habit %>
+      <%= f.label(:new_habit, 'Have you become addicted to any new drug or habit?' ) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+      <%= f.check_box :communicate_needs %>
+      <%= f.label(:communicate_needs, 'Are you able to communicate your needs to friends and staff?' ) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+       <%= f.select :eaten, [['Consistently','5'],['Regularly','4'],['Sometimes','3'],['Rarely','2'],['Never','1']] %>
+      <%= f.label(:eaten, 'How regularly have you ate?' ) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+       <%= f.text_field :health_condition_note %>
+      <%= f.label(:health_condition_note, 'Details of any health or medical problems' ) %>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+       <%= f.text_field :mental_health_note %>
+      <%= f.label(:mental_health_note, 'Details of Mental health issues?' ) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+      <%= f.select :new_habit_note, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %>
+      <%= f.label(:new_habit_note, 'How is your general health?' ) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+      <%= f.select :cooperate, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %>
+      <%= f.label(:cooperate, 'Are you able to cooperate with people and carry on conversations?' ) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col l2"></div>
+      <div class="input-field col s12 m12 l8">
+      <%= f.select :housing_situation, [['Permanent Home','5'],['Temporary Housing','4'],['Shelter or halfway house','3'],['Drop-in shelter','2'],['Living on Street','1']]  %>
+      <%= f.label(:housing_situation, 'What is your present housing situation?' ) %>
+      </div>
+    </div>
+    <div class="center-btn">
+      <a class="waves-effect waves-light btn"><%= f.submit "Submit" %></a>
+    </div>
+
 <% end %>
-<%= link_to 'Back', user_histories_path %>
+
+<div class="filling-div">
+
+</div>
+
+<div class="footer-profile-page">
+  <footer>© 2017 haven.to. All rights reserved.</footer>
+</div>
+
+</div>

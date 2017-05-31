@@ -3,6 +3,7 @@ import React from 'react';
 import UserList from './UserList.jsx';
 import RadarPie from './RadarPie.jsx'
 import UserProfile from './card.jsx'
+import UserCount from './UserCount.jsx';
 
 
 export default class LeftLayout extends React.Component {
@@ -95,8 +96,9 @@ export default class LeftLayout extends React.Component {
      return(
        <div>
         <UserProfile data={this.state.basicInfo}/>
-        <RadarPie data={this.state.radarData}/>
+        <UserCount/>
         <UserList selectedUser={this.state.selectedUserId} clickHandler={this.updateSelected}/>
+        <RadarPie data={this.state.radarData}/>
        </div>
      );
    }

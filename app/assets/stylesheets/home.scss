@@ -21,8 +21,18 @@ html, body {
       font-size: 2rem;
       font-weight: 900;
     }
-    a {
+    .brand-logo {
       margin-left: 1.2rem;
+    }
+    .user-avatar {
+      margin-top: 0.5rem;
+      margin-right: 0.8rem;
+      .circle {
+      height: 3rem;
+      }
+    }
+    .menu-icon {
+      margin-left: 2rem;
     }
   }
 
@@ -70,7 +80,7 @@ html, body {
   }
 
   .lower-content {
-    margin-top: 7rem;
+    margin-top: 5rem;
     margin-bottom: 7rem;
     .lower-content-asset {
     text-align:center;
