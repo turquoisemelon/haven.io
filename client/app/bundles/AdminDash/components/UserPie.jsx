@@ -8,7 +8,7 @@ export default class UserPie extends React.Component{
     this.state ={
       intervalId: '',
       data: [
-        {name: 'Total', value: 60},
+        {name: 'Total', value: 60, fill: '#d0ed57'},
       ]
     }
   }
@@ -27,11 +27,20 @@ export default class UserPie extends React.Component{
   }
 
   handleResponse = (data) => {
+    function newColor(){
+    var letters = 'ABCDE'.split('');
+    var color = '#';
+    for (var i=0; i<3; i++ ) {
+        color += letters[Math.floor(Math.random() * letters.length)];
+    }
+    return color;
+}
     let new_state = [];
     for(let key in data){
-      new_state.push({name: key, value: data[key]})
+      new_state.push({name: key, value: data[key], label: key, fill: newColor()})
     };
     this.setState({data: new_state});
+    console.log(new_state)
   }
 
   handleClick = (filter) => {
@@ -48,9 +57,10 @@ export default class UserPie extends React.Component{
   render(){
     return(
       <div className="col s12">
+                    Client Background
         <PieChart width={300} height={220}>
-          <Pie data={this.state.data} cx={150} cy={90} innerRadius={50} outerRadius={90} fill="#d0ed57" label/>
-          <Tooltip/>
+          <Pie data={this.state.data} cx={150} cy={90} innerRadius={50} outerRadius={90} label={this.state.data.name} fill/>
+          <Tooltip data={this.state.data.name}/>
         </PieChart>
         <div className="buttons">
           <button className="waves-effect waves-light btn" onClick={()=>this.handleClick('profession')}>Profession</button>

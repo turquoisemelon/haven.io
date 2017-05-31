@@ -16,12 +16,12 @@ export default class AgePie extends React.Component{
     this.state ={
       intervalId: '',
       data: [
-              {name: '0-19', uv: 0, fill: '#8884d8'},
-              {name: '20-29', uv: 0, fill: '#83a6ed'},
-              {name: '30-39', uv: 0, fill: '#8dd1e1'},
-              {name: '40-49', uv: 0, fill: '#82ca9d'},
-              {name: '50-59', uv: 0, fill: '#a4de6c'},
-              {name: '60+', uv: 0, fill: '#d0ed57'}
+              {name: '15-24', uv: 0, fill: '#8884d8'},
+              {name: '25-34', uv: 0, fill: '#83a6ed'},
+              {name: '35-44', uv: 0, fill: '#8dd1e1'},
+              {name: '45-54', uv: 0, fill: '#82ca9d'},
+              {name: '55-64', uv: 0, fill: '#a4de6c'},
+              {name: '65+', uv: 0, fill: '#d0ed57'}
             ]
     }
   }
@@ -52,12 +52,12 @@ export default class AgePie extends React.Component{
 
   handleResponse = (data) => {
     const new_data = [
-              {name: '0-19', uv: data['0-19'], fill: '#8884d8'},
-              {name: '20-29', uv: data['20-29'], fill: '#83a6ed'},
-              {name: '30-39', uv: data['30-39'], fill: '#8dd1e1'},
-              {name: '40-49', uv: data['40-49'], fill: '#82ca9d'},
-              {name: '50-59', uv: data['50-59'], fill: '#a4de6c'},
-              {name: '60+', uv: data['60+'], fill: '#d0ed57'}
+              {name: '15-24', uv: data['0-19'], fill: '#8884d8'},
+              {name: '25-34', uv: data['20-29'], fill: '#83a6ed'},
+              {name: '35-44', uv: data['30-39'], fill: '#8dd1e1'},
+              {name: '45-54', uv: data['40-49'], fill: '#82ca9d'},
+              {name: '55-64', uv: data['50-59'], fill: '#a4de6c'},
+              {name: '65+', uv: data['60+'], fill: '#d0ed57'}
             ]
     this.setState({data: new_data});
   }
@@ -72,7 +72,8 @@ export default class AgePie extends React.Component{
   render(){
     return(
       <div className="col s12">
-        <RadialBarChart width={350} height={210} cx={170} cy={170} innerRadius={50} outerRadius={170} barSize={13} data={this.state.data}>
+      Status by Age
+        <RadialBarChart width={350} height={200} cx={170} cy={170} innerRadius={50} outerRadius={170} barSize={13} data={this.state.data}>
           <RadialBar minAngle={0} background clockWise={true} dataKey='uv'/>
           <Legend iconSize={10} width={100} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
           <Tooltip/>
@@ -81,8 +82,6 @@ export default class AgePie extends React.Component{
           <button className="waves-effect waves-light btn" onClick={()=>this.handleClick('')}>All</button>
           <button className="waves-effect waves-light btn" onClick={()=>this.handleClick('hiv')}>HIV</button>
           <button className="waves-effect waves-light btn" onClick={()=>this.handleClick('male')}>Male</button>
-        </div>
-        <div className="buttons-second-row">
           <button className="waves-effect waves-light btn" onClick={()=>this.handleClick('female')}>Female</button>
           <button className="waves-effect waves-light btn" onClick={()=>this.handleClick('veteran')}>Veteran</button>
         </div>
