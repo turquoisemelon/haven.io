@@ -12,14 +12,14 @@ export default class LeftLayout extends React.Component {
     this.state = {
       selectedUserId: '',
       radarData: [
-        { subject: 'Treatment', A: 0, fullMark: 5 },
-        { subject: 'Incidents', A: 0, fullMark: 5 },
-        { subject: 'Compliance', A: 0, fullMark: 5 },
-        { subject: 'Housing', A: 0, fullMark: 5 },
-        { subject: 'Basic needs', A: 0, fullMark: 5 },
-        { subject: 'Substance', A: 0, fullMark: 5 },
-        { subject: 'Danger', A: 0, fullMark: 5 },
-        { subject: 'Situational', A: 0, fullMark: 5 },
+        { subject: 'Treatment', A: 0, fullMark: 4 },
+        { subject: 'Incidents', A: 0, fullMark: 4 },
+        { subject: 'Compliance', A: 0, fullMark: 4 },
+        { subject: 'Housing', A: 0, fullMark: 4 },
+        { subject: 'Basic needs', A: 0, fullMark: 4 },
+        { subject: 'Substance', A: 0, fullMark: 4 },
+        { subject: 'Danger', A: 0, fullMark: 4 },
+        { subject: 'Situational', A: 0, fullMark: 4 },
       ]
     };
   }
@@ -44,14 +44,14 @@ export default class LeftLayout extends React.Component {
 
   handleResponse = (data) => {
     const new_data = [
-              {subject: 'Treatment', A: data['Treatment Participation'], fullMark: 3},
-              {subject: 'Incidents', A: data['Crises Incidents'], fullMark: 3},
-              {subject: 'Compliance', A: data['Medicine Compliance'], fullMark: 3},
-              {subject: 'Housing', A: data['Housing'], fullMark: 3},
-              {subject: 'Basic needs', A: data['Meets basic'], fullMark: 3},
-              {subject: 'Substance', A: data['Substance Abuse'], fullMark: 3},
-              {subject: 'Danger', A: data['Danger to self'], fullMark: 3},
-              {subject: 'Situational', A: data['Other Problems'], fullMark: 3},
+              {subject: 'Treatment', A: data['Treatment Participation'], fullMark: 4},
+              {subject: 'Incidents', A: data['Crises Incidents'], fullMark: 4},
+              {subject: 'Compliance', A: data['Medicine Compliance'], fullMark: 4},
+              {subject: 'Housing', A: data['Housing'], fullMark: 4},
+              {subject: 'Basic needs', A: data['Meets basic'], fullMark: 4},
+              {subject: 'Substance', A: data['Substance Abuse'], fullMark: 4},
+              {subject: 'Danger', A: data['Danger to self'], fullMark: 4},
+              {subject: 'Situational', A: data['Other Problems'], fullMark: 4},
             ];
     this.setState({radarData: new_data});
   }
