@@ -1,5 +1,5 @@
 <div class="entrance-text">
-<h1>New History Report</h1>
+<h1>Please submit your situation report for this period</h1>
 </div>
 
 <div class="container">
@@ -9,7 +9,7 @@
       <div class="col l2"></div>
       <div class="input-field col s12 m12 l8">
        <%= f.check_box :stolen %>
-      <%= f.label(:stolen, 'Have you had anything stolen from you ?' ) %>
+      <%= f.label(:stolen, 'Have you had anything stolen from you?' ) %>
       </div>
     </div>
 
@@ -42,7 +42,7 @@
       <div class="col l2"></div>
       <div class="input-field col s12 m12 l8">
       <%= f.check_box :new_habit %>
-      <%= f.label(:new_habit, 'Have you become addicted to any drug or habit?' ) %>
+      <%= f.label(:new_habit, 'Have you become addicted to any new drug or habit?' ) %>
       </div>
     </div>
 
@@ -57,8 +57,8 @@
     <div class="row">
       <div class="col l2"></div>
       <div class="input-field col s12 m12 l8">
-       <%= f.select :eaten, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']] %>
-      <%= f.label(:eaten, 'How often have you ate?' ) %>
+       <%= f.select :eaten, [['Consistently','5'],['Regularly','4'],['Sometimes','3'],['Rarely','2'],['Never','1']] %>
+      <%= f.label(:eaten, 'How regularly have you ate?' ) %>
       </div>
     </div>
     <div class="row">
@@ -82,7 +82,7 @@
       <div class="col l2"></div>
       <div class="input-field col s12 m12 l8">
       <%= f.select :new_habit_note, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %>
-      <%= f.label(:new_habit_note, 'Your current mood' ) %>
+      <%= f.label(:new_habit_note, 'How is your general health?' ) %>
       </div>
     </div>
 
@@ -90,13 +90,13 @@
       <div class="col l2"></div>
       <div class="input-field col s12 m12 l8">
       <%= f.select :cooperate, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %>
-      <%= f.label(:cooperate, 'Able to cooperate with people and have conversations?' ) %>
+      <%= f.label(:cooperate, 'Are you able to cooperate with people and carry on conversations?' ) %>
       </div>
     </div>
     <div class="row">
       <div class="col l2"></div>
       <div class="input-field col s12 m12 l8">
-      <%= f.select :housing_situation, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %>
+      <%= f.select :housing_situation, [['Permanent Home','5'],['Temporary Housing','4'],['Shelter or halfway house','3'],['Drop-in shelter','2'],['Living on Street','1']]  %>
       <%= f.label(:housing_situation, 'What is your present housing situation?' ) %>
       </div>
     </div>
@@ -111,7 +111,7 @@
 </div>
 
 <div class="footer-profile-page">
-  <footer>© 2017 haven.io. All rights reserved.</footer>
+  <footer>© 2017 haven.to. All rights reserved.</footer>
 </div>
 
 </div>
