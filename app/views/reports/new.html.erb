@@ -1,5 +1,5 @@
 <div class="entrance-text">
-  <h1>Fill out this survey for us to keep track of your current situation</h1>
+  <h1>Please complete and submit your required report</h1>
 </div>
 
 <%= form_for [current_user,  @report], :html => {:multipart => true} do |f| %>
@@ -9,70 +9,70 @@
         <div class="col l3"></div>
         <div class="input-field col s12 m12 l8">
           <%= f.check_box :meetings %>
-          <%= f.label(:meetings, 'Have you been attending to your meetings for the past 6 months?' ) %>
+          <%= f.label(:meetings, 'Have you been attending all required meetings established by your service plan?' ) %>
         </div>
       </div>
       <div class="row">
         <div class="col l3"></div>
         <div class="input-field col s6">
           <%= f.check_box :arrested %>
-          <%= f.label(:arrested, 'Have you been arrested for the past 6 months?' ) %>
+          <%= f.label(:arrested, 'Since your last report, have you been arrested or interacted with Police?' ) %>
         </div>
       </div>
       <div class="row">
         <div class="col l3"></div>
         <div class="input-field col s12 m12 l8">
           <%= f.check_box :medicated %>
-          <%= f.label(:medicated, 'Have you been taking medication for the past 6 months?' ) %>
+          <%= f.label(:medicated, 'Have you been taking all required medication?' ) %>
         </div>
       </div>
       <div class="row">
         <div class="col l3"></div>
         <div class="input-field col s12 m12 l8">
           <%= f.check_box :indoors %>
-          <%= f.label(:indoors, 'Do you have an indoor place to sleep?' ) %>
+          <%= f.label(:indoors, 'Did you sleep indoors last night?' ) %>
         </div>
       </div>
       <div class="row">
         <div class="col l3"></div>
         <div class="input-field col s12 m12 l8">
           <%= f.check_box :bathed %>
-          <%= f.label(:bathed, 'Have you recently bathed?' ) %>
+          <%= f.label(:bathed, 'Are you clean and have access to fresh clothes and sanitation supplies?' ) %>
         </div>
       </div>
       <div class="row">
         <div class="col l3"></div>
         <div class="input-field col s12 m12 l8">
           <%= f.check_box :drugs %>
-          <%= f.label(:drugs, 'Have you been taking drugs recently?' ) %>
+          <%= f.label(:drugs, 'Have you taken any recreational drugs?' ) %>
         </div>
       </div>
        <div class="row">
         <div class="col l3"></div>
         <div class="input-field col s12 m12 l8">
           <%= f.check_box :fights %>
-          <%= f.label(:fights, 'Have you recently involved in a fight?' ) %>
+          <%= f.label(:fights, 'Have you recently been involved in a fight?' ) %>
         </div>
       </div>
       <div class="row">
         <div class="col l3"></div>
         <div class="input-field col s12 m12 l8">
           <%= f.check_box :ems %>
-          <%= f.label(:ems, 'Has EMS visited you?' ) %>
+          <%= f.label(:ems, 'Have you gone to the hospital or been visited by EMS during this reporting period?' ) %>
         </div>
       </div>
       <div class="row">
         <div class="col l3"></div>
         <div class="input-field col s12 m12 l8">
           <%= f.number_field :weeks_homeless, min: 0 %>
-          <%= f.label(:weeks_homeless, 'How many weeks have you been homeless?' ) %>
+          <%= f.label(:weeks_homeless, 'How many weeks have you been without a permanent home?' ) %>
         </div>
       </div>
       <div class="row">
         <div class="col l3"></div>
         <div class="input-field col s12 m12 l8">
           <%= f.select :sentiment, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %>
-          <%= f.label(:sentiment, 'Current Sentiment?' ) %>
+          <%= f.label(:sentiment, 'How would you describe your current sentiment?' ) %>
         </div>
       </div>
       <div class="row">
