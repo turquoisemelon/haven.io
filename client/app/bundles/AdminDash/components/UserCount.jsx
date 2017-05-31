@@ -30,7 +30,7 @@ export default class LeftLayout extends React.Component {
 
   render(){
     return(
-      <div className="user-count hoverable">
+      <div className="user-count">
       <h1>Current User Count: {this.state.count}</h1>
       </div>
     )

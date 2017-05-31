@@ -94,8 +94,8 @@ export default class TimeSeries extends React.Component {
           <button className="waves-effect waves-light btn" onClick={()=>this.getData('week')}>week</button>
           <button className="waves-effect waves-light btn" onClick={()=>this.getData('month')}>month</button>
         </div>
-        <LineChart width={800} height={500} data={this.state.data}
-              margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+        <LineChart width={820} height={500} data={this.state.data}
+              margin={{top: 5, right: 30, left: 5, bottom: 5}}>
          <XAxis dataKey="date"/>
          <YAxis/>
          <CartesianGrid strokeDasharray="3 3"/>
