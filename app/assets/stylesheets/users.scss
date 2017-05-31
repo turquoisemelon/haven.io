@@ -23,6 +23,23 @@ html, body {
     }
   }
 
+  .card-action {
+    height: 3.5em;
+    .right{
+      float: right;
+    }
+
+    .left{
+      float: left;
+    }
+  }
+
+  .card .card-content{
+    p {
+      margin: 0.75em;
+    }
+  }
+
   .input-field {
     p {
       margin-bottom: 2rem;
