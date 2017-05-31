@@ -28,10 +28,8 @@
             <a class='dropdown-button' href='#' data-activates='dropdown1'><i class="material-icons">view_headline</i></a>
             <ul id='dropdown1' class='dropdown-content'>
               <li><%= link_to 'Home', '/' %></li>
-              <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
+              <li><%= link_to "Profile", user_path(id: current_user.id) %></li>
               <li class="divider"></li>
-              <li><%= link_to "History", new_user_history_path(user_id: current_user.id) %></li>
-              <li><%= link_to 'New Survey', new_user_report_path(user_id: current_user.id) %></li>
               <li><%= link_to "Logout", '/logout' %></li>
             </ul>
           </li>
@@ -51,9 +49,7 @@
         <li><%= link_to "Logout", '/logout' %></li>
         <% else %>
         <li><%= link_to 'Home', '/' %></li>
-        <li><%= link_to "Profile", edit_user_path(id: current_user.id) %></li>
-        <li><%= link_to "History", new_user_history_path(user_id: current_user.id) %></li>
-        <li><%= link_to 'New Survey', new_user_report_path(user_id: current_user.id) %></li>
+        <li><%= link_to "Profile", user_path(id: current_user.id) %></li>
         <li><%= link_to "Logout", '/logout' %></li>
         <% end %>
       <% else %>
