@@ -6,92 +6,81 @@
   <div class="row">
     <div class="col s12">
       <div class="row">
-        <div class="col s3"></div>
-        <div class="input-field col s6">
+        <div class="col l3"></div>
+        <div class="input-field col s12 m12 l8">
           <%= f.check_box :meetings %>
           <%= f.label(:meetings, 'Have you been attending to your meetings for the past 6 months?' ) %>
         </div>
-        <div class="col s3"></div>
       </div>
       <div class="row">
-        <div class="col s3"></div>
+        <div class="col l3"></div>
         <div class="input-field col s6">
           <%= f.check_box :arrested %>
           <%= f.label(:arrested, 'Have you been arrested for the past 6 months?' ) %>
         </div>
-        <div class="col s3"></div>
       </div>
       <div class="row">
-        <div class="col s3"></div>
-        <div class="input-field col s6">
+        <div class="col l3"></div>
+        <div class="input-field col s12 m12 l8">
           <%= f.check_box :medicated %>
           <%= f.label(:medicated, 'Have you been taking medication for the past 6 months?' ) %>
         </div>
-        <div class="col s3"></div>
       </div>
       <div class="row">
-        <div class="col s3"></div>
-        <div class="input-field col s6">
+        <div class="col l3"></div>
+        <div class="input-field col s12 m12 l8">
           <%= f.check_box :indoors %>
           <%= f.label(:indoors, 'Do you have an indoor place to sleep?' ) %>
         </div>
-        <div class="col s3"></div>
       </div>
       <div class="row">
-        <div class="col s3"></div>
-        <div class="input-field col s6">
+        <div class="col l3"></div>
+        <div class="input-field col s12 m12 l8">
           <%= f.check_box :bathed %>
           <%= f.label(:bathed, 'Have you recently bathed?' ) %>
         </div>
-        <div class="col s3"></div>
       </div>
       <div class="row">
-        <div class="col s3"></div>
-        <div class="input-field col s6">
+        <div class="col l3"></div>
+        <div class="input-field col s12 m12 l8">
           <%= f.check_box :drugs %>
           <%= f.label(:drugs, 'Have you been taking drugs recently?' ) %>
         </div>
-        <div class="col s3"></div>
       </div>
        <div class="row">
-        <div class="col s3"></div>
-        <div class="input-field col s6">
+        <div class="col l3"></div>
+        <div class="input-field col s12 m12 l8">
           <%= f.check_box :fights %>
           <%= f.label(:fights, 'Have you recently involved in a fight?' ) %>
         </div>
-        <div class="col s3"></div>
       </div>
       <div class="row">
-        <div class="col s3"></div>
-        <div class="input-field col s6">
+        <div class="col l3"></div>
+        <div class="input-field col s12 m12 l8">
           <%= f.check_box :ems %>
           <%= f.label(:ems, 'Has EMS visited you?' ) %>
         </div>
-        <div class="col s3"></div>
       </div>
       <div class="row">
-        <div class="col s3"></div>
-        <div class="input-field col s6">
+        <div class="col l3"></div>
+        <div class="input-field col s12 m12 l8">
           <%= f.number_field :weeks_homeless, min: 0 %>
           <%= f.label(:weeks_homeless, 'How many weeks have you been homeless?' ) %>
         </div>
-        <div class="col s3"></div>
       </div>
       <div class="row">
-        <div class="col s3"></div>
-        <div class="input-field col s6">
+        <div class="col l3"></div>
+        <div class="input-field col s12 m12 l8">
           <%= f.select :sentiment, [['Great','5'],['Good','4'],['Fair','3'],['Bad','2'],['Horrible','1']]  %>
           <%= f.label(:sentiment, 'Current Sentiment?' ) %>
         </div>
-        <div class="col s3"></div>
       </div>
       <div class="row">
-        <div class="col s3"></div>
-        <div class="input-field col s6">
+        <div class="col l3"></div>
+        <div class="input-field col s12 m12 l8">
           <%= f.text_area :notes, class: 'materialize-textarea' %>
           <%= f.label(:notes, 'Additional information that you want to provide us: ' ) %>
         </div>
-        <div class="col s3"></div>
       </div>
       <div class="center-btn">
         <a class="waves-effect waves-light btn"><%= f.submit "Submit" %></a>
