@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import UserList from './UserList.jsx';
 import RadarPie from './RadarPie.jsx'
+import UserCount from './UserCount.jsx';
 
 
 export default class LeftLayout extends React.Component {
@@ -58,6 +59,7 @@ export default class LeftLayout extends React.Component {
    render() {
      return(
        <div>
+        <UserCount/>
         <UserList selectedUser={this.state.selectedUserId} clickHandler={this.updateSelected}/>
         <RadarPie data={this.state.radarData}/>
        </div>

@@ -38,16 +38,16 @@ export default class AgePie extends React.Component{
   clear = () => {clearInterval(this.state.intervalId)}
 
   pullUsers = (param) => {
-      const request = new Request(`http://localhost:3000/api/users/age?q=${param}`, {
-        method: 'GET',
-        credentials: 'same-origin',
-        header: {'Content-Type': 'application/json'},
-      })
-      fetch(request)
-      .then((res)=> res.json())
-      .then(data =>{
-        this.handleResponse(data);
-      });
+    const request = new Request(`http://localhost:3000/api/users/age?q=${param}`, {
+      method: 'GET',
+      credentials: 'same-origin',
+      header: {'Content-Type': 'application/json'},
+    })
+    fetch(request)
+    .then((res)=> res.json())
+    .then(data =>{
+      this.handleResponse(data);
+    });
   }
 
   handleResponse = (data) => {
