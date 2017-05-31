@@ -94,7 +94,7 @@ export default class TimeSeries extends React.Component {
           <button className="waves-effect waves-light btn" onClick={()=>this.getData('week')}>week</button>
           <button className="waves-effect waves-light btn" onClick={()=>this.getData('month')}>month</button>
         </div>
-        <LineChart width={1100} height={500} data={this.state.data}
+        <LineChart width={800} height={500} data={this.state.data}
               margin={{top: 5, right: 30, left: 20, bottom: 5}}>
          <XAxis dataKey="date"/>
          <YAxis/>
@@ -103,19 +103,7 @@ export default class TimeSeries extends React.Component {
          <Legend/>
          {series}
         </LineChart>
-        <form action='#'>
-          <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-          <label for="filled-in-box">Filled in</label>
-        </form>
       </div>
     );
   }
 }
-        // <button onClick={()=>this.getData('week')}>week</button>
-        // <button onClick={()=>this.getData('month')}>month</button>
-        // <button onClick={()=>this.getData('month')}>month</button>
-        // <button onClick={()=>this.getData('month')}>month</button>
-        // <button onClick={()=>this.getData('month')}>month</button>
-        // <button onClick={()=>this.getData('month')}>month</button>
-        // <button onClick={()=>this.getData('month')}>month</button>
-        // <button onClick={()=>this.getData('month')}>month</button>
