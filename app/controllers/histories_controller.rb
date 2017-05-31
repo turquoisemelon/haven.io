@@ -17,7 +17,7 @@ class HistoriesController < ApplicationController
     @history.user_id = session[:user_id]
     respond_to do |format|
       if @history.save
-        format.html { redirect_to '/', notice: 'History was successfully created.' }
+        format.html { redirect_to "/users/#{@history.user_id}", notice: 'History was successfully created.' }
       else
         puts @history.errors
         format.html { render :new }
@@ -38,4 +38,3 @@ class HistoriesController < ApplicationController
 end
 
 
-       
