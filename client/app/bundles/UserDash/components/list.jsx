@@ -9,7 +9,7 @@ const List = ({drop,water,shelters,youth,matchMarker, lat, lng}) => {
             matchMarker(item.geometry.coordinates[1],item.geometry.coordinates[0]);
           }
         }>
-        <h4>{item.properties.NAME}</h4>
+        <h3>{item.properties.NAME}</h3>
         <h4>{item.properties.Address}</h4>        
       </li>
     );
@@ -25,7 +25,7 @@ const List = ({drop,water,shelters,youth,matchMarker, lat, lng}) => {
         <h4>{item.properties.TYPE2}</h4>
         <h5>{item.properties.ADDRESS_FU}</h5>
       </li>
-    );s
+    );
   });
 
   const youthItem = youth.map((item) => {
@@ -57,15 +57,15 @@ const List = ({drop,water,shelters,youth,matchMarker, lat, lng}) => {
       {dropItems[0]}
       {sheltersItem[0]}
       {youthItem[0]}
-            {dropItems[1]}
+      {dropItems[1]}
       {sheltersItem[1]}
       {youthItem[1]}
-            {dropItems[2]}
+      {dropItems[2]}
       {sheltersItem[2]}
-            {dropItems[3]}
+      {dropItems[3]}
       {sheltersItem[3]}
       {youthItem[3]}
-            {dropItems[4]}
+      {dropItems[4]}
       {sheltersItem[4]}
       {youthItem[4]}
       {dropItems[5]}

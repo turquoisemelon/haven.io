@@ -50,7 +50,6 @@ export default class UserPie extends React.Component{
   }
 
   clear = () => {clearInterval(this.state.intervalId)}
-
   render(){
     return(
       <div className="col s12">
