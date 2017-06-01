@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col l3 m2"></div>
-  <div class="col s12 l6 m9">
+  <div class="col l4 m2"></div>
+  <div class="col s12 l4 m9">
     <div class="card">
       <div class="card-image">
-        <img src="/uploads/<%= @user.picture %>">
+        <img class="responsive-img" src="/uploads/<%= @user.picture %>">
         <span class="card-title"><%= @user.name %></span>
         <a href="<%= current_user.id %>/edit" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">edit</i></a>
       </div>

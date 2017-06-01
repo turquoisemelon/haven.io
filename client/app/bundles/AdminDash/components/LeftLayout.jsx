@@ -58,7 +58,7 @@ export default class LeftLayout extends React.Component {
 
    render() {
      return(
-       <div>
+       <div className="col s4 left-layout">
         <UserCount/>
         <UserList selectedUser={this.state.selectedUserId} clickHandler={this.updateSelected}/>
         <RadarPie data={this.state.radarData}/>

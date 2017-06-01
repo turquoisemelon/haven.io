@@ -72,9 +72,9 @@ export default class AgePie extends React.Component{
   render(){
     return(
       <div className="col s12">
-        <RadialBarChart width={350} height={210} cx={170} cy={170} innerRadius={50} outerRadius={170} barSize={13} data={this.state.data}>
+        <RadialBarChart width={350} height={220} cx={170} cy={190} innerRadius={50} outerRadius={170} barSize={13} data={this.state.data}>
           <RadialBar minAngle={0} background clockWise={true} dataKey='uv'/>
-          <Legend iconSize={10} width={100} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
+          <Legend iconSize={10} width={100} height={150} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
           <Tooltip/>
         </RadialBarChart>
         <div className="buttons-first-row">
