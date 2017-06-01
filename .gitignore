@@ -49,3 +49,5 @@ node_modules
 /app/assets/webpack/*
 
 yarn.lock
+
+.DS_Store
