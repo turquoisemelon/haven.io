@@ -56,6 +56,12 @@ export default class SimpleMap extends Component  {
 
   shouldComponentUpdate = shouldPureComponentUpdate;
 
+ handleCenterChange(mapNode) {
+  var newCenter = mapNode.getCenter();
+};
+
+
+
   render() {
     var drops = [];
     var currWindow =false; 
@@ -65,6 +71,7 @@ export default class SimpleMap extends Component  {
           <GoogleMapReact bootstrapURLKeys={{
             key: 'AIzaSyDFeKjIbY0DFXhuE_iRx0rAGTOTUPjcXFs'
           }} onGoogleApiLoaded={({map, maps}) => {
+
 
             drop_ins.features.map((data) => {
               const infowindow = new maps.InfoWindow({
@@ -94,7 +101,7 @@ export default class SimpleMap extends Component  {
                 if (marker.getAnimation() !== null) {
                   marker.setAnimation(null);
                 } else {
-                  marker.setAnimation(null);
+                  marker.setAnimation(maps.Animation.BOUNCE);
                 }
               });
               marker.set("id", data.properties.OBJECTID);
@@ -126,7 +133,7 @@ export default class SimpleMap extends Component  {
                 if (marker.getAnimation() !== null) {
                   marker.setAnimation(null);
                 } else {
-                  marker.setAnimation(null);
+                  marker.setAnimation(maps.Animation.BOUNCE);
                 }
               });
               marker.set("id", data.properties.OBJECTID);
@@ -163,7 +170,7 @@ export default class SimpleMap extends Component  {
                 if (marker.getAnimation() !== null) {
                   marker.setAnimation(null);
                 } else {
-                  marker.setAnimation(null);
+                  marker.setAnimation(maps.Animation.BOUNCE);
                 }
               });
               marker.set("id", data.properties.OBJECTID);
@@ -177,7 +184,7 @@ export default class SimpleMap extends Component  {
                 borderColor: '#2c2c2c',
                 arrowStyle: 1
               });
-              var image = 'https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=info|FFFFFF|000000';
+              var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
               const marker = new maps.Marker({
                 map: map,
                 icon: image,
@@ -203,11 +210,18 @@ export default class SimpleMap extends Component  {
               drops.push(marker);
             });
 
-            this.setState({map: map, maps: maps, markers: drops});
-          }} defaultCenter={{
+this.setState({map: map, maps: maps, markers: drops});
+   
+   _onChange(){
+    var c = this.state.map.getCenter();
+    console.log(c + "C Here")  
+          };
+
+}}
+          defaultCenter={{
             lat: this.state.centerLat,
             lng: this.state.centerLng
-          }} center={this.state.center} onChange={(settings) => { this.setState({lat: this.props.centerLat, lng: this.props.centerLng}); }} defaultZoom={16}></GoogleMapReact>
+          }} center={this.state.center} onChange = {_onChange()} defaultZoom={16}></GoogleMapReact>
         </div>
         <List drop={drop_ins.features} water={water.features} shelters={shelters.features} youth={youth.features} matchMarker={this.matchMarker} lat= {this.state.centerLat} lng= {this.state.centerLng}/>
       </div>
@@ -217,3 +231,5 @@ export default class SimpleMap extends Component  {
 
               //   if ((data.geometry.coordinates[1] - this.state.centerLat) <= .015 && (data.geometry.coordinates[0] - this.state.centerLng) >= .015){marker.set("id", data.properties.OBJECTID);
               // drops.push(marker);}
+              // 
+              // (); this.setState({lat: this.props.centerLat, lng: this.props.centerLng}); console.log("other state" +this.state.centerLat)

@@ -84,5 +84,5 @@ class Api::UsersController < Api::APIController
     @count = User.where("admin = false").count
     render json: @count
   end
-
+  
 end
