@@ -10,7 +10,7 @@ export default class UserPie extends React.Component{
     this.state ={
       intervalId: '',
       data: [
-        {name: 'Total', value: 60, fill: '#d0ed57'},
+        {name: 'Total', value: 60},
       ]
     }
   }
@@ -32,7 +32,7 @@ export default class UserPie extends React.Component{
 
     let new_state = [];
     for(let key in data){
-      new_state.push({name: key, value: data[key], label: key})
+      new_state.push({name: key, value: data[key]})
     };
     this.setState({data: new_state});
     console.log(new_state)
