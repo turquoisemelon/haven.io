@@ -6,7 +6,7 @@
       <% if current_user %>
         <% if current_user.admin %>
           <li class="user-avatar"><%=image_tag("/uploads/#{current_user.picture}", class:"circle responsive-img")%></li>
-          <li><%= current_user.email %></li>
+          <li><%= current_user.name %></li>
           <li class="menu-icon">
             <a class='dropdown-button' href='#' data-activates='dropdown1'><i class="material-icons">view_headline</i></a>
             <ul id='dropdown1' class='dropdown-content'>
