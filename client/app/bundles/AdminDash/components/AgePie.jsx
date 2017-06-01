@@ -27,12 +27,12 @@ export default class AgePie extends React.Component{
   }
 
   handleClick = (filter) => {
-    // this.clear();
+    this.clear();
     this.pullUsers(filter);
-    // this.poll = setInterval(()=>{
-    //   this.setState({intervalId: this.poll});
-    //   this.pullUsers(filter);
-    //   }, 1000)
+    this.poll = setInterval(()=>{
+      this.setState({intervalId: this.poll});
+      this.pullUsers(filter);
+      }, 2000)
   }
 
   clear = () => {clearInterval(this.state.intervalId)}
@@ -64,18 +64,18 @@ export default class AgePie extends React.Component{
 
   componentDidMount() {
     this.pullUsers();
-    // let poll = setInterval(()=>{
-    //   this.pullUsers();
-    //   this.setState({intervalId: poll});
-    // }, 10000)
+    let poll = setInterval(()=>{
+      this.pullUsers();
+      this.setState({intervalId: poll});
+    }, 2000)
   }
   render(){
     return(
       <div className="col s12">
-      Status by Age
         <RadialBarChart width={350} height={200} cx={170} cy={170} innerRadius={50} outerRadius={170} barSize={13} data={this.state.data}>
+        <RadialBarChart width={350} height={220} cx={170} cy={190} innerRadius={50} outerRadius={170} barSize={13} data={this.state.data}>
           <RadialBar minAngle={0} background clockWise={true} dataKey='uv'/>
-          <Legend iconSize={10} width={100} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
+          <Legend iconSize={10} width={100} height={150} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
           <Tooltip/>
         </RadialBarChart>
         <div className="buttons-first-row">
