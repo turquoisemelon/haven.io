@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import UserList from './UserList.jsx';
 import RadarPie from './RadarPie.jsx'
-import UserProfile from './card.jsx'
 import UserCount from './UserCount.jsx';
 
 
@@ -21,14 +20,6 @@ export default class LeftLayout extends React.Component {
         { subject: 'Danger', A: 0, fullMark: 4 },
         { subject: 'Situational', A: 0, fullMark: 4 },
       ],
-      basicInfo: {
-        name: "Tammy Geraldson",
-        gender: "Female",
-        age: "April 3, 1970",
-        location: "Toronto, ON",
-        photo: "https://pbs.twimg.com/profile_images/857413369850200065/KkKXIkze.jpg",
-        bio: "Social Service worker since 1999.  BS University of Toronto",
-      }  
     };
   }
 
@@ -52,32 +43,6 @@ export default class LeftLayout extends React.Component {
     });
   }
 
-  getProfile = (id) => {
-    const requested = new Request(`http://localhost:3000/api/users/${id}/profile`, {
-      method: 'GET',
-      credentials: 'same-origin',
-      header: {'Content-Type': 'application/json'},
-    })
-    fetch(requested)
-    .then((res)=> res.json())
-    .then(lore =>{
-      this.handleProfile(lore);
-// console.log(lore);
-    });
-  }
-
-  handleProfile = (lore) =>{
-    const new_profile = {
-      name: lore[0].name,
-      gender: lore[0].gender,
-      age: lore[0].age,
-      location: "Toronto, ON",
-      photo: "http://lorempixel.com/500/500/people",
-      bio: "Never bruv."
-    }
-    this.setState({basicInfo: new_profile});
-  }
-
   handleResponse = (data) => {
     const new_data = [
               {subject: 'Treatment', A: data['Treatment Participation'], fullMark: 4},
@@ -94,13 +59,11 @@ export default class LeftLayout extends React.Component {
 
    render() {
      return(
-       <div>
        <div className="col s4 left-layout">
 
         <UserCount/>
         <UserList selectedUser={this.state.selectedUserId} clickHandler={this.updateSelected}/>
         <RadarPie data={this.state.radarData}/>
-       </div>
        </div>
      );
    }

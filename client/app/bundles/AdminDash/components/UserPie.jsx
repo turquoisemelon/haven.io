@@ -29,17 +29,10 @@ export default class UserPie extends React.Component{
   }
 
   handleResponse = (data) => {
-    function newColor(){
-    var letters = 'ABCDE'.split('');
-    var color = '#';
-    for (var i=0; i<3; i++ ) {
-        color += letters[Math.floor(Math.random() * letters.length)];
-    }
-    return color;
-}
+
     let new_state = [];
     for(let key in data){
-      new_state.push({name: key, value: data[key], label: key, fill: newColor()})
+      new_state.push({name: key, value: data[key], label: key})
     };
     this.setState({data: new_state});
     console.log(new_state)
