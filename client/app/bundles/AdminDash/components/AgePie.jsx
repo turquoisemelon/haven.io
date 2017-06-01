@@ -27,12 +27,12 @@ export default class AgePie extends React.Component{
   }
 
   handleClick = (filter) => {
-    // this.clear();
+    this.clear();
     this.pullUsers(filter);
-    // this.poll = setInterval(()=>{
-    //   this.setState({intervalId: this.poll});
-    //   this.pullUsers(filter);
-    //   }, 1000)
+    this.poll = setInterval(()=>{
+      this.setState({intervalId: this.poll});
+      this.pullUsers(filter);
+      }, 2000)
   }
 
   clear = () => {clearInterval(this.state.intervalId)}
@@ -64,10 +64,10 @@ export default class AgePie extends React.Component{
 
   componentDidMount() {
     this.pullUsers();
-    // let poll = setInterval(()=>{
-    //   this.pullUsers();
-    //   this.setState({intervalId: poll});
-    // }, 10000)
+    let poll = setInterval(()=>{
+      this.pullUsers();
+      this.setState({intervalId: poll});
+    }, 2000)
   }
   render(){
     return(
