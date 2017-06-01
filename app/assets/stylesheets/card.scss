@@ -1,5 +1,5 @@
 $magenta: #6b0a3a;
-$green: #60a568;
+$green: #26a69a;
 $greenLight: lighten($green, 10%);
 
 @mixin dotBg($dotColor, $bgColor, $size) {
@@ -23,8 +23,8 @@ body {
   border-radius: 5px;
   text-align: center;
   overflow: hidden;
-  box-shadow: 2px 2px 5px #000;
-  border: 1px solid #000;
+
+
   @include dotBg(darken($green, 0%), $green, 30px);
   
   hr {
