@@ -1,5 +1,7 @@
 import React from 'react';
-import {PieChart, Pie, Legend, Tooltip} from 'recharts'
+import {PieChart, Pie, Legend, Tooltip, Cell} from 'recharts'
+
+const COLORS = ['#D5AAFF', '#6EB5FF', '#B28DFF', '#5CC6D9', '#97A2FF', '#FF9CEE', '#1B85B8'];
 
 export default class UserPie extends React.Component{
 
@@ -44,12 +46,7 @@ export default class UserPie extends React.Component{
   }
 
   handleClick = (filter) => {
-    // this.clear();
     this.breakdown(filter);
-    // this.poll = setInterval(()=>{
-    //   this.setState({intervalId: this.poll});
-    //   this.breakdown(filter);
-    //   }, 3000)
   }
 
   clear = () => {clearInterval(this.state.intervalId)}
@@ -57,10 +54,12 @@ export default class UserPie extends React.Component{
   render(){
     return(
       <div className="col s12">
-                    Client Background
-        <PieChart width={300} height={220}>
-          <Pie data={this.state.data} cx={150} cy={90} innerRadius={50} outerRadius={90} label={this.state.data.name} fill/>
-          <Tooltip data={this.state.data.name}/>
+      <p>User Background</p>
+        <PieChart width={300} height={245}>
+          <Pie data={this.state.data} cx={150} cy={122} innerRadius={50} outerRadius={90} fill="#82ca9d" label>
+          { this.state.data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)}
+          </Pie>
+          <Tooltip/>
         </PieChart>
         <div className="buttons">
           <button className="waves-effect waves-light btn" onClick={()=>this.handleClick('profession')}>Profession</button>
