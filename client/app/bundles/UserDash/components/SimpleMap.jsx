@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import PropTypes from 'prop-types';
-import MyGreatPlace from './my_great_place.jsx';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import drop_ins from './drop_ins.js';
 import shelters from './shelters.js';
