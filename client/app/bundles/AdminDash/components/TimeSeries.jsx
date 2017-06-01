@@ -9,11 +9,11 @@ export default class TimeSeries extends React.Component {
     this.state ={
       show: [
         'meetings',
-        'arrested',
-        'medicated',
-        'indoors',
-        'bathed',
-        'drugs',
+        // 'arrested',
+        // 'medicated',
+        // 'indoors',
+        // 'bathed',
+        // 'drugs',
         'fights',
         'sentiment'
       ],
@@ -25,7 +25,7 @@ export default class TimeSeries extends React.Component {
         bathed: "#cbd536",
         drugs: "#6ba9dd",
         fights: "#ff9ea3",
-        sentiment: "#e187ff",
+        sentiment: "#10adbc",
       },
       data: []
     }
@@ -63,20 +63,16 @@ export default class TimeSeries extends React.Component {
       new_state.push({
         date: day.date,
         meetings: day.meetings_count,
-        arrested: day.arrested_count,
-        medicated: day.medicated_count,
-        indoors: day.indoors_count,
-        bathed: day.bathed_count,
-        drugs: day.drugs_count,
+        // arrested: day.arrested_count,
+        // medicated: day.medicated_count,
+        // indoors: day.indoors_count,
+        // bathed: day.bathed_count,
+        // drugs: day.drugs_count,
         fights: day.fights_count,
         sentiment: day.sentiment_average
       })
     });
     this.setState({data: new_state});
-  }
-
-  toggleData = (item) => {
-
   }
 
   componentDidMount() {

@@ -35,12 +35,7 @@ export default class UserPie extends React.Component{
   }
 
   handleClick = (filter) => {
-    // this.clear();
     this.breakdown(filter);
-    // this.poll = setInterval(()=>{
-    //   this.setState({intervalId: this.poll});
-    //   this.breakdown(filter);
-    //   }, 3000)
   }
 
   clear = () => {clearInterval(this.state.intervalId)}
