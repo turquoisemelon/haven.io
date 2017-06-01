@@ -1,5 +1,7 @@
 import React from 'react';
-import {PieChart, Pie, Legend, Tooltip} from 'recharts'
+import {PieChart, Pie, Legend, Tooltip, Cell} from 'recharts'
+
+const COLORS = ['#D5AAFF', '#6EB5FF', '#B28DFF', '#5CC6D9', '#97A2FF', '#FF9CEE', '#1B85B8'];
 
 export default class UserPie extends React.Component{
 
@@ -45,7 +47,9 @@ export default class UserPie extends React.Component{
       <div className="col s12">
       <p>User Background</p>
         <PieChart width={300} height={245}>
-          <Pie data={this.state.data} cx={150} cy={122} innerRadius={50} outerRadius={90} fill="#82ca9d" label/>
+          <Pie data={this.state.data} cx={150} cy={122} innerRadius={50} outerRadius={90} fill="#82ca9d" label>
+          { this.state.data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)}
+          </Pie>
           <Tooltip/>
         </PieChart>
         <div className="buttons">
