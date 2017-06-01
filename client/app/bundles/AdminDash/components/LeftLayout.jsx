@@ -26,7 +26,6 @@ export default class LeftLayout extends React.Component {
   updateSelected = (id) => {
     this.setState({selectedUserId: id});
     this.pullReports(id);
-    this.getProfile(id);
   }
 
   pullReports = (id) => {
@@ -60,7 +59,6 @@ export default class LeftLayout extends React.Component {
    render() {
      return(
        <div className="col s4 left-layout">
-
         <UserCount/>
         <UserList selectedUser={this.state.selectedUserId} clickHandler={this.updateSelected}/>
         <RadarPie data={this.state.radarData}/>
