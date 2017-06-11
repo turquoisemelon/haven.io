@@ -45,3 +45,7 @@ Will listen on port :3000
 ## Screenshots
 
 ![havento-homepage](/public/Haven.to-homepage.png?raw=true)
+
+![havento-dashboard1](/public/Haven.to-dashboard1.png?raw=true)
+
+![havento-dashboard2](/public/Haven.to-dashboard2.png?raw=true)
