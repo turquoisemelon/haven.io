@@ -4,8 +4,12 @@ This a full-stack react on rails app. It is built from scratch where a team of 3
 
 # Concept
 
-The app is a content management system to collect data from the homeless. The collected data is used to map demographics of the users. Recharts http://recharts.org/ used to create data visualisations. Sign up to navigate inside the user interface of the app. To be able to access the admin interface use following credentials:
-username: root@user.com password: 1234
+The app is a content management system to collect data from the homeless. The collected data is used to map demographics of the users.
+Recharts http://recharts.org/ used to create data visualisations.
+Please sign up to navigate inside the user interface of the app.
+To be able to access the admin interface you need to use following credentials:
+username: root@user.com
+password: 1234
 
 ## Setup
 1. Clone
@@ -37,3 +41,6 @@ You will need to install yarn https://yarnpkg.com/en/docs/install after `bundle 
 
 run `foreman start -f Procfile.dev` to start both rails and react server
 Will listen on port :3000
+
+## Screenshots
+![havento-homepage](/public/havento-homepage.png?raw=true "Optional Title")
