@@ -1,10 +1,16 @@
-# haven.to
+# Haven.to
 
-An app to collect data from the homeless by the homeless to help the homeless.
+This a full-stack react on rails app. It is built from scratch where a team of 3 people handled everything from concept to design and development.
+
+# Concept
+
+The app is a content management system to collect data from the homeless. The collected data is used to map demographics of the users. Recharts http://recharts.org/ used to create data visualisations. Sign up to navigate inside the user interface of the app. To be able to access the admin interface use following credentials:
+username: root@user.com password: 1234
 
 ## Setup
 1. Clone
 2. Run `bundle install` to install dependencies
+3. cd to `client` folder and `yarn install` to work with react
 3. Run `bin/rake db:create`
 4. Run `bin/rake db:migrate`
 5. Run `bin/rake db:seed`
