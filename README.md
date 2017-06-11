@@ -43,4 +43,5 @@ run `foreman start -f Procfile.dev` to start both rails and react server
 Will listen on port :3000
 
 ## Screenshots
-![havento-homepage](/public/havento-homepage.png?raw=true "Optional Title")
+
+![havento-homepage](/public/Haven.to-homepage.png?raw=true)
