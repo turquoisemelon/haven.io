@@ -11,5 +11,4 @@
     "rails-server": "echo 'visit http://localhost:3000/' && foreman start -f Procfile.dev",
     "test": "rspec"
   }
-  }
 }
